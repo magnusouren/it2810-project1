@@ -1,16 +1,16 @@
 import { render, screen } from '@testing-library/react';
 import { describe, it } from 'vitest';
 
-import Accordion from '../Accordion';
+import { ExampleComponent } from '../ExampleComponent';
 
 // Les mer: https://eternaldev.com/blog/testing-a-react-application-with-vitest
 
 describe('Accordion test', () => {
   it('Should match snapshot', () => {
     const { container } = render(
-      <Accordion title='Testing'>
+      <ExampleComponent title='Testing'>
         <h4>Content</h4>
-      </Accordion>,
+      </ExampleComponent>,
     );
 
     expect(container).toMatchSnapshot();
@@ -18,9 +18,9 @@ describe('Accordion test', () => {
 
   it('Should show title', () => {
     render(
-      <Accordion title='Testing'>
+      <ExampleComponent title='Testing'>
         <h4>Content</h4>
-      </Accordion>,
+      </ExampleComponent>,
     );
 
     expect(screen.getByText(/Testing/i)).toBeDefined();

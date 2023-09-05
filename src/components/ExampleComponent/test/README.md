@@ -1,4 +1,4 @@
-# Accordion
+# ExampleComponent
 
 ## Should match snapshot
 

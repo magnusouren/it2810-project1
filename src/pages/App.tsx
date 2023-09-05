@@ -1,7 +1,11 @@
 import { FC } from 'react';
 
-import styles from './App.module.css';
+import { ExampleComponent } from '../components/ExampleComponent/ExampleComponent';
 
 export const App: FC = () => {
-  return <h1 className={styles.content}>App</h1>;
+  return (
+    <ExampleComponent title='Lorem ipsum'>
+      <p>Content</p>
+    </ExampleComponent>
+  );
 };

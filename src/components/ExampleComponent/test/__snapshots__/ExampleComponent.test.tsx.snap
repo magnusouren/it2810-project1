@@ -2,17 +2,13 @@
 
 exports[`Accordion test > Should match snapshot 1`] = `
 <div>
-  <div
-    class="accordion"
-  >
+  <div>
     <h3
-      class="accordion-title"
+      class="_heading_d988dd"
     >
       Testing
     </h3>
-    <div
-      class="accordion-content"
-    >
+    <div>
       <h4>
         Content
       </h4>
