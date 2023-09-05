@@ -1,8 +1,14 @@
 # Prosjektnavn README
 
-Dette README-dokumentet gir en oversikt over de tilgjengelige npm-scriptene for dette prosjektet. Disse scriptene hjelper deg med å håndtere utvikling, testing, bygging og annen vedlikehold av prosjektet.
-
 ## Tilgjengelige NPM-script
+
+Denne seksjonen gir en oversikt over de tilgjengelige npm-scriptene for dette prosjektet. Disse scriptene hjelper deg med å håndtere utvikling, testing, bygging og annen vedlikehold av prosjektet.
+
+```
+npm i
+```
+
+Må kjøres for å kunne kjøre prosjektet
 
 ```
 npm run dev
@@ -71,4 +77,7 @@ Dette scriptet kjører Prettier for å formatere koden i TypeScript-, JavaScript
 
 ## Filstruktur
 
-[Filstruktur](./docs/filstruktur.md)
+Dette prosjektet følger en bestemt filstruktur. Denne seksjonen gir en oversikt over filstrukturen og beskriver hva som skal være i de forskjellige mappene og filene.
+
+[Filstruktur prosjekt](./docs/filstruktur-prosjekt.md)
+[Filstruktur komponent](./docs/filstruktur-komponent.md)
