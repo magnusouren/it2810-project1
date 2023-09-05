@@ -80,4 +80,5 @@ Dette scriptet kjører Prettier for å formatere koden i TypeScript-, JavaScript
 Dette prosjektet følger en bestemt filstruktur. Denne seksjonen gir en oversikt over filstrukturen og beskriver hva som skal være i de forskjellige mappene og filene.
 
 [Filstruktur prosjekt](./docs/filstruktur-prosjekt.md)
+
 [Filstruktur komponent](./docs/filstruktur-komponent.md)
