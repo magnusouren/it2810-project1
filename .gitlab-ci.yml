@@ -1,0 +1,38 @@
+image: node:latest
+
+stages:         # List of stages for jobs, and their order of execution
+  - setup
+  - test
+  - build
+
+
+node-setup:
+  stage: setup
+  script:
+    - npm install
+  artifacts:
+    paths:
+      - node_modules
+
+unit-test-job:   # This job runs in the test stage.
+  stage: test    # It only starts when the job in the build stage completes successfully.
+  script:
+    - echo "Running unit tests..."
+    - npm run coverage
+    - echo "Retrieving code coverage..."
+    - echo "Code coverage is XX%"
+
+lint-test-job:   # This job also runs in the test stage.
+  stage: test    # It can run at the same time as unit-test-job (in parallel).
+  script:
+    - echo "Linting code..."
+    - npm run lint
+    - echo "No lint issues found."
+
+
+build-job:       # This job runs in the build stage.
+  stage: build
+  script:
+    - echo "Compiling the code..."
+    - npm run build:ci
+    - echo "Compile complete."
