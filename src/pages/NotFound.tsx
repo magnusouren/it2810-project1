@@ -1,5 +1,3 @@
-// Notfound page
-// ----------------------------------------------------------------------
 import { Link } from 'react-router-dom';
 export const NotFound = () => (
   <div>

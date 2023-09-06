@@ -1,0 +1,12 @@
+/* import lato */
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Lato, sans-serif;
+}
+
+section {
+  margin-left: 18rem;
+}
