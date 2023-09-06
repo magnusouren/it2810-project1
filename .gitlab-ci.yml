@@ -1,10 +1,9 @@
-image: node:latest
+image: node:20.5.1
 
 stages:         # List of stages for jobs, and their order of execution
   - setup
   - test
   - build
-
 
 node-setup:
   stage: setup
@@ -19,8 +18,7 @@ unit-test-job:   # This job runs in the test stage.
   script:
     - echo "Running unit tests..."
     - npm run coverage
-    - echo "Retrieving code coverage..."
-    - echo "Code coverage is XX%"
+  coverage: '/All files[^|]*\|[^|]*\s+([\d\.]+)/'
 
 lint-test-job:   # This job also runs in the test stage.
   stage: test    # It can run at the same time as unit-test-job (in parallel).
