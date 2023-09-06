@@ -16,8 +16,4 @@ describe('Accordion test', () => {
     expect(screen.getByText(/Search/i)).toBeDefined();
     expect(screen.getByText(/Favorites/i)).toBeDefined();
   });
-
-  it('Should navigate when link is clicked', () => {
-    renderWithRouter(<Navbar />);
-  });
 });
