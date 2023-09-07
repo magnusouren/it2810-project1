@@ -2,7 +2,7 @@ import { createBrowserRouter, createRoutesFromElements, Route } from 'react-rout
 
 import { PageLayout } from './layouts/PageLayout.tsx';
 import { Favorites } from './pages/Favorites.tsx';
-import { Home } from './pages/Home.tsx';
+import { Home } from './pages/home/Home.tsx';
 import { NotFound } from './pages/NotFound.tsx';
 import { Search } from './pages/Search.tsx';
 
