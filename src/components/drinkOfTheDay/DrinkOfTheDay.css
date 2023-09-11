@@ -1,0 +1,54 @@
+.drink-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 40px;
+  background-color: #f08080;
+  color: white;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+
+  .link-unstyled {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+
+    img {
+      max-width: 100%;
+      max-height: 150px;
+      object-fit: cover;
+    }
+  }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+  }
+}
+
+@media only screen and (min-width: 968px) {
+  .drink-card {
+    flex-direction: row; /* Horizontal layout for larger screens */
+    align-items: center; /* Center vertically on larger screens */
+    .left {
+      margin-right: 20px;
+    }
+  }
+}
