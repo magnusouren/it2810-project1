@@ -1,6 +1,7 @@
 import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
 
 import { PageLayout } from './layouts/PageLayout.tsx';
+import { Drink } from './pages/Drink.tsx';
 import { Favorites } from './pages/Favorites.tsx';
 import { Home } from './pages/Home.tsx';
 import { NotFound } from './pages/NotFound.tsx';
@@ -13,6 +14,7 @@ export const Router = createBrowserRouter(
         <Route path='/' element={<Home />} />
         <Route path='/search' element={<Search />} />
         <Route path='/favorites' element={<Favorites />} />
+        <Route path='/drink' element={<Drink />} />
       </Route>
       <Route path='*' element={<NotFound />} />
     </>,
