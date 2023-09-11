@@ -44,6 +44,7 @@ export const DrinkOfTheDay: React.FC = () => {
       {drink && (
         <Link to={`/categories/${drink.strCategory}`} className='link-unstyled'>
           <div className='left'>
+            <h1>Drink of the day!</h1>
             <h2>{drink.strDrink}</h2>
             <img src={drink.strDrinkThumb + '/preview'} alt={drink.strDrink} />
           </div>
