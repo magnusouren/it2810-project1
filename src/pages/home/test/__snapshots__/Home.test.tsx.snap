@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Accordion test > Should match snapshot 1`] = `
+<div>
+  <div>
+    Loading...
+  </div>
+</div>
+`;
