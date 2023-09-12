@@ -1,5 +1,5 @@
-import axios from 'axios';
-import React, { FC, useEffect, useState } from 'react';
+import axios, { isCancel } from 'axios';
+import { FC, useEffect, useState } from 'react';
 
 interface Ingredient {
   ingredient: string;
@@ -17,15 +17,27 @@ interface Drink {
   strAlcoholic: string;
 }
 
-export const DrinkCard: FC = () => {
+export const DrinkCard: FC<{ id: string }> = ({ id }) => {
   const [drink, setDrink] = useState<Drink | null>(null);
+  const [noMatch, setNoMatch] = useState(false);
 
   useEffect(() => {
     console.log('Fetching drink...');
+
+    // eslint-disable-next-line import/no-named-as-default-member
+    const cancelToken = axios.CancelToken.source();
+
     // Fetch a random drink from the API
     axios
-      .get('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita')
+      .get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`, { cancelToken: cancelToken.token })
       .then((response) => {
+        if (response.data.drinks === null) {
+          setNoMatch(true);
+          return;
+        }
+        setNoMatch(false);
+
+        // Extract drink data
         const drinkData = response.data.drinks[0];
         const ingredients: Array<Ingredient> = [];
 
@@ -44,9 +56,22 @@ export const DrinkCard: FC = () => {
         setDrink(drinkData);
       })
       .catch((error) => {
-        console.error('Error fetching drink:', error);
+        if (isCancel(error)) {
+          console.log('Request cancelled', error.message);
+        } else {
+          console.error('Error fetching drink:', error);
+        }
       });
+
+    return () => {
+      console.log('Cancelling drink request...');
+      cancelToken.cancel();
+    };
   }, []);
+
+  if (noMatch) {
+    return <div>No drink was found...</div>;
+  }
 
   if (!drink) {
     return <div>Loading...</div>;
