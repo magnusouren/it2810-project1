@@ -1,13 +1,13 @@
-import './Home.css';
+import './Categories.css';
 
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { FC } from 'react';
 
-import { Category } from '../../components/category/Category';
 import { CategoryType } from '../../types';
+import { Category } from '../category/Category';
 
-export const Home: FC = () => {
+export const Categories: FC = () => {
   const { data, isLoading, isSuccess } = useQuery<CategoryType[]>(['categories'], () =>
     axios
       .get('https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list')
