@@ -14,29 +14,42 @@ export const DrinkOfTheDay: React.FC = () => {
   const [drink, setDrink] = useState<Drink | null>(null);
 
   useEffect(() => {
-    // Fetch a random drink from the API
-    axios
-      .get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
-      .then((response) => {
-        const randomDrink = response.data.drinks[0];
-        const ingredients: string[] = [];
+    // Get the current date in YYYY-MM-DD format
+    const currentDate = new Date().toISOString().split('T')[0];
 
-        // Extract ingredients
-        for (let i = 1; i <= 15; i++) {
-          const ingredient = randomDrink[`strIngredient${i}`];
-          if (ingredient) {
-            ingredients.push(`${ingredient}`);
-          } else {
-            break;
+    // Check if a drink is stored for the current date in local storage
+    const storedDrink = localStorage.getItem(currentDate);
+
+    if (storedDrink) {
+      // Use the stored drink if available
+      setDrink(JSON.parse(storedDrink));
+    } else {
+      // Fetch a new random drink from the API
+      axios
+        .get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+        .then((response) => {
+          const randomDrink = response.data.drinks[0];
+          const ingredients: string[] = [];
+
+          // Extract ingredients, loop up to 15 because the API holds max 15 ingredients
+          for (let i = 1; i <= 15; i++) {
+            const ingredient = randomDrink[`strIngredient${i}`];
+            if (ingredient) {
+              ingredients.push(`${ingredient}`);
+            }
           }
-        }
 
-        randomDrink.ingredients = ingredients;
-        setDrink(randomDrink);
-      })
-      .catch((error) => {
-        console.error('Error fetching drink:', error);
-      });
+          randomDrink.ingredients = ingredients;
+
+          // Store the new random drink in local storage with the current date
+          localStorage.setItem(currentDate, JSON.stringify(randomDrink));
+
+          setDrink(randomDrink);
+        })
+        .catch((error) => {
+          console.error('Error fetching drink:', error);
+        });
+    }
   }, []);
 
   return (
