@@ -7,11 +7,9 @@ import { Categories } from '../Categories';
 
 vi.mock('@tanstack/react-query', async () => {
   const axios = (await vi.importActual('@tanstack/react-query')) as { default?: undefined };
-
   return {
     ...axios,
     useQuery: () => ({
-      // Mock values
       data: ['Beer', 'Cocoa', 'Coffee'] as CategoryType[],
       isLoading: false,
       isSuccess: true,
