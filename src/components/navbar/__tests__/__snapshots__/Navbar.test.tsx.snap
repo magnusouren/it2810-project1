@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Accordion test > Should match snapshot 1`] = `
+exports[`Navbar > Should match snapshot 1`] = `
 <div>
   <nav>
     <ul>
@@ -32,7 +32,7 @@ exports[`Accordion test > Should match snapshot 1`] = `
           class="link"
         >
           <a
-            href="/search"
+            href="/search/"
           >
             Search
           </a>
@@ -41,7 +41,7 @@ exports[`Accordion test > Should match snapshot 1`] = `
           class="link"
         >
           <a
-            href="/favorites"
+            href="/favorites/"
           >
             Favorites
           </a>

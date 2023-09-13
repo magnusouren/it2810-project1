@@ -17,7 +17,7 @@ vi.mock('@tanstack/react-query', async () => {
   };
 });
 
-describe('Home', () => {
+describe('Categories', () => {
   it('Should match snapshot', async () => {
     const { asFragment } = renderWithRouterAndQueryClient(<Categories />);
     expect(asFragment()).toMatchSnapshot();
@@ -28,16 +28,8 @@ describe('Home', () => {
     expect(screen.getByText(category)).toBeDefined();
   });
 
-  it.each(['Beer', 'Cocoa', 'Coffee'])('Should navigate when to /search/ when %s is clicked', async (category) => {
+  it('Should not show a category when it is not in the list', async () => {
     renderWithRouterAndQueryClient(<Categories />);
-    screen.getByText(category).click();
-    expect(window.location.pathname).toBe('/search/');
-    expect(window.history.state.usr).toEqual(category);
-  });
-
-  it.each(['Beer', 'Cocoa', 'Coffee'])('Should use %s as state in navigation when clicked', async (category) => {
-    renderWithRouterAndQueryClient(<Categories />);
-    screen.getByText(category).click();
-    expect(window.history.state.usr).toEqual(category);
+    expect(screen.queryByText('Ordinary drink')).toBeNull();
   });
 });

@@ -5,7 +5,7 @@ Merk at komponentnavn skal skrives med stor forbokstav. Dette er en konvensjon s
 
 ```
 ├── Komponentnavn
-│   ├── test
+│   ├── __tests__                           # tester for komponenten
 │       ├── __snapshots__                   # snapshots fra tester
 │       ├── Komponent.test.tsx              # testfil for 'Komponent'
 │       ├── Komponent-utils.test.ts         # tester utils-filen i komponenten
