@@ -1,5 +1,6 @@
-import axios, { isCancel } from 'axios';
-import { FC, useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import axios, { AxiosError, isCancel } from 'axios';
+import { FC, useState } from 'react';
 
 interface Ingredient {
   ingredient: string;
@@ -18,28 +19,30 @@ interface Drink {
 }
 
 export const DrinkCard: FC<{ id: string }> = ({ id }) => {
-  const [drink, setDrink] = useState<Drink | null>(null);
-  const [noMatch, setNoMatch] = useState(false);
+  const [networkOffline, setNetworkOffline] = useState(false);
 
-  useEffect(() => {
-    console.log('Fetching drink...');
-
-    // eslint-disable-next-line import/no-named-as-default-member
-    const cancelToken = axios.CancelToken.source();
-
-    // Fetch a random drink from the API
-    axios
-      .get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`, { cancelToken: cancelToken.token })
+  // useQuery hook
+  const { data, isLoading, isSuccess } = useQuery<Drink | null>(['drink'], () => {
+    return axios
+      .get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
       .then((response) => {
         if (response.data.drinks === null) {
-          setNoMatch(true);
-          return;
+          return null;
         }
-        setNoMatch(false);
 
         // Extract drink data
         const drinkData = response.data.drinks[0];
         const ingredients: Array<Ingredient> = [];
+        const drink: Drink = {
+          strDrink: drinkData.strDrink,
+          strGlass: drinkData.strGlass,
+          ingredients: [],
+          strInstructions: drinkData.strInstructions,
+          strDrinkThumb: drinkData.strDrinkThumb,
+          strVideo: drinkData.strVideo,
+          strCategory: drinkData.strCategory,
+          strAlcoholic: drinkData.strAlcoholic,
+        };
 
         // Extract ingredients
         for (let i = 1; i <= 15; i++) {
@@ -52,49 +55,57 @@ export const DrinkCard: FC<{ id: string }> = ({ id }) => {
           }
         }
 
-        drinkData.ingredients = ingredients;
-        setDrink(drinkData);
+        drink.ingredients = ingredients;
+        return drink;
       })
       .catch((error) => {
         if (isCancel(error)) {
           console.log('Request cancelled', error.message);
+          return null;
+        }
+        if (error instanceof AxiosError && error.code === 'ERR_NETWORK') {
+          console.log('Network error', error.message);
+          setNetworkOffline(true);
+          return null;
         } else {
           console.error('Error fetching drink:', error);
+          return null;
         }
       });
+  });
 
-    return () => {
-      console.log('Cancelling drink request...');
-      cancelToken.cancel();
-    };
-  }, []);
-
-  if (noMatch) {
-    return <div>No drink was found...</div>;
-  }
-
-  if (!drink) {
+  if (isLoading) {
     return <div>Loading...</div>;
   }
+  if (networkOffline) {
+    return <div>Network offline</div>;
+  }
 
+  if (!isSuccess) {
+    return <div>Something went wrong</div>;
+  }
+
+  if (!data) {
+    return <div>No drink was found...</div>;
+  }
   return (
     <div className='drinkContainer'>
-      <h2>{drink.strDrink}</h2>
+      <h2>{data.strDrink}</h2>
       <div className='imageContainer'>
-        <img src={drink.strDrinkThumb} alt={drink.strDrink + 'image'} />
+        <img src={data.strDrinkThumb} alt={data.strDrink + 'image'} />
       </div>
-      <p>{drink.strVideo}</p>
+      <p>{data.strVideo}</p>
       <div className='misc'>
-        <p>{drink.strCategory}</p>
-        <p>{drink.strGlass}</p>
-        <p>{drink.strAlcoholic}</p>
+        <p>{data.strCategory}</p>
+        <p>{data.strGlass}</p>
+        <p>{data.strAlcoholic}</p>
       </div>
       <div>
         <h3>Instructions</h3>
-        <p>{drink.strInstructions}</p>
+        <p>{data.strInstructions}</p>
       </div>
       <ul className='ingredients'>
-        {drink.ingredients.map((ingredient, index) => (
+        {data.ingredients.map((ingredient, index) => (
           <li key={index}>
             <div className='measure'>{ingredient.measure == null ? '' : ingredient.measure}</div>
             <div className='ingredient'>{ingredient.ingredient}</div>
