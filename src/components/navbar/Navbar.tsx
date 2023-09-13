@@ -13,10 +13,10 @@ export const Navbar = () => (
       </li>
       <div className='links'>
         <li className='link'>
-          <Link to={'/search'}>Search</Link>
+          <Link to={'/search/'}>Search</Link>
         </li>
         <li className='link'>
-          <Link to={'/favorites'}>Favorites</Link>
+          <Link to={'/favorites/'}>Favorites</Link>
         </li>
       </div>
     </ul>

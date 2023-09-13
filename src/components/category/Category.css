@@ -1,0 +1,19 @@
+.category {
+  flex-grow: 1;
+  margin: 0 auto;
+  padding: 3rem 1rem 1rem;
+  background-color: #fff;
+  border: solid 1px #eaeaea;
+  transition: border 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.category h3 {
+  color: #000;
+}
+
+.category:hover {
+  border: solid 1px #000;
+  cursor: pointer;
+  text-decoration: underline #f2c2a6;
+}
