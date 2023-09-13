@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import axios, { AxiosError, isCancel } from 'axios';
 import { FC, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 interface Ingredient {
   ingredient: string;
@@ -18,8 +19,9 @@ interface Drink {
   strAlcoholic: string;
 }
 
-export const DrinkCard: FC<{ id: string }> = ({ id }) => {
+export const DrinkCard: FC = () => {
   const [networkOffline, setNetworkOffline] = useState(false);
+  const { id } = useParams();
 
   // useQuery hook
   const { data, isLoading, isSuccess } = useQuery<Drink | null>(['drink'], () => {
