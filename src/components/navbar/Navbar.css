@@ -5,6 +5,7 @@ nav {
   position: fixed;
   height: 100%;
   margin: 0;
+  background-color: #f08080;
 }
 
 ul {
@@ -41,5 +42,5 @@ li a {
 }
 
 li a:hover:not(.active) {
-  color: #f08080;
+  color: black;
 }

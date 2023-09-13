@@ -1,0 +1,14 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Category > Should match snapshot 1`] = `
+<div>
+  <a
+    class="category"
+    href="/search/"
+  >
+    <h3>
+      Ordinary drink
+    </h3>
+  </a>
+</div>
+`;
