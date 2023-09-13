@@ -1,13 +1,16 @@
+import './DrinkCard.css';
+
 import { useQuery } from '@tanstack/react-query';
 import axios, { AxiosError, isCancel } from 'axios';
 import { FC, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 interface Ingredient {
   ingredient: string;
   measure: string;
 }
 
+// TODO: Add type for strCategory, separate strAcloholic
 interface Drink {
   strDrink: string;
   ingredients: Array<Ingredient>;
@@ -16,7 +19,7 @@ interface Drink {
   strDrinkThumb: string;
   strVideo: string | null;
   strCategory: string;
-  strAlcoholic: string;
+  strAlcoholic: 'Alcoholic' | 'Non alcoholic' | 'Optional alcohol';
 }
 
 export const DrinkCard: FC = () => {
@@ -92,28 +95,38 @@ export const DrinkCard: FC = () => {
   }
   return (
     <div className='drinkContainer'>
-      <h2>{data.strDrink}</h2>
+      <div className='returnButtonContainer'>
+        <Link to='/search' className='returnButton'>
+          <span className='material-symbols-outlined'>arrow_back_ios_new</span>
+        </Link>
+      </div>
+      <div className='drinkHeader'>
+        <h1>{data.strDrink}</h1>
+      </div>
       <div className='imageContainer'>
         <img src={data.strDrinkThumb} alt={data.strDrink + 'image'} />
       </div>
-      <p>{data.strVideo}</p>
-      <div className='misc'>
-        <p>{data.strCategory}</p>
-        <p>{data.strGlass}</p>
-        <p>{data.strAlcoholic}</p>
+      <div className='info'>
+        <p id='drinkCategory'>{data.strCategory}</p>
+        <p id='drinkGlass'>{data.strGlass}</p>
+        <p id='drinkAlcoholic'>{data.strAlcoholic}</p>
       </div>
-      <div>
-        <h3>Instructions</h3>
+      <div className='ingredients'>
+        <h3 className='sectionHeader'>Ingredients</h3>
+        <ul className='ingredientsList'>
+          {data.ingredients.map((ingredient, index) => (
+            <li key={index}>
+              <div className='measure'>{ingredient.measure == null ? '' : ingredient.measure}</div>
+              <div className='ingredient'>{ingredient.ingredient}</div>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className='instructions'>
+        <h3 className='sectionHeader'>Instructions</h3>
         <p>{data.strInstructions}</p>
       </div>
-      <ul className='ingredients'>
-        {data.ingredients.map((ingredient, index) => (
-          <li key={index}>
-            <div className='measure'>{ingredient.measure == null ? '' : ingredient.measure}</div>
-            <div className='ingredient'>{ingredient.ingredient}</div>
-          </li>
-        ))}
-      </ul>
+      <p>{data.strVideo}</p>
     </div>
   );
 };
