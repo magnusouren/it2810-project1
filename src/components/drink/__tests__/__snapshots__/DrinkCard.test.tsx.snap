@@ -1,0 +1,107 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DrinkCard > Should match snapshot 1`] = `
+<div>
+  <div
+    class="drinkContainer"
+  >
+    <div
+      class="returnButtonContainer"
+    >
+      <a
+        class="returnButton"
+        href="/search"
+      >
+        <span
+          class="material-symbols-outlined"
+        >
+          arrow_back_ios_new
+        </span>
+      </a>
+    </div>
+    <div
+      class="drinkHeader"
+    >
+      <h1>
+        Super Drink
+      </h1>
+    </div>
+    <div
+      class="imageContainer"
+    >
+      <img
+        alt="Super Drinkimage"
+        src="https://localhost:3000/drink/11118.jpg"
+      />
+    </div>
+    <div
+      class="info"
+    >
+      <p
+        id="drinkCategory"
+      >
+        Category
+      </p>
+      <p
+        id="drinkGlass"
+      >
+        Highball
+      </p>
+      <p
+        id="drinkAlcoholic"
+      >
+        Alcoholic
+      </p>
+    </div>
+    <div
+      class="ingredients"
+    >
+      <h3
+        class="sectionHeader"
+      >
+        Ingredients
+      </h3>
+      <ul
+        class="ingredientsList"
+      >
+        <li>
+          <div
+            class="measure"
+          >
+            Measure 1
+          </div>
+          <div
+            class="ingredient"
+          >
+            Ingredient 1
+          </div>
+        </li>
+        <li>
+          <div
+            class="measure"
+          >
+            Measure 2
+          </div>
+          <div
+            class="ingredient"
+          >
+            Ingredient 2
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div
+      class="instructions"
+    >
+      <h3
+        class="sectionHeader"
+      >
+        Instructions
+      </h3>
+      <p>
+        Instructions for drink
+      </p>
+    </div>
+  </div>
+</div>
+`;

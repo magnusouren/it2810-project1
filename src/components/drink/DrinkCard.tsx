@@ -1,8 +1,8 @@
 import './DrinkCard.css';
 
 import { useQuery } from '@tanstack/react-query';
-import axios, { AxiosError, isCancel } from 'axios';
-import { FC, useState } from 'react';
+import axios, { isCancel } from 'axios';
+import { FC } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 import { Alcoholic } from '../../types';
@@ -13,18 +13,17 @@ interface Ingredient {
 }
 
 interface Drink {
+  drinkId: string;
   strDrink: string;
   ingredients: Array<Ingredient>;
-  strGlass: string | null;
+  strGlass: string;
   strInstructions: string;
   strDrinkThumb: string;
-  strVideo: string | null;
   strCategory: string;
   strAlcoholic: Alcoholic;
 }
 
 export const DrinkCard: FC = () => {
-  const [networkOffline, setNetworkOffline] = useState(false);
   const { id } = useParams();
 
   // useQuery hook
@@ -32,7 +31,7 @@ export const DrinkCard: FC = () => {
     return axios
       .get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
       .then((response) => {
-        if (response.data.drinks === null) {
+        if (!id) {
           return null;
         }
 
@@ -40,12 +39,12 @@ export const DrinkCard: FC = () => {
         const drinkData = response.data.drinks[0];
         const ingredients: Array<Ingredient> = [];
         const drink: Drink = {
+          drinkId: id,
           strDrink: drinkData.strDrink,
           strGlass: drinkData.strGlass,
           ingredients: [],
           strInstructions: drinkData.strInstructions,
           strDrinkThumb: drinkData.strDrinkThumb,
-          strVideo: drinkData.strVideo,
           strCategory: drinkData.strCategory,
           strAlcoholic: drinkData.strAlcoholic,
         };
@@ -69,9 +68,7 @@ export const DrinkCard: FC = () => {
           console.log('Request cancelled', error.message);
           return null;
         }
-        if (error instanceof AxiosError && error.code === 'ERR_NETWORK') {
-          console.log('Network error', error.message);
-          setNetworkOffline(true);
+        if (error instanceof TypeError) {
           return null;
         } else {
           console.error('Error fetching drink:', error);
@@ -82,9 +79,6 @@ export const DrinkCard: FC = () => {
 
   if (isLoading) {
     return <div>Loading...</div>;
-  }
-  if (networkOffline) {
-    return <div>Network offline</div>;
   }
 
   if (!isSuccess) {
@@ -127,7 +121,6 @@ export const DrinkCard: FC = () => {
         <h3 className='sectionHeader'>Instructions</h3>
         <p>{data.strInstructions}</p>
       </div>
-      <p>{data.strVideo}</p>
     </div>
   );
 };
