@@ -10,3 +10,5 @@ export type CategoryType =
   | 'Punch / Party Drink'
   | 'Beer'
   | 'Soft Drink';
+
+export type Alcoholic = 'Alcoholic' | 'Non alcoholic' | 'Optional alcohol';

@@ -5,12 +5,13 @@ import axios, { AxiosError, isCancel } from 'axios';
 import { FC, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
+import { Alcoholic } from '../../types';
+
 interface Ingredient {
   ingredient: string;
   measure: string;
 }
 
-// TODO: Add type for strCategory, separate strAcloholic
 interface Drink {
   strDrink: string;
   ingredients: Array<Ingredient>;
@@ -19,7 +20,7 @@ interface Drink {
   strDrinkThumb: string;
   strVideo: string | null;
   strCategory: string;
-  strAlcoholic: 'Alcoholic' | 'Non alcoholic' | 'Optional alcohol';
+  strAlcoholic: Alcoholic;
 }
 
 export const DrinkCard: FC = () => {
