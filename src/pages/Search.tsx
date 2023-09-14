@@ -5,17 +5,11 @@ import { useLocation } from 'react-router-dom';
 
 import { CategoryType } from '../types';
 
-interface SearchProps {
-  searchCategory?: CategoryType;
-}
-
-interface Cat {
-  name: string;
-}
-
-export const Search: FC<SearchProps> = ({ searchCategory }) => {
+export const Search: FC = () => {
   const { state } = useLocation();
-  const [Cat, setCat] = useState<Cat | null>(null);
+
+  const [cat, setCat] = useState<CategoryType | null>((state as CategoryType) || null);
+  // const [drinks, setDrinks] = useState<Drink[] | null>(null); // State med drinks som er resultatet av kallet fra API
 
   const { data, isLoading, isSuccess } = useQuery<CategoryType[]>(['categories'], () =>
     axios
@@ -24,29 +18,29 @@ export const Search: FC<SearchProps> = ({ searchCategory }) => {
   );
 
   useEffect(() => {
-    if (searchCategory) {
-      axios
-        .get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${searchCategory}`)
-        .then((res) => console.log(res));
-    } else if (Cat) {
-      axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${Cat.name}`).then((res) => console.log(res));
-    }
-  }, [Cat, searchCategory]);
-  console.log(state);
-  console.log(searchCategory);
-  if (isLoading) return <div>Loading...</div>;
-  !state && window.location.replace('/');
+    if (cat) {
+      axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${cat}`).then((res) => console.log(res));
 
-  const category = state as CategoryType;
+      //.then((res) => setDrinks(res.data.drinks)); // tilpasses til hvordan dataobjektet ser ut
+    } else {
+      axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${cat}`).then((res) => console.log(res));
+    }
+  }, [cat]);
+
+  console.log(state);
+  console.log(cat);
+
+  if (isLoading) return <div>Loading...</div>;
 
   return (
     <>
+      {/* <SearchCategory searchCategory={cat} setSearchCategory={setCat} /> */}
       <div>
         {data && isSuccess && (
           <select
             placeholder='Filter by category'
             onChange={(e) => {
-              setCat({ name: e.target.value });
+              setCat(e.target.value as CategoryType);
             }}
           >
             {data.sort().map((category: CategoryType) => (
@@ -56,7 +50,7 @@ export const Search: FC<SearchProps> = ({ searchCategory }) => {
             ))}
           </select>
         )}
-        {category}
+        {cat}
       </div>
     </>
   );
