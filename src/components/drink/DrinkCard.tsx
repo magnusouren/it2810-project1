@@ -6,6 +6,7 @@ import { FC } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 import { Alcoholic } from '../../types';
+import { FavoriteButton } from '../favoriteButton/FavoriteButton';
 
 interface Ingredient {
   ingredient: string;
@@ -97,6 +98,9 @@ export const DrinkCard: FC = () => {
       </div>
       <div className='drinkHeader'>
         <h1>{data.strDrink}</h1>
+      </div>
+      <div className='favoriteButtonContainer'>
+        <FavoriteButton id={id ? id : ''} />
       </div>
       <div className='imageContainer'>
         <img src={data.strDrinkThumb} alt={data.strDrink + 'image'} />

@@ -27,6 +27,19 @@ exports[`DrinkCard > Should match snapshot 1`] = `
       </h1>
     </div>
     <div
+      class="favoriteButtonContainer"
+    >
+      <div
+        class="favoriteToggle"
+      >
+        <span
+          class="material-symbols-outlined"
+        >
+          favorite
+        </span>
+      </div>
+    </div>
+    <div
       class="imageContainer"
     >
       <img
