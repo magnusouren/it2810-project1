@@ -1,4 +1,4 @@
-# Navbar tests
+# MobileNav tests
 
 ## Snapshot tests
 

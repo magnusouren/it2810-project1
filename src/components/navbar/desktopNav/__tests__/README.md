@@ -1,4 +1,4 @@
-# Navbar tests
+# DesktopNav tests
 
 ## Snapshot tests
 
