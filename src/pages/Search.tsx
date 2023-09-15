@@ -10,17 +10,24 @@ import { CategoryType, SimpleDrink } from '../types';
 export const Search: FC = () => {
   const { state } = useLocation();
   const [searchCategory, setSearchCategory] = useState<CategoryType | null>((state as CategoryType) || null);
-  const { data } = useQuery<SimpleDrink[]>([searchCategory], () =>
-    axios
+  const { data } = useQuery<SimpleDrink[]>([searchCategory], async () => {
+    return axios
       .get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${searchCategory || 'Beer'}`)
-      .then((res) =>
-        res.data.drinks.map(
-          (drink: { drinkID: string; strDrink: string; strDrinkThumb: string }) => (
-            drink.drinkID, drink.strDrink, drink.strDrinkThumb
-          ),
-        ),
-      ),
-  );
+      .then((res) => {
+        const drinkData = res.data.drinks;
+        const drinks: SimpleDrink[] = [];
+        for (let i = 0; i < drinkData.length; i++) {
+          const drink: SimpleDrink = {
+            strDrink: drinkData[i].strDrink,
+            strDrinkThumb: drinkData[i].strDrinkThumb,
+            idDrink: drinkData[i].idDrink,
+          };
+          drinks.push(drink);
+        }
+        return drinks;
+      });
+  });
+
   useEffect(() => {
     console.log(data);
   }, [data]);

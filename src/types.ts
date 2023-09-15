@@ -12,7 +12,7 @@ export type CategoryType =
   | 'Soft Drink';
 
 export type SimpleDrink = {
-  drinkId: string;
   strDrink: string;
   strDrinkThumb: string;
+  idDrink: string;
 };

@@ -14,7 +14,7 @@ export const DrinkList: FC<DrinkListProps> = ({ drinks }) => {
       {drinks && (
         <ul className='drink-list'>
           {drinks.map((drink) => (
-            <li key={drink.drinkId}>{drink.strDrink}</li>
+            <li key={drink.idDrink}>{drink.strDrink}</li>
           ))}
         </ul>
       )}
