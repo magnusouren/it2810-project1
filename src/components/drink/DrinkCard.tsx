@@ -6,6 +6,7 @@ import { FC } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 import { Drink, Ingredient } from '../../types';
+import { FavoriteButton } from '../favoriteButton/FavoriteButton';
 
 export const DrinkCard: FC = () => {
   const { id } = useParams();
@@ -81,6 +82,9 @@ export const DrinkCard: FC = () => {
       </div>
       <div className='drinkHeader'>
         <h1>{data.strDrink}</h1>
+      </div>
+      <div className='favoriteButtonContainer'>
+        <FavoriteButton id={id || ''} />
       </div>
       <div className='imageContainer'>
         <img src={data.strDrinkThumb} alt={data.strDrink + 'image'} />
