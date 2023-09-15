@@ -6,6 +6,7 @@ import { FC } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 import { Drink, Ingredient } from '../../types';
+import { FavoriteButton } from '../favoriteButton/FavoriteButton';
 
 export const DrinkCard: FC = () => {
   const { id } = useParams();
