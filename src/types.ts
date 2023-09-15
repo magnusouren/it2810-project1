@@ -19,7 +19,7 @@ export interface Ingredient {
 }
 
 export interface Drink {
-  drinkId: string;
+  idDrink: string;
   strDrink: string;
   ingredients: Array<Ingredient>;
   strGlass: string;

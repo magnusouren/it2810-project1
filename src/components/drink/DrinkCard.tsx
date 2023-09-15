@@ -24,7 +24,7 @@ export const DrinkCard: FC = () => {
         const drinkData = response.data.drinks[0];
         const ingredients: Array<Ingredient> = [];
         const drink: Drink = {
-          drinkId: id,
+          idDrink: drinkData.idDrink,
           strDrink: drinkData.strDrink,
           strGlass: drinkData.strGlass,
           ingredients: [],

@@ -1,3 +1,3 @@
-export const Favorites = () => {
-  return <>Favorites</>;
-};
+import FavoriteList from '../components/favoriteList/FavoriteList';
+
+export const Favorites = () => <FavoriteList />;

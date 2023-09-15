@@ -4,7 +4,11 @@ import { FC, useEffect, useRef, useState } from 'react';
 
 import { isFavorite, toggleFavorite } from '../../utils/persistency';
 
-export const FavoriteButton: FC<{ id: string }> = ({ id }) => {
+interface FavoriteButtonProps {
+  id: string;
+}
+
+export const FavoriteButton: FC<FavoriteButtonProps> = ({ id }) => {
   const [isFavoriteDrink, setIsFavoriteDrink] = useState(isFavorite(id));
   const favoriteDrinkToggleButton = useRef<HTMLDivElement>(null);
 
