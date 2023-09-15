@@ -29,7 +29,7 @@ exports[`Categories > Should match snapshot 1`] = `
       href="/search/"
     >
       <h3>
-        Coffee
+        Coffee / Tea
       </h3>
     </a>
   </div>
