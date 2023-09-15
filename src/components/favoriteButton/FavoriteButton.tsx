@@ -9,13 +9,7 @@ export const FavoriteButton: FC<{ id: string }> = ({ id }) => {
   const favoriteDrinkToggleButton = useRef<HTMLDivElement>(null);
 
   const updateFavoriteDrink = () => {
-    if (id) {
-      if (isFavorite(id)) {
-        setIsFavoriteDrink(true);
-      } else {
-        setIsFavoriteDrink(false);
-      }
-    }
+    setIsFavoriteDrink(id ? isFavorite(id) : false);
   };
 
   const toggleFavoriteDrink = () => {
