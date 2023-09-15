@@ -84,7 +84,7 @@ export const DrinkCard: FC = () => {
         <h1>{data.strDrink}</h1>
       </div>
       <div className='favoriteButtonContainer'>
-        <FavoriteButton id={id ? id : ''} />
+        <FavoriteButton id={id || ''} />
       </div>
       <div className='imageContainer'>
         <img src={data.strDrinkThumb} alt={data.strDrink + 'image'} />
