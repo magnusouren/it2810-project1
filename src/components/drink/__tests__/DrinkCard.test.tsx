@@ -22,6 +22,20 @@ const testDrink = {
   strMeasure2: 'Measure 2',
 };
 
+const tree = (id: string) => {
+  return (
+    <QueryClientProvider client={new QueryClient()}>
+      <MemoryRouter initialEntries={[`/drink/${id}`]}>
+        <Routes>
+          <Route path='/drink'>
+            <Route path=':id' element={<DrinkCard />} />
+          </Route>
+        </Routes>
+      </MemoryRouter>
+    </QueryClientProvider>
+  );
+};
+
 describe('DrinkCard', () => {
   it('Renders with proper params', async () => {
     /* This nock is to remove a temporary error showing in the test logs */
@@ -36,17 +50,7 @@ describe('DrinkCard', () => {
         drinks: [testDrink],
       });
 
-    render(
-      <QueryClientProvider client={new QueryClient()}>
-        <MemoryRouter initialEntries={[`/drink/${testDrink.drinkId}`]}>
-          <Routes>
-            <Route path='/drink'>
-              <Route path=':id' element={<DrinkCard />} />
-            </Route>
-          </Routes>
-        </MemoryRouter>
-      </QueryClientProvider>,
-    );
+    render(tree(testDrink.drinkId));
 
     await waitFor(() => {
       expect(screen.getByText(testDrink.strDrink)).toBeDefined();
@@ -74,17 +78,7 @@ describe('DrinkCard', () => {
         drinks: [testDrink],
       });
 
-    const { container } = render(
-      <QueryClientProvider client={new QueryClient()}>
-        <MemoryRouter initialEntries={[`/drink/${testDrink.drinkId}`]}>
-          <Routes>
-            <Route path='/drink'>
-              <Route path=':id' element={<DrinkCard />} />
-            </Route>
-          </Routes>
-        </MemoryRouter>
-      </QueryClientProvider>,
-    );
+    const { container } = render(tree(testDrink.drinkId));
 
     /* Expecting Drink name to show to make sure
     the component is finished loading before comparing snapshots */
@@ -109,17 +103,7 @@ describe('DrinkCard', () => {
       drinks: [],
     });
 
-    render(
-      <QueryClientProvider client={new QueryClient()}>
-        <MemoryRouter initialEntries={[`/drink/1`]}>
-          <Routes>
-            <Route path='/drink'>
-              <Route path=':id' element={<DrinkCard />} />
-            </Route>
-          </Routes>
-        </MemoryRouter>
-      </QueryClientProvider>,
-    );
+    render(tree('1'));
 
     await waitFor(() => {
       expect(screen.getByText(/No drink was found.../i)).toBeDefined();
