@@ -18,36 +18,36 @@ export const SearchCategory: FC<SearchCategoryProps> = ({ searchCategory, setSea
       .then((res) => res.data.drinks.map((drink: { strCategory: string }) => drink.strCategory)),
   );
 
-  const {
-    data: drinks,
-    isLoading: isLoadingDrinks,
-    isSuccess: isSuccessDrinks,
-  } = useQuery<CategoryType[]>(
-    [searchCategory],
-    () =>
-      axios
-        .get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${searchCategory}`)
-        .then((res) => res.data.drinks.map((drink: { strDrink: string }) => drink.strDrink)),
-    // { enabled: !!searchCategory },
-  );
+  // const {
+  //   data: drinks,
+  //   isLoading: isLoadingDrinks,
+  //   isSuccess: isSuccessDrinks,
+  // } = useQuery<CategoryType[]>(
+  //   [searchCategory],
+  //   () =>
+  //     axios
+  //       .get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${searchCategory || 'Beer'}`)
+  //       .then((res) => res.data.drinks.map((drink: { strDrink: string }) => drink.strDrink)),
+  //   // { enabled: !!searchCategory },
+  // );
 
   useEffect(() => {
-    if (searchCategory !== null) {
+    if (searchCategory) {
       axios
         .get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${searchCategory}`)
         .then((res) => console.log(res));
 
       //.then((res) => setDrinks(res.data.drinks)); // tilpasses til hvordan dataobjektet ser ut
     }
-  }, [drinks, searchCategory]);
+  }, [searchCategory]);
 
   if (isLoading) return <div>Loading...</div>;
 
-  if (isLoadingDrinks) return <div>Loading...</div>;
+  // if (isLoadingDrinks) return <div>Loading...</div>;
 
-  if (searchCategory && isSuccessDrinks) {
-    console.log(searchCategory + 'her');
-  }
+  // if (searchCategory && isSuccessDrinks) {
+  //   console.log(searchCategory + ' her');
+  // }
 
   return (
     <div>

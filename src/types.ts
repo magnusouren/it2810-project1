@@ -10,3 +10,9 @@ export type CategoryType =
   | 'Punch / Party Drink'
   | 'Beer'
   | 'Soft Drink';
+
+export type SimpleDrink = {
+  drinkId: string;
+  strDrink: string;
+  strDrinkThumb: string;
+};
