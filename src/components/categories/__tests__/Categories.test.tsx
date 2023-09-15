@@ -16,18 +16,27 @@ import { Categories } from '../Categories';
 //   };
 // });
 
+const mockApiReturn = [
+  {
+    strCategory: 'Beer',
+  },
+  {
+    strCategory: 'Cocoa',
+  },
+  {
+    strCategory: 'Coffee',
+  },
+];
+
 describe('Categories', () => {
   it('Should match snapshot', async () => {
-    nock('https://www.thecocktaildb.com')
-      .get(`/api/json/v1/1/list.php?c=list`)
-      .once()
-      .reply(200, {
-        drinks: ['Beer', 'Cocoa', 'Coffee'],
-      });
+    nock('https://www.thecocktaildb.com').get(`/api/json/v1/1/list.php?c=list`).once().reply(200, {
+      drinks: mockApiReturn,
+    });
 
     const { asFragment } = renderWithRouterAndQueryClient(<Categories />);
 
-    waitFor(() => {
+    await waitFor(() => {
       expect(screen.getByText('Beer')).toBeDefined();
       expect(screen.getByText('Cocoa')).toBeDefined();
       expect(screen.getByText('Coffee')).toBeDefined();
