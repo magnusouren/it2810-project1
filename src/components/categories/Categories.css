@@ -12,3 +12,13 @@ h2 {
   padding-bottom: 0.5rem;
   border-bottom: solid 2px #f2c2a6;
 }
+
+@media screen and (max-width: 992px) {
+  .categories {
+    width: 90%;
+  }
+
+  h2 {
+    width: 90%;
+  }
+}

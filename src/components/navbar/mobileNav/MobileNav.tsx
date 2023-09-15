@@ -6,14 +6,14 @@ import { Link } from 'react-router-dom';
 export const MobileNav = () => {
   return (
     <>
-      <Link to={'/'} className={'mobileLogo'}>
+      <Link to={'/'} className={'logo'}>
         Enjoy my cocktail <FaCocktail />
       </Link>
-      <div className='mobileLinks'>
-        <Link to={'/search/'} className='mobileLink'>
+      <div className='links'>
+        <Link to={'/search/'} className='link'>
           Search
         </Link>
-        <Link to={'/favorites/'} className='mobileLink'>
+        <Link to={'/favorites/'} className='link'>
           Favorites
         </Link>
       </div>

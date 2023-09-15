@@ -6,19 +6,19 @@
   background-color: #f08080;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
   .mobile {
     display: flex;
     justify-content: space-between;
   }
 }
 
-.mobileLinks {
+.mobile .links {
   display: flex;
   justify-content: flex-end;
 }
 
-.mobileLink {
+.mobile .link {
   color: white;
   text-align: center;
   text-decoration: none;
@@ -29,11 +29,11 @@
   color: #fbc4ab;
 }
 
-.mobileLink:hover {
+.mobile .link:hover {
   color: #000000;
 }
 
-.mobileLogo {
+.mobile .logo {
   font-size: 1.5rem;
   font-weight: bolder;
   padding: 1rem;
