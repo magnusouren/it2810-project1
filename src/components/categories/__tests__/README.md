@@ -10,3 +10,27 @@ We tests with snapshots to make sure that the categories does not change unexpec
 ## Rendering
 
 Tests that the categories renders correctly with the correct content when a list of categories is mocked.
+
+## API call mock
+
+Instead of making an actual API call, we mock the API call to return a predefined list of categories. This is done to make the test run faster and to make sure that the test does not fail because of an API call failing.
+
+### Mock structure
+
+The mock is structured in the following way:
+
+```javascript
+{
+  drinks: [
+    {
+      strCategory: 'Beer',
+    },
+    {
+      strCategory: 'Cocoa',
+    },
+    {
+      strCategory: 'Coffee / Tea',
+    },
+  ];
+}
+```
