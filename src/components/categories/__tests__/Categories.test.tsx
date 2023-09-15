@@ -1,25 +1,38 @@
-import { screen } from '@testing-library/react';
-import { vi } from 'vitest';
+import { screen, waitFor } from '@testing-library/react';
+import nock from 'nock';
 
-import { CategoryType } from '../../../types';
 import { renderWithRouterAndQueryClient } from '../../../utils/test-utils';
 import { Categories } from '../Categories';
 
-vi.mock('@tanstack/react-query', async () => {
-  const axios = (await vi.importActual('@tanstack/react-query')) as { default?: undefined };
-  return {
-    ...axios,
-    useQuery: () => ({
-      data: ['Beer', 'Cocoa', 'Coffee'] as CategoryType[],
-      isLoading: false,
-      isSuccess: true,
-    }),
-  };
-});
+// vi.mock('@tanstack/react-query', async () => {
+//   const axios = (await vi.importActual('@tanstack/react-query')) as { default?: undefined };
+//   return {
+//     ...axios,
+//     useQuery: () => ({
+//       data: ['Beer', 'Cocoa', 'Coffee'] as CategoryType[],
+//       isLoading: false,
+//       isSuccess: true,
+//     }),
+//   };
+// });
 
 describe('Categories', () => {
   it('Should match snapshot', async () => {
+    nock('https://www.thecocktaildb.com')
+      .get(`/api/json/v1/1/list.php?c=list`)
+      .once()
+      .reply(200, {
+        drinks: ['Beer', 'Cocoa', 'Coffee'],
+      });
+
     const { asFragment } = renderWithRouterAndQueryClient(<Categories />);
+
+    waitFor(() => {
+      expect(screen.getByText('Beer')).toBeDefined();
+      expect(screen.getByText('Cocoa')).toBeDefined();
+      expect(screen.getByText('Coffee')).toBeDefined();
+    });
+
     expect(asFragment()).toMatchSnapshot();
   });
 
