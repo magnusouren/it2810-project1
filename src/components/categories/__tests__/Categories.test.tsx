@@ -23,6 +23,9 @@ describe('Categories', () => {
       drinks: mockApiReturn,
     });
   });
+  afterEach(() => {
+    nock.cleanAll();
+  });
 
   it('Should match snapshot', async () => {
     const { asFragment } = renderWithRouterAndQueryClient(<Categories />);
