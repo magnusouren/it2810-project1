@@ -1,19 +1,18 @@
 import { screen, waitFor } from '@testing-library/react';
 import nock from 'nock';
 
-import { CategoryType } from '../../../types';
 import { renderWithRouterAndQueryClient } from '../../../utils/test-utils';
 import { Categories } from '../Categories';
 
 const mockApiReturn = [
   {
-    strCategory: 'Beer' as CategoryType,
+    strCategory: 'Beer',
   },
   {
-    strCategory: 'Cocoa' as CategoryType,
+    strCategory: 'Cocoa',
   },
   {
-    strCategory: 'Coffee / Tea' as CategoryType,
+    strCategory: 'Coffee / Tea',
   },
 ];
 
