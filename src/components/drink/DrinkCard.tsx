@@ -5,30 +5,13 @@ import axios, { isCancel } from 'axios';
 import { FC } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
-import { Alcoholic } from '../../types';
-import { FavoriteButton } from '../favoriteButton/FavoriteButton';
-
-interface Ingredient {
-  ingredient: string;
-  measure: string;
-}
-
-interface Drink {
-  drinkId: string;
-  strDrink: string;
-  ingredients: Array<Ingredient>;
-  strGlass: string;
-  strInstructions: string;
-  strDrinkThumb: string;
-  strCategory: string;
-  strAlcoholic: Alcoholic;
-}
+import { Drink, Ingredient } from '../../types';
 
 export const DrinkCard: FC = () => {
   const { id } = useParams();
 
   // useQuery hook
-  const { data, isLoading, isSuccess } = useQuery<Drink | null>(['drink'], () => {
+  const { data, isLoading, isSuccess } = useQuery<Drink | null>(['drink', id], async () => {
     return axios
       .get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
       .then((response) => {
