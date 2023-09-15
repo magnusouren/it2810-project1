@@ -41,6 +41,12 @@
   left: 320px;
 }
 
+@media screen and (max-width: 768px) {
+  .drinkContainer .returnButtonContainer .returnButton {
+    left: 5%;
+  }
+}
+
 .drinkContainer .returnButtonContainer .returnButton:hover {
   color: #f08080;
 }

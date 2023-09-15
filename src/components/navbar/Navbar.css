@@ -1,11 +1,15 @@
 /* import raleway */
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap');
 
-nav {
+.desktop {
   position: fixed;
   height: 100%;
   margin: 0;
   background-color: #f08080;
+}
+
+.mobile {
+  display: none;
 }
 
 ul {
@@ -43,4 +47,10 @@ li a {
 
 li a:hover:not(.active) {
   color: black;
+}
+
+@media screen and (max-width: 768px) {
+  .desktop {
+    display: none;
+  }
 }
