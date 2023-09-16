@@ -1,41 +1,42 @@
 import './FavoriteList.css';
 
-import { useQuery } from '@tanstack/react-query';
+import { useQueries } from '@tanstack/react-query';
+import { FC } from 'react';
 
 import { Drink } from '../../types';
-import { fetchCocktailById } from '../../utils/apiCalls';
+import { fetchDrinkById } from '../../utils/queries';
 import { FavoriteCard } from './favoriteCard/FavoriteCard';
 
-export const FavoriteList = () => {
-  const favorites: string[] | undefined = localStorage
-    .getItem('drinkFavorites')
-    ?.slice(1, -1)
-    .split(',')
-    .map((fav) => fav.slice(1, -1));
+interface FavoriteListProps {
+  favorites: string[];
+}
 
-  const { data, isLoading, isError } = useQuery<Drink[] | undefined>(
-    ['cocktailById', favorites?.map((f) => f)],
-    async () => {
-      // Hent data for hver ID og vent på alle forespørslene
-      if (!favorites) return;
-      const promises = favorites.map((id) => fetchCocktailById(id));
-      const results = await Promise.all(promises);
-      return results.map((result) => result.drinks[0] as Drink);
-    },
-  );
+export const FavoriteList: FC<FavoriteListProps> = ({ favorites }) => {
+  const userQueries = useQueries<Drink[]>({
+    queries:
+      favorites?.map((favorite) => {
+        return {
+          queryKey: ['drinkI', favorite], // TODO - felles query for alle drinkQueries i utils
+          queryFn: () => fetchDrinkById(favorite).then((res) => res),
+        };
+      }) || [],
+  });
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
+  const data: Drink[] = userQueries.map((query) => query.data as Drink);
 
-  if (isError) {
-    return <div>Error while loading drinks</div>;
-  }
+  const isLoading: boolean = userQueries.some((query) => query.isLoading);
+  const isError: boolean = userQueries.some((query) => query.isError);
+  const isSuccess: boolean = userQueries.some((query) => query.isSuccess);
+
+  if (isLoading) return <div>Loading...</div>;
+  if (isError) return <div>Something went wrong...</div>;
+  if (data.length == 0) return <div>No favorites found...</div>;
+
   return (
     <>
       <h2 id={'favorites-heading'}>Your favorites:</h2>
       <div className='favorites'>
-        <ul>{data && favorites && data.map((drink, index) => <FavoriteCard drink={drink} key={index} />)}</ul>
+        <ul>{isSuccess && favorites && data.map((drink, index) => <FavoriteCard drink={drink} key={index} />)}</ul>
       </div>
     </>
   );
