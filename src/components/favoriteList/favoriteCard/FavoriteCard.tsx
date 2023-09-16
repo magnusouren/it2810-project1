@@ -4,7 +4,7 @@ import { FC } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Drink } from '../../../types';
-import { toggleFavorite } from '../../../utils/persistency';
+import { removeFavorite } from '../../../utils/persistency';
 
 interface FavoriteCardProps {
   drink: Drink;
@@ -12,7 +12,8 @@ interface FavoriteCardProps {
 
 export const FavoriteCard: FC<FavoriteCardProps> = ({ drink }) => {
   const handleClick = () => {
-    toggleFavorite(drink.idDrink);
+    removeFavorite(drink.idDrink);
+    window.location.reload();
   };
   return (
     <li key={drink.strDrink}>
@@ -26,9 +27,7 @@ export const FavoriteCard: FC<FavoriteCardProps> = ({ drink }) => {
         </p>
       </div>
       <button onClick={handleClick} className='remove-favorite'>
-        <span className='material-symbols-outlined' onClick={handleClick}>
-          heart_minus
-        </span>
+        <span className='material-symbols-outlined'>heart_minus</span>
       </button>
     </li>
   );

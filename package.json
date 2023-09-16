@@ -13,6 +13,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx,json .",
     "lint:css": "npx stylelint \"src/**/*{css, js, ts, tsx, jsx}\"",
+    "lint:css:fix": "npx stylelint --fix \"src/**/*{css, js, ts, tsx, jsx}\"",
     "preview": "vite preview",
     "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx,scss,json,css}' --config .prettierrc.cjs"
   },
