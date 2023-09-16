@@ -101,7 +101,7 @@
 }
 
 .drinkContainer .info p::before {
-  font-family: 'Material Symbols Outlined';
+  font-family: 'Material Symbols Outlined'; /* stylelint-disable-line */
   font-size: 1.5em;
   color: #fbc4ab;
   margin-right: 6px;
@@ -144,6 +144,10 @@
     margin-right: 20px;
   }
 
+  .drinkContainer .instructions p {
+    max-width: 70%;
+  }
+
   .drinkContainer .info p:last-child {
     margin-right: 0;
   }
@@ -152,10 +156,6 @@
   .drinkContainer .instructions {
     margin-top: 20px;
     flex-basis: 100%;
-  }
-
-  .drinkContainer .instructions p {
-    max-width: 70%;
   }
 }
 
