@@ -11,14 +11,14 @@ interface DrinkListProps {
 
 export const DrinkList: FC<DrinkListProps> = ({ drinks }) => {
   return (
-    <div>
+    <>
       {drinks && (
-        <ul className='drink-list'>
+        <div className='drinkDiv'>
           {drinks.map((drink: SimpleDrinkType) => (
             <SimpleDrink key={drink.idDrink} drink={drink} />
           ))}
-        </ul>
+        </div>
       )}
-    </div>
+    </>
   );
 };

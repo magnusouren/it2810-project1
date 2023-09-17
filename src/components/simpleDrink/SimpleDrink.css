@@ -1,4 +1,30 @@
+.simpleDrink {
+  flex-grow: 1;
+  margin: 0 auto;
+  padding: 3rem 1rem 1rem;
+  background-color: #fff;
+  border: solid 1px #eaeaea;
+  transition: border 0.2s ease-in-out;
+  text-decoration: none;
+  justify-content: space-between;
+}
+
+.simpleDrink h3 {
+  text-align: center;
+  color: #000;
+}
+
+.simpleDrink:hover {
+  border: solid 1px #000;
+  cursor: pointer;
+  text-decoration: underline #f2c2a6;
+}
+
 .drinkImage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
   width: 100px;
   height: 100px;
 }

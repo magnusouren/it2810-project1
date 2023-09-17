@@ -1,0 +1,14 @@
+.drinkDiv {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 60%;
+  gap: 1rem;
+}
+
+h2 {
+  width: 60%;
+  margin: 0 auto 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: solid 2px #f2c2a6;
+}
