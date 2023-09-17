@@ -2,10 +2,11 @@ import './DrinkList.css';
 
 import { FC } from 'react';
 
-import { SimpleDrink } from '../../types';
+import { SimpleDrinkType } from '../../types';
+import { SimpleDrink } from '../simpleDrink/SimpleDrink';
 
 interface DrinkListProps {
-  drinks: SimpleDrink[] | undefined;
+  drinks: SimpleDrinkType[] | undefined;
 }
 
 export const DrinkList: FC<DrinkListProps> = ({ drinks }) => {
@@ -13,8 +14,8 @@ export const DrinkList: FC<DrinkListProps> = ({ drinks }) => {
     <div>
       {drinks && (
         <ul className='drink-list'>
-          {drinks.map((drink) => (
-            <li key={drink.idDrink}>{drink.strDrink}</li>
+          {drinks.map((drink: SimpleDrinkType) => (
+            <SimpleDrink key={drink.idDrink} drink={drink} />
           ))}
         </ul>
       )}

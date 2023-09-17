@@ -11,7 +11,7 @@ export type CategoryType =
   | 'Beer'
   | 'Soft Drink';
 
-export type SimpleDrink = {
+export type SimpleDrinkType = {
   strDrink: string;
   strDrinkThumb: string;
   idDrink: string;
