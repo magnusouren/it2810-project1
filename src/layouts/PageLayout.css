@@ -11,7 +11,7 @@ section {
   margin-left: 18rem;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (width <= 992px) {
   section {
     margin-left: 0;
     margin-top: 2rem;

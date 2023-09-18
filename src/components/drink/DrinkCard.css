@@ -40,7 +40,7 @@
   left: 320px;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (width <= 992px) {
   .drinkContainer .returnButtonContainer .returnButton {
     left: 5%;
     top: 90px;
