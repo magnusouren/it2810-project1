@@ -3,7 +3,7 @@
 exports[`FavoriteButton > Should match snapshot 1`] = `
 <div>
   <div
-    class="favoriteToggle"
+    class="favorite-toggle"
   >
     <span
       class="material-symbols-outlined"
