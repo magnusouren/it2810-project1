@@ -5,7 +5,7 @@ import { FC } from 'react';
 
 import { Drink } from '../../types';
 import { fetchDrinkById } from '../../utils/queries';
-import { FavoriteCard } from './favoriteCard/FavoriteCard';
+import { FavoriteCard } from '../favoriteCard/FavoriteCard';
 
 interface FavoriteListProps {
   favorites: string[];
@@ -16,7 +16,7 @@ export const FavoriteList: FC<FavoriteListProps> = ({ favorites }) => {
     queries:
       favorites?.map((favorite) => {
         return {
-          queryKey: ['drinkI', favorite], // TODO - felles query for alle drinkQueries i utils
+          queryKey: ['drink', favorite],
           queryFn: () => fetchDrinkById(favorite).then((res) => res),
         };
       }) || [],
