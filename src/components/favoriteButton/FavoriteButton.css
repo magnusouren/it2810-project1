@@ -1,5 +1,5 @@
 /* Favorite Toggle */
-.favoriteToggle {
+.favorite-toggle {
   font-size: 2em;
   color: #fbc4ab;
   margin-right: 0.5em;
@@ -9,19 +9,25 @@
   right: 30px;
   cursor: pointer;
   transition: 0.02s ease-in;
+  user-select: none;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
-  user-select: none;
 }
 
-.favoriteToggle:hover {
+.favorite-toggle:hover {
   transform: scale(1.1);
 }
 
-.favoriteToggle:active {
+.favorite-toggle:active {
   transform: scale(1);
 }
 
 .favorite {
   color: #f00;
+}
+
+@media screen and (width <= 992px) {
+  .favorite-toggle {
+    top: 90px;
+  }
 }

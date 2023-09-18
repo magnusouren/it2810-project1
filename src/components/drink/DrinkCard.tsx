@@ -21,29 +21,29 @@ export const DrinkCard: FC = () => {
   if (!data) return <div>No drink was found...</div>;
 
   return (
-    <div className='drinkContainer'>
-      <div className='returnButtonContainer'>
-        <Link to='/search' className='returnButton'>
+    <div className='drink-container'>
+      <div className='return-button-container'>
+        <Link to='/search' className='return-button'>
           <span className='material-symbols-outlined'>arrow_back_ios_new</span>
         </Link>
       </div>
-      <div className='drinkHeader'>
+      <div className='drink-header'>
         <h1>{data.strDrink}</h1>
       </div>
-      <div className='favoriteButtonContainer'>
+      <div className='favorite-button-container'>
         <FavoriteButton id={id || ''} />
       </div>
-      <div className='imageContainer'>
+      <div className='image-container'>
         <img src={data.strDrinkThumb} alt={data.strDrink + 'image'} />
       </div>
       <div className='info'>
-        <p id='drinkCategory'>{data.strCategory}</p>
-        <p id='drinkGlass'>{data.strGlass}</p>
-        <p id='drinkAlcoholic'>{data.strAlcoholic}</p>
+        <p id='drink-category'>{data.strCategory}</p>
+        <p id='drink-glass'>{data.strGlass}</p>
+        <p id='drink-alcoholic'>{data.strAlcoholic}</p>
       </div>
       <div className='ingredients'>
-        <h3 className='sectionHeader'>Ingredients</h3>
-        <ul className='ingredientsList'>
+        <h3 className='section-header'>Ingredients</h3>
+        <ul className='ingredients-list'>
           {data.ingredients.map((ingredient, index) => (
             <li key={index}>
               <div className='measure'>{ingredient.measure == null ? '' : ingredient.measure}</div>
@@ -53,7 +53,7 @@ export const DrinkCard: FC = () => {
         </ul>
       </div>
       <div className='instructions'>
-        <h3 className='sectionHeader'>Instructions</h3>
+        <h3 className='section-header'>Instructions</h3>
         <p>{data.strInstructions}</p>
       </div>
     </div>
