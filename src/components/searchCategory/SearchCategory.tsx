@@ -2,7 +2,7 @@ import './SearchCategory.css';
 
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
-import { FC } from 'react';
+import { FC, useState } from 'react';
 
 import { CategoryType } from '../../types';
 
@@ -11,22 +11,26 @@ interface SearchCategoryProps {
   setSearchCategory: (category: CategoryType | null) => void;
 }
 
-export const SearchCategory: FC<SearchCategoryProps> = ({ setSearchCategory }) => {
-  const { data, isLoading, isSuccess } = useQuery<CategoryType[]>(['categories'], () =>
+export const SearchCategory: FC<SearchCategoryProps> = ({ searchCategory, setSearchCategory }) => {
+  const [filter, setFilter] = useState(searchCategory || '');
+  const { data, isSuccess } = useQuery<CategoryType[]>(['categories'], () =>
     axios
       .get('https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list')
       .then((res) => res.data.drinks.map((drink: { strCategory: string }) => drink.strCategory)),
   );
 
-  if (isLoading) return <div>Loading...</div>;
+  // if (isLoading) return <div>Loading...</div>;
 
   return (
-    <div>
+    <div className='categoryDiv'>
       {data && isSuccess && (
         <select
+          className='searchCategory'
           placeholder='Filter by category'
+          value={filter}
           onChange={(e) => {
             setSearchCategory(e.target.value as CategoryType);
+            setFilter(e.target.value as CategoryType);
           }}
         >
           {data.sort().map((category: CategoryType) => (

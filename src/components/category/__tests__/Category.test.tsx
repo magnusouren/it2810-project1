@@ -5,7 +5,7 @@ import { renderWithRouterAndQueryClient } from '../../../utils/test-utils';
 import { Category } from '../Category';
 
 const categories: CategoryType[] = [
-  'Ordinary drink',
+  'Ordinary Drink',
   'Cocktail',
   'Shake',
   'Other / Unknown',
@@ -20,13 +20,13 @@ const categories: CategoryType[] = [
 
 describe('Category', () => {
   it('Should match snapshot', () => {
-    const { container } = renderWithRouterAndQueryClient(<Category category={'Ordinary drink'} />);
+    const { container } = renderWithRouterAndQueryClient(<Category category={'Ordinary Drink'} />);
     expect(container).toMatchSnapshot();
   });
 
   it('Should show category when it is passed as prop', () => {
-    renderWithRouterAndQueryClient(<Category category={'Ordinary drink'} />);
-    expect(screen.getByText(/Ordinary drink/i)).toBeDefined();
+    renderWithRouterAndQueryClient(<Category category={'Ordinary Drink'} />);
+    expect(screen.getByText(/Ordinary Drink/i)).toBeDefined();
   });
 
   it.each(categories)('Should navigate correct when "%s" is clicked', async (category) => {

@@ -1,0 +1,12 @@
+/* Design for the selection part of the component */
+
+.searchCategory {
+  display: flex;
+  padding-top: 0.3rem;
+  border-radius: 0.3rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  margin-left: 20%;
+}

@@ -1,5 +1,5 @@
 export type CategoryType =
-  | 'Ordinary drink'
+  | 'Ordinary Drink'
   | 'Cocktail'
   | 'Shake'
   | 'Other / Unknown'
