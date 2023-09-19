@@ -22,10 +22,10 @@ export const SearchCategory: FC<SearchCategoryProps> = ({ searchCategory, setSea
   // if (isLoading) return <div>Loading...</div>;
 
   return (
-    <div className='categoryDiv'>
+    <div className='category-div'>
       {data && isSuccess && (
         <select
-          className='searchCategory'
+          className='search-category'
           placeholder='Filter by category'
           value={filter}
           onChange={(e) => {

@@ -13,7 +13,7 @@ export const DrinkList: FC<DrinkListProps> = ({ drinks }) => {
   return (
     <>
       {drinks && (
-        <div className='drinkDiv'>
+        <div className='drink-div'>
           {drinks.map((drink: SimpleDrinkType) => (
             <SimpleDrink key={drink.idDrink} drink={drink} />
           ))}

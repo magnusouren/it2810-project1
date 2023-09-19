@@ -1,4 +1,4 @@
-.simpleDrink {
+.simple-drink {
   flex-grow: 1;
   margin: 0 auto;
   padding: 3rem 1rem 1rem;
@@ -9,18 +9,18 @@
   justify-content: space-between;
 }
 
-.simpleDrink h3 {
+.simple-drink h3 {
   text-align: center;
   color: #000;
 }
 
-.simpleDrink:hover {
+.simple-drink:hover {
   border: solid 1px #000;
   cursor: pointer;
   text-decoration: underline #f2c2a6;
 }
 
-.drinkImage {
+.drink-image {
   display: block;
   margin-left: auto;
   margin-right: auto;
