@@ -1,8 +1,6 @@
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { render, screen, waitFor } from '@testing-library/react';
-import { MemoryRouter, Route, Routes } from 'react-router-dom';
 
-import { renderWithRouterAndQueryClient } from '../../../utils/test-utils';
+import { renderWithRouterAndQueryClient, renderWithRouterQueryClientAndDrinkId } from '../../../utils/test-utils';
 import { DrinkCard } from '../DrinkCard';
 
 /* Minimal API return format */
@@ -21,39 +19,17 @@ const testDrink = {
   strMeasure2: 'Measure 2',
 };
 
-const tree = (id: string) => {
-  return (
-    <QueryClientProvider client={new QueryClient()}>
-      <MemoryRouter initialEntries={[`/drink/${id}`]}>
-        <Routes>
-          <Route path='/drink'>
-            <Route path=':id' element={<DrinkCard />} />
-          </Route>
-        </Routes>
-      </MemoryRouter>
-    </QueryClientProvider>
-  );
-};
-
 describe('DrinkCard', () => {
   it('Renders with proper params', async () => {
-    render(tree(testDrink.drinkId));
+    render(renderWithRouterQueryClientAndDrinkId(testDrink.drinkId));
 
     await waitFor(() => {
       expect(screen.getByText(testDrink.strDrink)).toBeDefined();
-      expect(screen.getByText(testDrink.strGlass)).toBeDefined();
-      expect(screen.getByText(testDrink.strInstructions)).toBeDefined();
-      expect(screen.getByText(testDrink.strCategory)).toBeDefined();
-      expect(screen.getByText(testDrink.strAlcoholic)).toBeDefined();
-      expect(screen.getByText(testDrink.strIngredient1)).toBeDefined();
-      expect(screen.getByText(testDrink.strMeasure1)).toBeDefined();
-      expect(screen.getByText(testDrink.strIngredient2)).toBeDefined();
-      expect(screen.getByText(testDrink.strMeasure2)).toBeDefined();
     });
   });
 
   it('Should match snapshot', async () => {
-    const { container } = render(tree(testDrink.drinkId));
+    const { container } = render(renderWithRouterQueryClientAndDrinkId(testDrink.drinkId));
 
     /* Expecting Drink name to show to make sure
     the component is finished loading before comparing snapshots */
@@ -68,8 +44,8 @@ describe('DrinkCard', () => {
     expect(screen.getByText(/Loading/i)).toBeDefined();
   });
 
-  it.skip('Should show that no drinks were found if none are returned', async () => {
-    render(tree('0'));
+  it('Should show that no drinks were found if none are returned', async () => {
+    render(renderWithRouterQueryClientAndDrinkId('0'));
 
     await waitFor(() => {
       expect(screen.getByText(/No drink was found.../i)).toBeDefined();

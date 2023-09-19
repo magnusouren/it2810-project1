@@ -22,4 +22,8 @@ describe('queries - fetchDrinkById', () => {
   it('it should return null when id is invalid', async () => {
     expect(await fetchDrinkById('0')).toEqual(null);
   });
+
+  it('it should return null when id is not provided', async () => {
+    expect(await fetchDrinkById()).toEqual(null);
+  });
 });
