@@ -2,6 +2,7 @@
   height: 100%;
   margin: 0;
   background-color: #f08080;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 
 .desktop ul {
@@ -37,6 +38,14 @@
   margin-top: 2rem;
 }
 
+.desktop li a.active {
+  color: white;
+}
+
 .desktop li a:hover:not(.active) {
+  color: white;
+}
+
+.desktop li a.logo:hover {
   color: black;
 }

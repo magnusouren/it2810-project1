@@ -43,7 +43,8 @@ exports[`Navbar > Should match snapshot 1`] = `
     class="links"
   >
     <a
-      class="link"
+      aria-current="page"
+      class="link active"
       href="/"
     >
       Home
