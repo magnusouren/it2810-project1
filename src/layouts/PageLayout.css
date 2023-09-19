@@ -9,6 +9,7 @@
 
 section {
   margin-left: 18rem;
+  overflow: auto;
 }
 
 @media screen and (width <= 992px) {
