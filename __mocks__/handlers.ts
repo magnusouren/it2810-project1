@@ -31,13 +31,36 @@ export const handlers = [
         }),
       );
     }
+    if (req.url.searchParams.get('i') === '2') {
+      return res(
+        ctx.status(200),
+        ctx.json({
+          drinks: [
+            {
+              idDrink: '22222',
+              strDrink: 'Foo bar',
+              ingredients: [],
+              strGlass: 'Foo',
+              strInstructions: 'Instructions for foo drink',
+              strDrinkThumb: 'https://localhost:3000/drink/2.jpg',
+              strCategory: 'Category',
+              strAlcoholic: 'Alcoholic',
+              strIngredient1: 'Ingredient 1',
+              strMeasure1: 'Measure 1',
+              strIngredient2: 'Ingredient 2',
+              strMeasure2: 'Measure 2',
+            },
+          ],
+        }),
+      );
+    }
     req.url.searchParams.set('i', '11118');
     return res(
       ctx.status(200),
       ctx.json({
         drinks: [
           {
-            drinkId: '11118',
+            idDrink: '11118',
             strDrink: 'Super Drink',
             ingredients: [],
             strGlass: 'Highball',
