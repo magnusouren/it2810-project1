@@ -1,6 +1,15 @@
 import { DrinkOfTheDay } from '../../types';
 import { getDrinkOfTheDay, getFavorites, isFavorite, setDrinkOfTheDay, toggleFavorite } from '../persistency';
 
+const testDrink: DrinkOfTheDay = {
+  drinkId: '1',
+  strDrink: 'Test drink',
+  strDrinkThumb: 'http://www.test.com/test.jpg',
+  strAlcoholic: 'Alcoholic',
+  strCategory: 'Ordinary Drink',
+  strGlass: 'Highball glass',
+};
+
 describe('Persistency', () => {
   afterEach(() => {
     localStorage.clear();
@@ -36,14 +45,7 @@ describe('Persistency', () => {
 
   it('should return the drink of the day', () => {
     const date = new Date().toISOString().split('T')[0];
-    const drink: DrinkOfTheDay = {
-      drinkId: '1',
-      strDrink: 'Test Drink',
-      strDrinkThumb: 'test.jpg',
-      strCategory: 'category',
-      strAlcoholic: 'alcoholic',
-      strGlass: 'glass',
-    };
+    const drink: DrinkOfTheDay = testDrink;
     setDrinkOfTheDay(date, drink);
     expect(getDrinkOfTheDay(date)).toEqual(drink);
   });

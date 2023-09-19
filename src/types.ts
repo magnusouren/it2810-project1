@@ -35,5 +35,5 @@ export interface DrinkOfTheDay {
   strDrinkThumb: string;
   strCategory: string;
   strGlass: string;
-  strAlcoholic: string;
+  strAlcoholic: Alcoholic;
 }
