@@ -14,11 +14,11 @@ exports[`FavoriteList > should render correctly when having 1 favorite 1`] = `
       <li>
         <img
           alt="Super Drink"
-          src="https://localhost:3000/drink/11008.jpg"
+          src="https://localhost:3000/drink/11118.jpg"
         />
         <div>
           <a
-            href="/drink/undefined"
+            href="/drink/11118"
           >
             <h3>
               Super Drink
@@ -61,11 +61,11 @@ exports[`FavoriteList > should render correctly when having 2 favorites 1`] = `
       <li>
         <img
           alt="Super Drink"
-          src="https://localhost:3000/drink/11008.jpg"
+          src="https://localhost:3000/drink/11118.jpg"
         />
         <div>
           <a
-            href="/drink/undefined"
+            href="/drink/11118"
           >
             <h3>
               Super Drink
@@ -96,7 +96,7 @@ exports[`FavoriteList > should render correctly when having 2 favorites 1`] = `
         />
         <div>
           <a
-            href="/drink/undefined"
+            href="/drink/22222"
           >
             <h3>
               Foo bar

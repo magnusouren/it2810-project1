@@ -1,6 +1,8 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { render } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, MemoryRouter, Route, Routes } from 'react-router-dom';
+
+import { DrinkCard } from '../components/drink/DrinkCard';
 
 // Function to render a component wrapped inside a browserrouter for testing purposes
 export const renderWithRouter = (component: JSX.Element) => render(<BrowserRouter>{component}</BrowserRouter>);
@@ -11,5 +13,18 @@ export const renderWithRouterAndQueryClient = (component: JSX.Element) =>
   render(
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>{component}</BrowserRouter>
+    </QueryClientProvider>,
+  );
+
+export const renderWithRouterQueryClientAndDrinkId = (id: string) =>
+  render(
+    <QueryClientProvider client={new QueryClient()}>
+      <MemoryRouter initialEntries={[`/drink/${id}`]}>
+        <Routes>
+          <Route path='/drink'>
+            <Route path=':id' element={<DrinkCard />} />
+          </Route>
+        </Routes>
+      </MemoryRouter>
     </QueryClientProvider>,
   );
