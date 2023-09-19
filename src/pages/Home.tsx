@@ -5,9 +5,9 @@ import { DrinkOfTheDay } from '../components/drinkOfTheDay/DrinkOfTheDay';
 
 export const Home: FC = () => {
   return (
-    <div>
-      <Categories />
+    <>
       <DrinkOfTheDay />
-    </div>
+      <Categories />
+    </>
   );
 };

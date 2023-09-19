@@ -28,3 +28,12 @@ export interface Drink {
   strCategory: string;
   strAlcoholic: Alcoholic;
 }
+
+export interface DrinkOfTheDay {
+  drinkId: string;
+  strDrink: string;
+  strDrinkThumb: string;
+  strCategory: string;
+  strGlass: string;
+  strAlcoholic: string;
+}
