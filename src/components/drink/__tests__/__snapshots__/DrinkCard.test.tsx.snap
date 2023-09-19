@@ -1,0 +1,120 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DrinkCard > Should match snapshot 1`] = `
+<div>
+  <div
+    class="drink-container"
+  >
+    <div
+      class="return-button-container"
+    >
+      <a
+        class="return-button"
+        href="/search"
+      >
+        <span
+          class="material-symbols-outlined"
+        >
+          arrow_back_ios_new
+        </span>
+      </a>
+    </div>
+    <div
+      class="drink-header"
+    >
+      <h1>
+        Super Drink
+      </h1>
+    </div>
+    <div
+      class="favorite-button-container"
+    >
+      <div
+        class="favorite-toggle"
+      >
+        <span
+          class="material-symbols-outlined"
+        >
+          favorite
+        </span>
+      </div>
+    </div>
+    <div
+      class="image-container"
+    >
+      <img
+        alt="Super Drinkimage"
+        src="https://localhost:3000/drink/11118.jpg"
+      />
+    </div>
+    <div
+      class="info"
+    >
+      <p
+        id="drink-category"
+      >
+        Category
+      </p>
+      <p
+        id="drink-glass"
+      >
+        Highball
+      </p>
+      <p
+        id="drink-alcoholic"
+      >
+        Alcoholic
+      </p>
+    </div>
+    <div
+      class="ingredients"
+    >
+      <h3
+        class="section-header"
+      >
+        Ingredients
+      </h3>
+      <ul
+        class="ingredients-list"
+      >
+        <li>
+          <div
+            class="measure"
+          >
+            Measure 1
+          </div>
+          <div
+            class="ingredient"
+          >
+            Ingredient 1
+          </div>
+        </li>
+        <li>
+          <div
+            class="measure"
+          >
+            Measure 2
+          </div>
+          <div
+            class="ingredient"
+          >
+            Ingredient 2
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div
+      class="instructions"
+    >
+      <h3
+        class="section-header"
+      >
+        Instructions
+      </h3>
+      <p>
+        Instructions for drink
+      </p>
+    </div>
+  </div>
+</div>
+`;

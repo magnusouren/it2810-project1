@@ -1,0 +1,37 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Categories > Should match snapshot 1`] = `
+<DocumentFragment>
+  <h2>
+    Categories:
+  </h2>
+  <div
+    class="categories"
+  >
+    <a
+      class="category"
+      href="/search/"
+    >
+      <h3>
+        Beer
+      </h3>
+    </a>
+    <a
+      class="category"
+      href="/search/"
+    >
+      <h3>
+        Cocoa
+      </h3>
+    </a>
+    <a
+      class="category"
+      href="/search/"
+    >
+      <h3>
+        Coffee / Tea
+      </h3>
+    </a>
+  </div>
+</DocumentFragment>
+`;

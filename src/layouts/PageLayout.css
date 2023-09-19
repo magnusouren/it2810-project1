@@ -1,5 +1,5 @@
 /* import lato */
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap');
 
 * {
   margin: 0;
@@ -9,4 +9,10 @@
 
 section {
   margin-left: 18rem;
+}
+
+@media screen and (width <= 992px) {
+  section {
+    margin-left: 0;
+  }
 }

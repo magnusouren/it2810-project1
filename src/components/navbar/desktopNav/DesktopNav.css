@@ -1,0 +1,42 @@
+.desktop {
+  height: 100%;
+  margin: 0;
+  background-color: #f08080;
+}
+
+.desktop ul {
+  list-style-type: none;
+  overflow: hidden;
+  width: 18rem;
+}
+
+.desktop li a {
+  display: block;
+  color: #fbc4ab;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: Raleway, sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.desktop .logo {
+  font-size: 2rem;
+  font-weight: bolder;
+  padding: 1rem;
+  color: #313030;
+  background-color: #fbc4ab;
+}
+
+.desktop .links {
+  margin-top: 10rem;
+}
+
+.desktop .link {
+  margin-top: 2rem;
+}
+
+.desktop li a:hover:not(.active) {
+  color: black;
+}

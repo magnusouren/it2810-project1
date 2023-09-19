@@ -1,45 +1,13 @@
-/* import raleway */
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap');
-
-nav {
+.desktop {
   position: fixed;
-  height: 100%;
-  margin: 0;
 }
 
-ul {
-  list-style-type: none;
-  overflow: hidden;
-  width: 18rem;
+.mobile {
+  display: none;
 }
 
-li a {
-  display: block;
-  color: #fbc4ab;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-family: Raleway, sans-serif;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.logo {
-  font-size: 2rem;
-  font-weight: bolder;
-  padding: 1rem;
-  color: #313030;
-  background-color: #fbc4ab;
-}
-
-.links {
-  margin-top: 10rem;
-}
-
-.link {
-  margin-top: 2rem;
-}
-
-li a:hover:not(.active) {
-  color: #f08080;
+@media screen and (width <= 992px) {
+  .desktop {
+    display: none;
+  }
 }

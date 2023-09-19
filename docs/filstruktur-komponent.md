@@ -5,15 +5,15 @@ Merk at komponentnavn skal skrives med stor forbokstav. Dette er en konvensjon s
 
 ```
 ├── Komponentnavn
-│   ├── test
+│   ├── __tests__                           # tester for komponenten
 │       ├── __snapshots__                   # snapshots fra tester
 │       ├── Komponent.test.tsx              # testfil for 'Komponent'
 │       ├── Komponent-utils.test.ts         # tester utils-filen i komponenten
 │       ├── README.md                       # dokumentasjon til tester
 │   ├── Komponent.tsx                       # komponent
-│   ├── Komponent.module.css                # stilark
-│   ├── utils.ts                            # utils til komponenten
-│   ├── README.md                           # dokumentasjon til komponenten
+│   ├── Komponent.css                       # stilark
+│   ├── utils.ts                            # utils til komponenten (valgfritt)
+│   ├── README.md                           # dokumentasjon til komponenten (valgfritt)
 ```
 
 ## Test

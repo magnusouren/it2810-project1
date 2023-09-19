@@ -82,3 +82,11 @@ Dette prosjektet følger en bestemt filstruktur. Denne seksjonen gir en oversikt
 [Filstruktur prosjekt](./docs/filstruktur-prosjekt.md)
 
 [Filstruktur komponent](./docs/filstruktur-komponent.md)
+
+## Copy project to VM
+
+1. Build project with `npm run build`
+2. run `npm run preview` to preview the application before deployment
+3. Copy files from `dist` folder to VM with `scp -r dist <username>@it2810-16.idi.ntnu.no:/tmp/`. Replace `<username>` with your username!
+4. SSH into VM with `ssh <username>@it2810-16.idi.ntnu.no`. Replace `<username>` with your username!
+5. Move files from `/tmp/dist` to `/var/www/html` with `sudo mv /tmp/dist/* /var/www/html/project1`

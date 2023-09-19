@@ -1,24 +1,15 @@
 import './Navbar.css';
 
-import { FaCocktail } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { DesktopNav } from './desktopNav/DesktopNav';
+import { MobileNav } from './mobileNav/MobileNav';
 
 export const Navbar = () => (
-  <nav>
-    <ul>
-      <li>
-        <Link to={'/'} className={'logo'}>
-          Enjoy my cocktail <FaCocktail />
-        </Link>
-      </li>
-      <div className='links'>
-        <li className='link'>
-          <Link to={'/search'}>Search</Link>
-        </li>
-        <li className='link'>
-          <Link to={'/favorites'}>Favorites</Link>
-        </li>
-      </div>
-    </ul>
-  </nav>
+  <div>
+    <nav className='desktop'>
+      <DesktopNav />
+    </nav>
+    <nav className='mobile'>
+      <MobileNav />
+    </nav>
+  </div>
 );
