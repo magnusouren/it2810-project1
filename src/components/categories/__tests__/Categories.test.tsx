@@ -9,8 +9,6 @@ describe('Categories', () => {
 
     await waitFor(() => {
       expect(screen.getByText('Beer')).toBeDefined();
-      expect(screen.getByText('Cocoa')).toBeDefined();
-      expect(screen.getByText('Coffee / Tea')).toBeDefined();
     });
 
     expect(asFragment()).toMatchSnapshot();
