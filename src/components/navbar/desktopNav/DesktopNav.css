@@ -2,7 +2,7 @@
   height: 100%;
   margin: 0;
   background-color: #f08080;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
 }
 
 .desktop ul {
