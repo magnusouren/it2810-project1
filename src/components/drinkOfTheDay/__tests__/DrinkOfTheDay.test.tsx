@@ -1,4 +1,4 @@
-import { waitFor, screen } from '@testing-library/react';
+import { waitFor, screen, fireEvent } from '@testing-library/react';
 import { renderWithRouterAndQueryClient } from '../../../utils/test-utils';
 import { DrinkOfTheDay } from '../DrinkOfTheDay';
 
@@ -45,5 +45,11 @@ describe('DrinkOfTheDay', () => {
       expect(screen.getByText('Random Drink')).toBeDefined();
     });
     expect(getByAltText('Random Drink')).toBeDefined();
+  });
+
+  it('should navigate to correct drink on click', async () => {
+    const { getByText } = renderWithRouterAndQueryClient(<DrinkOfTheDay />);
+    fireEvent.click(getByText('Random Drink'));
+    expect(window.location.pathname).toBe('/drink/9118');
   });
 });
