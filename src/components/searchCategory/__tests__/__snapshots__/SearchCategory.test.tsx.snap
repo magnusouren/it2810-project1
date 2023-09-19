@@ -3,7 +3,7 @@
 exports[`SearchCategory > Should match snapshot 1`] = `
 <div>
   <div
-    class="categoryDiv"
+    class="category-div"
   />
 </div>
 `;

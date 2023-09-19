@@ -3,7 +3,7 @@
 exports[`SimpleDrink > Should match snapshot 1`] = `
 <div>
   <a
-    class="simpleDrink"
+    class="simple-drink"
     href="/search/11007"
   >
     <h3>
@@ -11,7 +11,7 @@ exports[`SimpleDrink > Should match snapshot 1`] = `
     </h3>
     <img
       alt="Drink image"
-      class="drinkImage"
+      class="drink-image"
       src="https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg"
     />
   </a>
