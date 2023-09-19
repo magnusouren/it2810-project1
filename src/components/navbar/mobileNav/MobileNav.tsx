@@ -9,7 +9,13 @@ export const MobileNav = () => {
       <Link to={'/'} className={'logo'}>
         Enjoy my cocktail <FaCocktail />
       </Link>
+      <Link to={'/'} className={'logoIcon'}>
+        <FaCocktail />
+      </Link>
       <div className='links'>
+        <Link to={'/'} className='link'>
+          Home
+        </Link>
         <Link to={'/search/'} className='link'>
           Search
         </Link>
