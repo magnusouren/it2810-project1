@@ -1,0 +1,37 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`FavoriteCard > should render correctly 1`] = `
+<div>
+  <li>
+    <img
+      alt="mockDrink"
+      src="mockThumb"
+    />
+    <div>
+      <a
+        href="/drink/1"
+      >
+        <h3>
+          mockDrink
+        </h3>
+      </a>
+      <p
+        class="extra-info"
+      >
+        mockCategory
+         - 
+        mockGlass
+      </p>
+    </div>
+    <button
+      class="remove-favorite"
+    >
+      <span
+        class="material-symbols-outlined"
+      >
+        heart_minus
+      </span>
+    </button>
+  </li>
+</div>
+`;
