@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+.drink-of-the-day-card {
+  border-radius: 10px;
+  padding: 16px 30px 30px;
+  margin: 40px;
+  box-shadow:
+    0 4px 8px 0 rgb(0 0 0 / 20%),
+    0 6px 20px 0 rgba(0 0 0 / 19%);
+  transition: transform 0.2s ease;
+}
+
+.drink-of-the-day-card:hover {
+  transform: scale(1.03);
+}
+
+.drink-of-the-day-card .link-wrapper {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.drink-of-the-day-card .link-wrapper h2 {
+  flex-basis: 100%;
+  text-align: center;
+  padding: 0 0 10px;
+}
+
+.drink-of-the-day-card .link-wrapper .left {
+  flex-basis: 50%;
+}
+
+.drink-of-the-day-card .link-wrapper .left h3 {
+  margin: none;
+}
+
+.drink-of-the-day-card .link-wrapper .right {
+  flex-basis: 50%;
+  display: flex;
+  justify-content: end;
+}
+
+.drink-of-the-day-card .link-wrapper .right img {
+  overflow-x: hidden;
+  border-radius: 8px;
+  box-shadow:
+    0 4px 8px 0 rgb(0 0 0 / 20%),
+    0 6px 20px 0 rgba(0 0 0 / 19%);
+}
+
+.drink-of-the-day-card p::before {
+  font-family: 'Material Symbols Outlined', sans-serif;
+  font-size: 1.5em;
+  color: #fbc4ab;
+  margin-right: 6px;
+  font-weight: 300;
+}
+
+.drink-of-the-day-card #drink-of-the-day-category::before,
+.drink-of-the-day-card #drink-of-the-day-glass::before,
+.drink-of-the-day-card #drink-of-the-day-alcoholic::before {
+  vertical-align: -20%;
+}
+
+.drink-of-the-day-card #drink-of-the-day-category::before {
+  content: '\e574';
+}
+
+.drink-of-the-day-card #drink-of-the-day-glass::before {
+  content: '\e540';
+}
+
+.drink-of-the-day-card #drink-of-the-day-alcoholic::before {
+  content: '\ea60';
+}
+
+/* @media only screen and (width >= 968px) {
+  .drink-of-the-day-card {
+    flex-direction: row;
+    align-items: center;
+  } 
+} */
