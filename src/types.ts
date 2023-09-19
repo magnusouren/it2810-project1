@@ -19,7 +19,7 @@ export interface Ingredient {
 }
 
 export interface Drink {
-  drinkId: string;
+  idDrink: string;
   strDrink: string;
   ingredients: Array<Ingredient>;
   strGlass: string;
@@ -34,3 +34,12 @@ export type SimpleDrinkType = {
   strDrinkThumb: string;
   idDrink: string;
 };
+
+export interface DrinkOfTheDay {
+  drinkId: string;
+  strDrink: string;
+  strDrinkThumb: string;
+  strCategory: string;
+  strGlass: string;
+  strAlcoholic: string;
+}

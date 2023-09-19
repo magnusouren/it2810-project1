@@ -1,0 +1,28 @@
+export const testDrink = {
+  drinkId: '1',
+  strDrink: 'Super Drink',
+  ingredients: [],
+  strGlass: 'Highball',
+  strInstructions: 'Instructions for drink',
+  strDrinkThumb: 'https://localhost:3000/drink/11008.jpg',
+  strCategory: 'Category',
+  strAlcoholic: 'Alcoholic',
+  strIngredient1: 'Ingredient 1',
+  strMeasure1: 'Measure 1',
+  strIngredient2: 'Ingredient 2',
+  strMeasure2: 'Measure 2',
+};
+export const testDrink2 = {
+  drinkId: '2',
+  strDrink: 'Foo bar',
+  ingredients: [],
+  strGlass: 'Foo',
+  strInstructions: 'Instructions for foo drink',
+  strDrinkThumb: 'https://localhost:3000/drink/2.jpg',
+  strCategory: 'Category',
+  strAlcoholic: 'Alcoholic',
+  strIngredient1: 'Ingredient 1',
+  strMeasure1: 'Measure 1',
+  strIngredient2: 'Ingredient 2',
+  strMeasure2: 'Measure 2',
+};

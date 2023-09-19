@@ -1,3 +1,5 @@
+import { DrinkOfTheDay } from '../types';
+
 const addFavorite = (id: string) => {
   const favorites = getFavorites();
   favorites.push(id);
@@ -12,7 +14,7 @@ export const getFavorites = () => {
   return [];
 };
 
-const removeFavorite = (id: string) => {
+export const removeFavorite = (id: string) => {
   const favorites = getFavorites();
   const newFavorites = favorites.filter((favorite: string) => favorite !== id);
   localStorage.setItem('drinkFavorites', JSON.stringify(newFavorites));
@@ -30,4 +32,16 @@ export const toggleFavorite = (id: string) => {
 export const isFavorite = (id: string) => {
   const favorites = getFavorites();
   return favorites.includes(id);
+};
+
+export const getDrinkOfTheDay = (date: string) => {
+  const drinkOfTheDay = localStorage.getItem(date);
+  if (drinkOfTheDay) {
+    return JSON.parse(drinkOfTheDay);
+  }
+  return null;
+};
+
+export const setDrinkOfTheDay = (date: string, drink: DrinkOfTheDay) => {
+  localStorage.setItem(date, JSON.stringify(drink));
 };

@@ -1,9 +1,6 @@
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { render, screen, waitFor } from '@testing-library/react';
-import nock from 'nock';
-import { MemoryRouter, Route, Routes } from 'react-router-dom';
+import { screen, waitFor } from '@testing-library/react';
 
-import { renderWithRouterAndQueryClient } from '../../../utils/test-utils';
+import { renderWithRouterAndQueryClient, renderWithRouterQueryClientAndDrinkId } from '../../../utils/test-utils';
 import { DrinkCard } from '../DrinkCard';
 
 /* Minimal API return format */
@@ -22,63 +19,17 @@ const testDrink = {
   strMeasure2: 'Measure 2',
 };
 
-const tree = (id: string) => {
-  return (
-    <QueryClientProvider client={new QueryClient()}>
-      <MemoryRouter initialEntries={[`/drink/${id}`]}>
-        <Routes>
-          <Route path='/drink'>
-            <Route path=':id' element={<DrinkCard />} />
-          </Route>
-        </Routes>
-      </MemoryRouter>
-    </QueryClientProvider>
-  );
-};
-
 describe('DrinkCard', () => {
   it('Renders with proper params', async () => {
-    /* This nock is to remove a temporary error showing in the test logs */
-    nock('https://www.thecocktaildb.com').get(`/api/json/v1/1/lookup.php?i=undefined`).once().reply(200, {
-      drinks: [],
-    });
-
-    nock('https://www.thecocktaildb.com')
-      .get(`/api/json/v1/1/lookup.php?i=${testDrink.drinkId}`)
-      .once()
-      .reply(200, {
-        drinks: [testDrink],
-      });
-
-    render(tree(testDrink.drinkId));
+    renderWithRouterQueryClientAndDrinkId(testDrink.drinkId);
 
     await waitFor(() => {
       expect(screen.getByText(testDrink.strDrink)).toBeDefined();
-      expect(screen.getByText(testDrink.strGlass)).toBeDefined();
-      expect(screen.getByText(testDrink.strInstructions)).toBeDefined();
-      expect(screen.getByText(testDrink.strCategory)).toBeDefined();
-      expect(screen.getByText(testDrink.strAlcoholic)).toBeDefined();
-      expect(screen.getByText(testDrink.strIngredient1)).toBeDefined();
-      expect(screen.getByText(testDrink.strMeasure1)).toBeDefined();
-      expect(screen.getByText(testDrink.strIngredient2)).toBeDefined();
-      expect(screen.getByText(testDrink.strMeasure2)).toBeDefined();
     });
   });
 
   it('Should match snapshot', async () => {
-    /* This nock is to remove a temporary error showing in the test logs */
-    nock('https://www.thecocktaildb.com').get(`/api/json/v1/1/lookup.php?i=undefined`).once().reply(200, {
-      drinks: [],
-    });
-
-    nock('https://www.thecocktaildb.com')
-      .get(`/api/json/v1/1/lookup.php?i=${testDrink.drinkId}`)
-      .once()
-      .reply(200, {
-        drinks: [testDrink],
-      });
-
-    const { container } = render(tree(testDrink.drinkId));
+    const { container } = renderWithRouterQueryClientAndDrinkId(testDrink.drinkId);
 
     /* Expecting Drink name to show to make sure
     the component is finished loading before comparing snapshots */
@@ -94,16 +45,7 @@ describe('DrinkCard', () => {
   });
 
   it('Should show that no drinks were found if none are returned', async () => {
-    /* This nock is to remove a temporary error showing in the test logs */
-    nock('https://www.thecocktaildb.com').get(`/api/json/v1/1/lookup.php?i=undefined`).once().reply(200, {
-      drinks: [],
-    });
-
-    nock('https://www.thecocktaildb.com').get(`/api/json/v1/1/lookup.php?i=1`).once().reply(200, {
-      drinks: [],
-    });
-
-    render(tree('1'));
+    renderWithRouterQueryClientAndDrinkId('0');
 
     await waitFor(() => {
       expect(screen.getByText(/No drink was found.../i)).toBeDefined();

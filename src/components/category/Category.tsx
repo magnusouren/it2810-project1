@@ -9,10 +9,8 @@ interface CategoryProps {
   category: CategoryType;
 }
 
-export const Category: FC<CategoryProps> = ({ category }) => {
-  return (
-    <Link to={`/search/`} state={category} className='category'>
-      <h3>{category}</h3>
-    </Link>
-  );
-};
+export const Category: FC<CategoryProps> = ({ category }) => (
+  <Link to={`/search/`} state={category} className='category'>
+    <h3>{category}</h3>
+  </Link>
+);
