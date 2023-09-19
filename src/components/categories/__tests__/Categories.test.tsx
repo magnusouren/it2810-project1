@@ -1,31 +1,9 @@
 import { screen, waitFor } from '@testing-library/react';
-import nock from 'nock';
 
 import { renderWithRouterAndQueryClient } from '../../../utils/test-utils';
 import { Categories } from '../Categories';
 
-const mockApiReturn = [
-  {
-    strCategory: 'Beer',
-  },
-  {
-    strCategory: 'Cocoa',
-  },
-  {
-    strCategory: 'Coffee / Tea',
-  },
-];
-
 describe('Categories', () => {
-  beforeEach(() => {
-    nock('https://www.thecocktaildb.com').get(`/api/json/v1/1/list.php?c=list`).reply(200, {
-      drinks: mockApiReturn,
-    });
-  });
-  afterEach(() => {
-    nock.cleanAll();
-  });
-
   it('Should match snapshot', async () => {
     const { asFragment } = renderWithRouterAndQueryClient(<Categories />);
 
