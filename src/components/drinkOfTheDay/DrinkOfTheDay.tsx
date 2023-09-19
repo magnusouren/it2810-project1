@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './DrinkOfTheDay.css';
 interface Drink {
+  idDrink: string;
   strDrink: string;
   strDrinkThumb: string;
   strCategory: string;
@@ -55,7 +56,7 @@ export const DrinkOfTheDay: React.FC = () => {
   return (
     <div className='drink-card'>
       {drink && (
-        <Link to={`/categories/${drink.strCategory}`} className='link-unstyled'>
+        <Link to={`/drink/${drink.idDrink}`} className='link-unstyled'>
           <div className='left'>
             <h1>Drink of the day!</h1>
             <h2>{drink.strDrink}</h2>
