@@ -13,13 +13,15 @@ interface SearchCategoryProps {
 
 export const SearchCategory: FC<SearchCategoryProps> = ({ searchCategory, setSearchCategory }) => {
   const [filter, setFilter] = useState(searchCategory || '');
-  const { data, isSuccess } = useQuery<CategoryType[]>(['categories'], () =>
+  const { data, isLoading, isSuccess } = useQuery<CategoryType[]>(['categories'], () =>
     axios
       .get('https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list')
       .then((res) => res.data.drinks.map((drink: { strCategory: string }) => drink.strCategory)),
   );
 
-  // if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <div>Loading...</div>;
+
+  if (!isSuccess) return <div>Something went wrong</div>;
 
   return (
     <div className='category-div'>

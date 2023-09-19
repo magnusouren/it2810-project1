@@ -20,10 +20,16 @@ const categories: CategoryType[] = [
 
 describe('SearchCategory', () => {
   it('Should match snapshot', async () => {
-    const { container } = renderWithRouterAndQueryClient(
-      <SearchCategory searchCategory={'Ordinary drink'} setSearchCategory={() => {}} />,
+    const { asFragment } = renderWithRouterAndQueryClient(
+      <SearchCategory searchCategory={'Ordinary Drink'} setSearchCategory={() => {}} />,
     );
-    expect(container).toMatchSnapshot();
+    expect(asFragment()).toMatchInlineSnapshot(`
+    <DocumentFragment>
+      <div>
+        Loading...
+      </div>
+    </DocumentFragment>
+  `);
 
     await waitFor(() => {
       for (let i = 0; i < categories.length; i++) {
