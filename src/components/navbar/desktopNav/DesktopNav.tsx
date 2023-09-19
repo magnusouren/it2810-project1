@@ -12,6 +12,9 @@ export const DesktopNav = () => (
     </li>
     <div className='links'>
       <li className='link'>
+        <Link to={'/'}>Home</Link>
+      </li>
+      <li className='link'>
         <Link to={'/search/'}>Search</Link>
       </li>
       <li className='link'>

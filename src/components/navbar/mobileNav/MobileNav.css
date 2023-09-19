@@ -39,3 +39,22 @@
   background-color: #fbc4ab;
   text-decoration: none;
 }
+
+.mobile .logoIcon {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  padding: 1rem;
+  color: #313030;
+  background-color: #fbc4ab;
+  text-decoration: none;
+  display: none;
+}
+
+@media screen and (width <= 460px) {
+  .mobile .logo {
+    display: none;
+  }
+  .mobile .logoIcon {
+    display: block;
+  }
+}

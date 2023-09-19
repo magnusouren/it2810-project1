@@ -17,3 +17,9 @@
   cursor: pointer;
   text-decoration: underline #f2c2a6;
 }
+
+@media screen and (width <= 460px) {
+  .category {
+    width: 100%;
+  }
+}
