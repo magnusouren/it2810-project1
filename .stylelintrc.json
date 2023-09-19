@@ -6,5 +6,9 @@
       "files": ["*.{js,ts,jsx,tsx}"],
       "customSyntax": "postcss-lit"
     }
-  ]
+  ],
+  "rules": {
+    "selector-class-pattern": null,
+    "selector-id-pattern": null
+  }
 }

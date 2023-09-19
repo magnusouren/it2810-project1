@@ -3,13 +3,13 @@
 exports[`DrinkCard > Should match snapshot 1`] = `
 <div>
   <div
-    class="drinkContainer"
+    class="drink-container"
   >
     <div
-      class="returnButtonContainer"
+      class="return-button-container"
     >
       <a
-        class="returnButton"
+        class="return-button"
         href="/search"
       >
         <span
@@ -20,14 +20,27 @@ exports[`DrinkCard > Should match snapshot 1`] = `
       </a>
     </div>
     <div
-      class="drinkHeader"
+      class="drink-header"
     >
       <h1>
         Super Drink
       </h1>
     </div>
     <div
-      class="imageContainer"
+      class="favorite-button-container"
+    >
+      <div
+        class="favorite-toggle"
+      >
+        <span
+          class="material-symbols-outlined"
+        >
+          favorite
+        </span>
+      </div>
+    </div>
+    <div
+      class="image-container"
     >
       <img
         alt="Super Drinkimage"
@@ -38,17 +51,17 @@ exports[`DrinkCard > Should match snapshot 1`] = `
       class="info"
     >
       <p
-        id="drinkCategory"
+        id="drink-category"
       >
         Category
       </p>
       <p
-        id="drinkGlass"
+        id="drink-glass"
       >
         Highball
       </p>
       <p
-        id="drinkAlcoholic"
+        id="drink-alcoholic"
       >
         Alcoholic
       </p>
@@ -57,12 +70,12 @@ exports[`DrinkCard > Should match snapshot 1`] = `
       class="ingredients"
     >
       <h3
-        class="sectionHeader"
+        class="section-header"
       >
         Ingredients
       </h3>
       <ul
-        class="ingredientsList"
+        class="ingredients-list"
       >
         <li>
           <div
@@ -94,7 +107,7 @@ exports[`DrinkCard > Should match snapshot 1`] = `
       class="instructions"
     >
       <h3
-        class="sectionHeader"
+        class="section-header"
       >
         Instructions
       </h3>

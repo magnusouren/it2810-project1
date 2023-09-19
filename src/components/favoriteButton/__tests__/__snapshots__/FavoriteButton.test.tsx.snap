@@ -1,0 +1,15 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`FavoriteButton > Should match snapshot 1`] = `
+<div>
+  <div
+    class="favorite-toggle"
+  >
+    <span
+      class="material-symbols-outlined"
+    >
+      favorite
+    </span>
+  </div>
+</div>
+`;

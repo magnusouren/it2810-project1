@@ -19,4 +19,5 @@ export const Router = createBrowserRouter(
       <Route path='*' element={<NotFound />} />
     </>,
   ),
+  { basename: '/project1' },
 );
