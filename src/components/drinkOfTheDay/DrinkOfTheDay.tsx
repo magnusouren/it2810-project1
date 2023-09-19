@@ -76,18 +76,22 @@ export const DrinkOfTheDay: React.FC = () => {
 
   return (
     <div className='drink-of-the-day-card'>
-      <Link to={`/drink/${drink.drinkId}`} className='link-wrapper'>
-        <h2>Drink of the day!</h2>
-        <div className='left'>
-          <h3>{drink.strDrink}</h3>
-          <p id='drink-of-the-day-category'>{drink.strCategory}</p>
-          <p id='drink-of-the-day-glass'>{drink.strGlass}</p>
-          <p id='drink-of-the-day-alcoholic'>{drink.strAlcoholic}</p>
-        </div>
-        <div className='right'>
-          <img src={drink.strDrinkThumb + '/preview'} alt={drink.strDrink} />
-        </div>
-      </Link>
+      <div className='drink-of-the-day-card-container'>
+        <Link to={`/drink/${drink.drinkId}`} className='link-wrapper'>
+          <h2>Drink of the day!</h2>
+          <div className='left'>
+            <h3>{drink.strDrink}</h3>
+            <div className='info-container'>
+              <p id='drink-of-the-day-category'>{drink.strCategory}</p>
+              <p id='drink-of-the-day-glass'>{drink.strGlass}</p>
+              <p id='drink-of-the-day-alcoholic'>{drink.strAlcoholic}</p>
+            </div>
+          </div>
+          <div className='right'>
+            <img src={drink.strDrinkThumb + '/preview'} alt={drink.strDrink} />
+          </div>
+        </Link>
+      </div>
     </div>
   );
 };
