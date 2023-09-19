@@ -16,14 +16,15 @@ export const renderWithRouterAndQueryClient = (component: JSX.Element) =>
     </QueryClientProvider>,
   );
 
-export const renderWithRouterQueryClientAndDrinkId = (id: string) => (
-  <QueryClientProvider client={new QueryClient()}>
-    <MemoryRouter initialEntries={[`/drink/${id}`]}>
-      <Routes>
-        <Route path='/drink'>
-          <Route path=':id' element={<DrinkCard />} />
-        </Route>
-      </Routes>
-    </MemoryRouter>
-  </QueryClientProvider>
-);
+export const renderWithRouterQueryClientAndDrinkId = (id: string) =>
+  render(
+    <QueryClientProvider client={new QueryClient()}>
+      <MemoryRouter initialEntries={[`/drink/${id}`]}>
+        <Routes>
+          <Route path='/drink'>
+            <Route path=':id' element={<DrinkCard />} />
+          </Route>
+        </Routes>
+      </MemoryRouter>
+    </QueryClientProvider>,
+  );

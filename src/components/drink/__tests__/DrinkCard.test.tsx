@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { screen, waitFor } from '@testing-library/react';
 
 import { renderWithRouterAndQueryClient, renderWithRouterQueryClientAndDrinkId } from '../../../utils/test-utils';
 import { DrinkCard } from '../DrinkCard';
@@ -21,7 +21,7 @@ const testDrink = {
 
 describe('DrinkCard', () => {
   it('Renders with proper params', async () => {
-    render(renderWithRouterQueryClientAndDrinkId(testDrink.drinkId));
+    renderWithRouterQueryClientAndDrinkId(testDrink.drinkId);
 
     await waitFor(() => {
       expect(screen.getByText(testDrink.strDrink)).toBeDefined();
@@ -29,7 +29,7 @@ describe('DrinkCard', () => {
   });
 
   it('Should match snapshot', async () => {
-    const { container } = render(renderWithRouterQueryClientAndDrinkId(testDrink.drinkId));
+    const { container } = renderWithRouterQueryClientAndDrinkId(testDrink.drinkId);
 
     /* Expecting Drink name to show to make sure
     the component is finished loading before comparing snapshots */
@@ -45,7 +45,7 @@ describe('DrinkCard', () => {
   });
 
   it('Should show that no drinks were found if none are returned', async () => {
-    render(renderWithRouterQueryClientAndDrinkId('0'));
+    renderWithRouterQueryClientAndDrinkId('0');
 
     await waitFor(() => {
       expect(screen.getByText(/No drink was found.../i)).toBeDefined();
