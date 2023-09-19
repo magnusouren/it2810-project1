@@ -8,12 +8,13 @@ import { removeFavorite } from '../../utils/persistency';
 
 interface FavoriteCardProps {
   drink: Drink;
+  onRemoveFavorite: (id: string) => void;
 }
 
-export const FavoriteCard: FC<FavoriteCardProps> = ({ drink }) => {
+export const FavoriteCard: FC<FavoriteCardProps> = ({ drink, onRemoveFavorite }) => {
   const handleClick = () => {
     removeFavorite(drink.idDrink);
-    window.location.reload();
+    onRemoveFavorite(drink.idDrink);
   };
   return (
     <li key={drink.strDrink}>

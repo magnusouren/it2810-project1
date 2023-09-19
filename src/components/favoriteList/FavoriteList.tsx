@@ -9,9 +9,10 @@ import { FavoriteCard } from '../favoriteCard/FavoriteCard';
 
 interface FavoriteListProps {
   favorites: string[];
+  onRemoveFavorite: (id: string) => void;
 }
 
-export const FavoriteList: FC<FavoriteListProps> = ({ favorites }) => {
+export const FavoriteList: FC<FavoriteListProps> = ({ favorites, onRemoveFavorite }) => {
   const userQueries = useQueries<Drink[]>({
     queries:
       favorites?.map((favorite) => {
@@ -36,7 +37,11 @@ export const FavoriteList: FC<FavoriteListProps> = ({ favorites }) => {
     <>
       <h2 id={'favorites-heading'}>Your favorites:</h2>
       <div className='favorites'>
-        <ul>{isSuccess && favorites && data.map((drink, index) => <FavoriteCard drink={drink} key={index} />)}</ul>
+        <ul>
+          {isSuccess &&
+            favorites &&
+            data.map((drink, index) => <FavoriteCard drink={drink} onRemoveFavorite={onRemoveFavorite} key={index} />)}
+        </ul>
       </div>
     </>
   );
