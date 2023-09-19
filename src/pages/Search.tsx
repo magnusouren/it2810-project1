@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
-import { FC, useEffect, useState } from 'react';
+import { FC, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { DrinkList } from '../components/drinkList/DrinkList';
@@ -27,10 +27,6 @@ export const Search: FC = () => {
         return drinks;
       });
   });
-
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
 
   return (
     <>

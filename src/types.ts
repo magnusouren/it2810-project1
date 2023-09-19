@@ -11,6 +11,24 @@ export type CategoryType =
   | 'Beer'
   | 'Soft Drink';
 
+export type Alcoholic = 'Alcoholic' | 'Non alcoholic' | 'Optional alcohol';
+
+export interface Ingredient {
+  ingredient: string;
+  measure: string;
+}
+
+export interface Drink {
+  drinkId: string;
+  strDrink: string;
+  ingredients: Array<Ingredient>;
+  strGlass: string;
+  strInstructions: string;
+  strDrinkThumb: string;
+  strCategory: string;
+  strAlcoholic: Alcoholic;
+}
+
 export type SimpleDrinkType = {
   strDrink: string;
   strDrinkThumb: string;
