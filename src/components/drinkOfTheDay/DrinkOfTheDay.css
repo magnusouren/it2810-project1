@@ -42,6 +42,10 @@
   justify-content: space-between;
 }
 
+.drink-of-the-day-card .drink-of-the-day-card-container .link-wrapper .left p {
+  font-weight: 300;
+}
+
 .drink-of-the-day-card .drink-of-the-day-card-container .link-wrapper .left p:first-child {
   margin-top: auto;
 }
