@@ -26,6 +26,9 @@ export const DrinkOfTheDay: FC = () => {
 
       // Fetch a new random drink from the API
       return await fetchDrinkOfTheDay(currentDate).then((response) => {
+        if (!response) {
+          return null;
+        }
         setDrink(response);
         return response;
       });
