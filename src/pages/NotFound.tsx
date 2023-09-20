@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 export const NotFound = () => (
-  <div>
-    <h1>404 - Not Found!</h1>
-    <Link to='/'>Go Home</Link>
+  <div className='page-not-found'>
+    <h1>404 - Not Found. Go home, you are drunk!</h1>
+    <Link to='/'>Back to the cocktails</Link>
   </div>
 );
