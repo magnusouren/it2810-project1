@@ -5,44 +5,52 @@ exports[`DrinkOfTheDay > Should match snapshot 1`] = `
   <div
     class="drink-of-the-day-card"
   >
-    <a
-      class="link-wrapper"
-      href="/drink/9118"
+    <div
+      class="drink-of-the-day-card-container"
     >
-      <h2>
-        Drink of the day!
-      </h2>
-      <div
-        class="left"
+      <a
+        class="link-wrapper"
+        href="/drink/9118"
       >
-        <h3>
-          Random Drink
-        </h3>
-        <p
-          id="drink-of-the-day-category"
+        <h2>
+          Drink of the day!
+        </h2>
+        <div
+          class="left"
         >
-          Category
-        </p>
-        <p
-          id="drink-of-the-day-glass"
+          <h3>
+            Random Drink
+          </h3>
+          <div
+            class="info-container"
+          >
+            <p
+              id="drink-of-the-day-category"
+            >
+              Category
+            </p>
+            <p
+              id="drink-of-the-day-glass"
+            >
+              Highball
+            </p>
+            <p
+              id="drink-of-the-day-alcoholic"
+            >
+              Alcoholic
+            </p>
+          </div>
+        </div>
+        <div
+          class="right"
         >
-          Highball
-        </p>
-        <p
-          id="drink-of-the-day-alcoholic"
-        >
-          Alcoholic
-        </p>
-      </div>
-      <div
-        class="right"
-      >
-        <img
-          alt="Random Drink"
-          src="https://localhost:3000/drink/11118.jpg/preview"
-        />
-      </div>
-    </a>
+          <img
+            alt="Random Drink"
+            src="https://localhost:3000/drink/11118.jpg/preview"
+          />
+        </div>
+      </a>
+    </div>
   </div>
 </DocumentFragment>
 `;
