@@ -11,12 +11,11 @@ exports[`DrinkCard > Should match snapshot 1`] = `
       <div
         class="return-button-container"
       >
-        <a
+        <button
           class="return-button"
-          href="/drinks"
         >
           &lt;-
-        </a>
+        </button>
       </div>
       <h1>
         Super Drink

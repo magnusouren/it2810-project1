@@ -2,7 +2,7 @@ import './DrinkCard.css';
 
 import { useQuery } from '@tanstack/react-query';
 import { FC } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import { Drink } from '../../types';
 import { fetchDrinkById } from '../../utils/queries';
@@ -12,6 +12,9 @@ import { Spinner } from '../loading/Loading';
 export const DrinkCard: FC = () => {
   const { id } = useParams();
   // useQuery hook
+
+  const navigate = useNavigate();
+  const goBack = () => navigate(-1);
   const { data, isLoading, isSuccess } = useQuery<Drink | null>(['drink', id], () => fetchDrinkById(id));
 
   if (isLoading) return <Spinner />;
@@ -24,9 +27,9 @@ export const DrinkCard: FC = () => {
     <div className='drink-container'>
       <div className='drink-header'>
         <div className='return-button-container'>
-          <Link to='/drinks' className='return-button'>
+          <button onClick={goBack} className='return-button'>
             &#60;-
-          </Link>
+          </button>
         </div>
         <h1>{data.strDrink}</h1>
         <div className='favorite-button-container'>

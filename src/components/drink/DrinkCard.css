@@ -53,6 +53,9 @@
   font-size: 1.5em;
   color: transparent;
   font-weight: 300;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .drink-container .drink-header .return-button-container .return-button::before {
