@@ -19,9 +19,9 @@ export const DrinkCard: FC = () => {
 
   if (isLoading) return <Spinner />;
 
-  if (!isSuccess) return <div>Something went wrong</div>;
+  if (!isSuccess) return <div className='drink-container'>Something went wrong</div>;
 
-  if (!data) return <div>No drink was found...</div>;
+  if (!data) return <div className='drink-container'>No drink was found...</div>;
 
   return (
     <div className='drink-container'>
