@@ -16,10 +16,10 @@ export const MobileNav = () => {
         <NavLink to={'/'} className='link'>
           Home
         </NavLink>
-        <NavLink to={'/search/'} className='link'>
-          Search
+        <NavLink to={'/drinks'} className='link'>
+          Drinks
         </NavLink>
-        <NavLink to={'/favorites/'} className='link'>
+        <NavLink to={'/favorites'} className='link'>
           Favorites
         </NavLink>
       </div>

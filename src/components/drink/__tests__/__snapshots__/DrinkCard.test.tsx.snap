@@ -13,7 +13,7 @@ exports[`DrinkCard > Should match snapshot 1`] = `
       >
         <a
           class="return-button"
-          href="/search"
+          href="/drinks"
         >
           &lt;-
         </a>

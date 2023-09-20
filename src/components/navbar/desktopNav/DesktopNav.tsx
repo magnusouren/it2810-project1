@@ -15,10 +15,10 @@ export const DesktopNav = () => (
         <NavLink to={'/'}>Home</NavLink>
       </li>
       <li className='link'>
-        <NavLink to={'/search/'}>Search</NavLink>
+        <Link to={'/drinks'}>Drinks</Link>
       </li>
       <li className='link'>
-        <NavLink to={'/favorites/'}>Favorites</NavLink>
+        <NavLink to={'/favorites'}>Favorites</NavLink>
       </li>
     </div>
   </ul>
