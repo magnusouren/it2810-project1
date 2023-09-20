@@ -114,3 +114,9 @@ This project follows a specific file structure. This section provides an overvie
 4. Copy files from the dist folder to the VM with `scp -r dist <username>@it2810-16.idi.ntnu.no:/tmp/`. Replace `<username>` with your username.
 5. If there is already a version of the project on the VM, run `sudo rm -r /var/www/html/project1` to remove the old files.
 6. Move files from `/tmp/dist` to `/var/www/html` with `sudo mv /tmp/dist/\* /var/www/html/project1`.
+
+## Platform responsiveness
+
+We have styled the application to be responsive and fit different screen sizes.
+However, we have encountered some issues with the responsiveness of the application when running it on the VM.
+When running the application on the VM, the same type of phone (iPhone 12, Safari & Chrome, iOS 16) with the same setup renders the application differently, i.e, some are not responsive. We have tried to fix this issue, but we have not been able to find a solution.
