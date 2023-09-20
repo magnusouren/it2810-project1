@@ -85,8 +85,8 @@ This script runs Prettier to format the code in TypeScript, JavaScript, SCSS, JS
 
 This project follows a specific file structure. This section provides an overview of the file structure and describes what should be in the various folders and files.
 
-- [Project filestructure](./docs/filstruktur-prosjekt.md)
-- [Component filestructure](./docs/filstruktur-komponent.md)
+- [Project filestructure](./docs/filestructure-project.md)
+- [Component filestructure](./docs/filestructure-component.md)
 
 ## Copy project to VM
 
