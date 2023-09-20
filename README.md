@@ -1,5 +1,23 @@
 # Enjoy my cocktail
 
+## Environment
+
+The system is built on node v20.5.0 and npm v9.8.1. It's necessary to have these versions installed to run the project locally.
+
+To set correct node version, run:
+
+```cli
+nvm install 20.5.0
+```
+
+> Note, the project could not be runned with node 20.6.0 or higher.
+
+To set correct npm version, run:
+
+```cli
+npm install -g npm@9.8.1
+```
+
 ## Available NPM Scripts
 
 This section provides an overview of the available npm scripts for this project. These scripts help you manage development, testing, building, and other maintenance tasks for the project.
