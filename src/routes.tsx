@@ -12,8 +12,8 @@ export const Router = createBrowserRouter(
     <>
       <Route path='/' element={<PageLayout />}>
         <Route path='/' element={<Home />} />
-        <Route path='/drinks/' element={<Search />} />
-        <Route path='/favorites/' element={<Favorites />} />
+        <Route path='/drinks' element={<Search />} />
+        <Route path='/favorites' element={<Favorites />} />
         <Route path='/drink/:id' element={<Drink />} />
       </Route>
       <Route path='*' element={<NotFound />} />

@@ -16,7 +16,7 @@ export const MobileNav = () => {
         <Link to={'/'} className='link'>
           Home
         </Link>
-        <Link to={'/drinks/'} className='link'>
+        <Link to={'/drinks'} className='link'>
           Drinks
         </Link>
         <Link to={'/favorites/'} className='link'>
