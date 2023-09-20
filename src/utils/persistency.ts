@@ -1,4 +1,4 @@
-import { DrinkOfTheDay } from '../types';
+import { CategoryType, DrinkOfTheDay } from '../types';
 
 const addFavorite = (id: string) => {
   const favorites = getFavorites();
@@ -44,4 +44,12 @@ export const getDrinkOfTheDay = (date: string) => {
 
 export const setDrinkOfTheDay = (date: string, drink: DrinkOfTheDay) => {
   localStorage.setItem(date, JSON.stringify(drink));
+};
+
+export const setSessionFilter = (filter: CategoryType) => {
+  sessionStorage.setItem('filter', filter);
+};
+
+export const getSessionFilter = () => {
+  return sessionStorage.getItem('filter') as CategoryType;
 };

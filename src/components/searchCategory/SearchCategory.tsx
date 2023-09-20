@@ -5,6 +5,7 @@ import axios from 'axios';
 import { FC, useState } from 'react';
 
 import { CategoryType } from '../../types';
+import { setSessionFilter } from '../../utils/persistency';
 
 interface SearchCategoryProps {
   searchCategory: string | null;
@@ -33,6 +34,7 @@ export const SearchCategory: FC<SearchCategoryProps> = ({ searchCategory, setSea
           onChange={(e) => {
             setSearchCategory(e.target.value as CategoryType);
             setFilter(e.target.value as CategoryType);
+            setSessionFilter(e.target.value as CategoryType);
           }}
         >
           {data.sort().map((category: CategoryType) => (
