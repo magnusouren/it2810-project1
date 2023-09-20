@@ -34,7 +34,7 @@ describe('Category', () => {
     act(() => {
       screen.getByText(category).click();
     });
-    expect(window.location.pathname).toBe('/search/');
+    expect(window.location.pathname).toBe('/drinks');
     expect(window.history.state.usr).toEqual(category);
   });
 

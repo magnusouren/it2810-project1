@@ -15,7 +15,7 @@ export const DesktopNav = () => (
         <NavLink to={'/'}>Home</NavLink>
       </li>
       <li className='link'>
-        <Link to={'/drinks'}>Drinks</Link>
+        <NavLink to={'/drinks'}>Drinks</NavLink>
       </li>
       <li className='link'>
         <NavLink to={'/favorites'}>Favorites</NavLink>
