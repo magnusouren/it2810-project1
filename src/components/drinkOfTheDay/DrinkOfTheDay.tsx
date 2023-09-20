@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { DrinkOfTheDay as DrinkOfTheDayType } from '../../types';
 import { getDrinkOfTheDay } from '../../utils/persistency';
 import { fetchDrinkOfTheDay } from '../../utils/queries';
+import { Spinner } from '../loading/Loading';
 
 export const DrinkOfTheDay: FC = () => {
   // // Get the current date in YYYY-MM-DD format
@@ -37,7 +38,11 @@ export const DrinkOfTheDay: FC = () => {
 
   if (!drink) {
     if (isLoading) {
-      return <p>Loading...</p>;
+      return (
+        <div className='drink-of-the-day-card'>
+          <Spinner />
+        </div>
+      );
     }
 
     if (!isSuccess) {
@@ -53,18 +58,22 @@ export const DrinkOfTheDay: FC = () => {
 
   return (
     <div className='drink-of-the-day-card'>
-      <Link to={`/drink/${drink.drinkId}`} className='link-wrapper'>
-        <h2>Drink of the day!</h2>
-        <div className='left'>
-          <h3>{drink.strDrink}</h3>
-          <p id='drink-of-the-day-category'>{drink.strCategory}</p>
-          <p id='drink-of-the-day-glass'>{drink.strGlass}</p>
-          <p id='drink-of-the-day-alcoholic'>{drink.strAlcoholic}</p>
-        </div>
-        <div className='right'>
-          <img src={drink.strDrinkThumb + '/preview'} alt={drink.strDrink} />
-        </div>
-      </Link>
+      <div className='drink-of-the-day-card-container'>
+        <Link to={`/drink/${drink.drinkId}`} className='link-wrapper'>
+          <h2>Drink of the day!</h2>
+          <div className='left'>
+            <h3>{drink.strDrink}</h3>
+            <div className='info-container'>
+              <p id='drink-of-the-day-category'>{drink.strCategory}</p>
+              <p id='drink-of-the-day-glass'>{drink.strGlass}</p>
+              <p id='drink-of-the-day-alcoholic'>{drink.strAlcoholic}</p>
+            </div>
+          </div>
+          <div className='right'>
+            <img src={drink.strDrinkThumb + '/preview'} alt={drink.strDrink} />
+          </div>
+        </Link>
+      </div>
     </div>
   );
 };

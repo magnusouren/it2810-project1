@@ -36,12 +36,22 @@ export const FavoriteButton: FC<FavoriteButtonProps> = ({ id }) => {
   }, [isFavoriteDrink, favoriteDrinkToggleButton]);
 
   return isFavoriteDrink ? (
-    <div className='favorite-toggle favorite' onClick={toggleFavoriteDrink} ref={favoriteDrinkToggleButton}>
-      <span className='material-symbols-outlined'>favorite</span>
+    <div
+      className='favorite-toggle favorite'
+      onClick={toggleFavoriteDrink}
+      ref={favoriteDrinkToggleButton}
+      data-testid='favorite'
+    >
+      &#60;3
     </div>
   ) : (
-    <div className='favorite-toggle' onClick={toggleFavoriteDrink} ref={favoriteDrinkToggleButton}>
-      <span className='material-symbols-outlined'>favorite</span>
+    <div
+      className='favorite-toggle'
+      onClick={toggleFavoriteDrink}
+      ref={favoriteDrinkToggleButton}
+      data-testid='favorite'
+    >
+      &#60;3
     </div>
   );
 };

@@ -30,7 +30,7 @@ describe('Navbar', () => {
     act(() => {
       screen.getByText(/Favorites/i).click();
     });
-    expect(window.location.pathname).toBe('/favorites/');
+    expect(window.location.pathname).toBe('/favorites');
   });
 
   it('Should navigate when to / when logo is clicked', async () => {

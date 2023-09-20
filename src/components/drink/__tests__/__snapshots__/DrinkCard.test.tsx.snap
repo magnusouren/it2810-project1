@@ -6,37 +6,30 @@ exports[`DrinkCard > Should match snapshot 1`] = `
     class="drink-container"
   >
     <div
-      class="return-button-container"
-    >
-      <a
-        class="return-button"
-        href="/drinks"
-      >
-        <span
-          class="material-symbols-outlined"
-        >
-          arrow_back_ios_new
-        </span>
-      </a>
-    </div>
-    <div
       class="drink-header"
     >
+      <div
+        class="return-button-container"
+      >
+        <a
+          class="return-button"
+          href="/drinks"
+        >
+          &lt;-
+        </a>
+      </div>
       <h1>
         Super Drink
       </h1>
-    </div>
-    <div
-      class="favorite-button-container"
-    >
       <div
-        class="favorite-toggle"
+        class="favorite-button-container"
       >
-        <span
-          class="material-symbols-outlined"
+        <div
+          class="favorite-toggle"
+          data-testid="favorite"
         >
-          favorite
-        </span>
+          &lt;3
+        </div>
       </div>
     </div>
     <div

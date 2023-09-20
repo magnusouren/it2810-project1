@@ -1,17 +1,21 @@
 /* Favorite Toggle */
 .favorite-toggle {
-  font-size: 2em;
-  color: #fbc4ab;
-  margin-right: 0.5em;
+  position: relative;
+  font-size: 1.7em;
+  color: transparent;
   font-weight: 300;
-  position: absolute;
-  top: 36px;
-  right: 30px;
   cursor: pointer;
-  transition: 0.02s ease-in;
+  transition: 0.08s ease-in;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
+}
+
+.favorite-toggle::before {
+  content: 'favorite_border';
+  position: absolute;
+  font-family: 'Material Symbols Outlined', sans-serif;
+  color: #fbc4ab;
 }
 
 .favorite-toggle:hover {
@@ -22,12 +26,6 @@
   transform: scale(1);
 }
 
-.favorite {
+.favorite-toggle.favorite::before {
   color: #f00;
-}
-
-@media screen and (width <= 992px) {
-  .favorite-toggle {
-    top: 90px;
-  }
 }

@@ -1,7 +1,7 @@
 import './DesktopNav.css';
 
 import { FaCocktail } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 export const DesktopNav = () => (
   <ul>
@@ -12,13 +12,13 @@ export const DesktopNav = () => (
     </li>
     <div className='links'>
       <li className='link'>
-        <Link to={'/'}>Home</Link>
+        <NavLink to={'/'}>Home</NavLink>
       </li>
       <li className='link'>
-        <Link to={'/drinks/'}>Drinks</Link>
+        <NavLink to={'/drinks'}>Drinks</NavLink>
       </li>
       <li className='link'>
-        <Link to={'/favorites/'}>Favorites</Link>
+        <NavLink to={'/favorites'}>Favorites</NavLink>
       </li>
     </div>
   </ul>

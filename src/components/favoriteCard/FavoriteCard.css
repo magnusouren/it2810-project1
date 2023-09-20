@@ -41,6 +41,7 @@
   margin-bottom: 0.5rem;
   color: #313030;
   text-align: center;
+  font-weight: 500;
 }
 
 .favorites a {
@@ -52,13 +53,8 @@
   text-decoration: underline #f2c2a6;
 }
 
-.material-symbols-outlined {
-  font-size: 2rem;
-}
-
-.material-symbols-outlined:hover {
-  cursor: pointer;
-  color: #606060;
+.favorites p {
+  font-weight: 300;
 }
 
 .remove-favorite {
@@ -69,6 +65,15 @@
   font: inherit;
   cursor: pointer;
   outline: inherit;
+}
+
+.remove-favorite .material-symbols-outlined {
+  font-size: 2rem;
+}
+
+.remove-favorite .material-symbols-outlined:hover {
+  cursor: pointer;
+  color: #606060;
 }
 
 .extra-info {

@@ -10,7 +10,7 @@ exports[`Categories > Should match snapshot 1`] = `
   >
     <a
       class="category"
-      href="/search/"
+      href="/drinks"
     >
       <h3>
         Beer
@@ -18,7 +18,7 @@ exports[`Categories > Should match snapshot 1`] = `
     </a>
     <a
       class="category"
-      href="/search/"
+      href="/drinks"
     >
       <h3>
         Cocoa
@@ -26,7 +26,7 @@ exports[`Categories > Should match snapshot 1`] = `
     </a>
     <a
       class="category"
-      href="/search/"
+      href="/drinks"
     >
       <h3>
         Coffee / Tea

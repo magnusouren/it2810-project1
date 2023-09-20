@@ -7,13 +7,14 @@ import { Link, useParams } from 'react-router-dom';
 import { Drink } from '../../types';
 import { fetchDrinkById } from '../../utils/queries';
 import { FavoriteButton } from '../favoriteButton/FavoriteButton';
+import { Spinner } from '../loading/Loading';
 
 export const DrinkCard: FC = () => {
   const { id } = useParams();
   // useQuery hook
   const { data, isLoading, isSuccess } = useQuery<Drink | null>(['drink', id], () => fetchDrinkById(id));
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <Spinner />;
 
   if (!isSuccess) return <div>Something went wrong</div>;
 
@@ -21,16 +22,16 @@ export const DrinkCard: FC = () => {
 
   return (
     <div className='drink-container'>
-      <div className='return-button-container'>
-        <Link to='/drinks' className='return-button'>
-          <span className='material-symbols-outlined'>arrow_back_ios_new</span>
-        </Link>
-      </div>
       <div className='drink-header'>
+        <div className='return-button-container'>
+          <Link to='/drinks' className='return-button'>
+            &#60;-
+          </Link>
+        </div>
         <h1>{data.strDrink}</h1>
-      </div>
-      <div className='favorite-button-container'>
-        <FavoriteButton id={id || ''} />
+        <div className='favorite-button-container'>
+          <FavoriteButton id={id || ''} />
+        </div>
       </div>
       <div className='image-container'>
         <img src={data.strDrinkThumb} alt={data.strDrink + 'image'} />
