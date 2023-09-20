@@ -4,27 +4,19 @@ stages:
   - setup
   - test
   - lint
+  - lint-css
   - build
-
-cache:
-  paths:
-    - ./node_modules/
 
 node-setup:
   stage: setup
   script:
     - npm install
-  cache:
+  artifacts:
     paths:
-      - ./node_modules/
+      - node_modules
 
 unit-test-job:
   stage: test
-  needs:
-    - job: node-setup
-  cache:
-    paths:
-      - ./node_modules/
   script:
     - echo "Running unit tests..."
     - npm run coverage
@@ -38,23 +30,13 @@ unit-test-job:
 
 lint-test-job 1/2:
   stage: lint
-  needs:
-    - job: node-setup
-  cache:
-    paths:
-      - ./node_modules/
   script:
     - echo "Linting code..."
     - npm run lint
     - echo "No lint issues found."
 
 lint-test-job 2/2:
-  stage: lint
-  needs:
-    - job: node-setup
-  cache:
-    paths:
-      - ./node_modules/
+  stage: lint-css
   script:
     - echo "Linting code..."
     - npm run lint:css
@@ -62,9 +44,6 @@ lint-test-job 2/2:
 
 build-job:
   stage: build
-  cache:
-    paths:
-      - ./node_modules/
   script:
     - echo "Compiling the code..."
     - npm run build:ci
