@@ -29,43 +29,41 @@
   margin-bottom: 10px;
 }
 
-/* **** Return Button **** */
-.drink-container .return-button-container .return-button {
-  font-size: 2em;
-  color: #fbc4ab;
-  margin-right: 0.5em;
-  font-weight: 300;
-  position: absolute;
-  top: 36px;
-  left: 320px;
-}
-
-@media screen and (width <= 992px) {
-  .drink-container .return-button-container .return-button {
-    left: 5%;
-    top: 90px;
-  }
-}
-
-.drink-container .return-button-container .return-button:hover {
-  color: #f08080;
-}
-
 /* **** Header **** */
 .drink-container .drink-header {
   margin: 0 0 40px;
   display: flex;
-  justify-content: center;
+  flex-flow: row nowrap;
+  justify-content: space-between;
   align-items: center;
   flex-basis: 100%;
 }
 
-.drink-container h1 {
+.drink-container .drink-header h1 {
   text-align: center;
   padding: 0;
   font-size: 2em;
   font-family: Raleway, Lato, sans-serif;
   font-weight: 500;
+}
+
+/* **** Return Button **** */
+.drink-container .drink-header .return-button-container .return-button {
+  position: relative;
+  font-size: 1.5em;
+  color: transparent;
+  font-weight: 300;
+}
+
+.drink-container .drink-header .return-button-container .return-button::before {
+  content: 'arrow_back_ios_new';
+  position: absolute;
+  font-family: 'Material Symbols Outlined', sans-serif;
+  color: #fbc4ab;
+}
+
+.drink-container .drink-header .return-button-container .return-button:hover::before {
+  color: #f08080;
 }
 
 /* **** Image **** */

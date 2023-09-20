@@ -4,12 +4,9 @@ exports[`FavoriteButton > Should match snapshot 1`] = `
 <div>
   <div
     class="favorite-toggle"
+    data-testid="favorite"
   >
-    <span
-      class="material-symbols-outlined"
-    >
-      favorite
-    </span>
+    &lt;3
   </div>
 </div>
 `;

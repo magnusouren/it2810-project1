@@ -22,16 +22,16 @@ export const DrinkCard: FC = () => {
 
   return (
     <div className='drink-container'>
-      <div className='return-button-container'>
-        <Link to='/search' className='return-button'>
-          <span className='material-symbols-outlined'>arrow_back_ios_new</span>
-        </Link>
-      </div>
       <div className='drink-header'>
+        <div className='return-button-container'>
+          <Link to='/search' className='return-button'>
+            &#60;-
+          </Link>
+        </div>
         <h1>{data.strDrink}</h1>
-      </div>
-      <div className='favorite-button-container'>
-        <FavoriteButton id={id || ''} />
+        <div className='favorite-button-container'>
+          <FavoriteButton id={id || ''} />
+        </div>
       </div>
       <div className='image-container'>
         <img src={data.strDrinkThumb} alt={data.strDrink + 'image'} />
