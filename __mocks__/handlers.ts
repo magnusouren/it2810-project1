@@ -49,4 +49,22 @@ export const handlers = [
       }),
     );
   }),
+
+  rest.get('https://www.thecocktaildb.com/api/json/v1/1/random.php', (req, res, ctx) => {
+    return res(
+      ctx.status(200),
+      ctx.json({
+        drinks: [
+          {
+            idDrink: '9118',
+            strDrink: 'Random Drink',
+            strDrinkThumb: 'https://localhost:3000/drink/11118.jpg',
+            strCategory: 'Category',
+            strGlass: 'Highball',
+            strAlcoholic: 'Alcoholic',
+          },
+        ],
+      }),
+    );
+  }),
 ];
