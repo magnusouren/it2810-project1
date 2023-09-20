@@ -7,7 +7,6 @@
   border: solid 1px #eaeaea;
   border-radius: 8px;
   transition: 0.1s ease-in-out;
-  text-decoration: none;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -25,10 +24,6 @@
   border: solid 1px #000;
   cursor: pointer;
   text-decoration: underline #f2c2a6;
-}
-
-.simple-drink:hover .drink-image {
-  transform: scale(1.05);
 }
 
 .drink-image {
