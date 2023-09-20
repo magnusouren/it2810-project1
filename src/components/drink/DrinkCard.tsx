@@ -7,13 +7,14 @@ import { Link, useParams } from 'react-router-dom';
 import { Drink } from '../../types';
 import { fetchDrinkById } from '../../utils/queries';
 import { FavoriteButton } from '../favoriteButton/FavoriteButton';
+import { Spinner } from '../loading/Loading';
 
 export const DrinkCard: FC = () => {
   const { id } = useParams();
   // useQuery hook
   const { data, isLoading, isSuccess } = useQuery<Drink | null>(['drink', id], () => fetchDrinkById(id));
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <Spinner />;
 
   if (!isSuccess) return <div>Something went wrong</div>;
 

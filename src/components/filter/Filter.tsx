@@ -6,6 +6,7 @@ import { FC, useState } from 'react';
 
 import { CategoryType } from '../../types';
 import { setSessionFilter } from '../../utils/persistency';
+import { Spinner } from '../loading/Loading';
 
 interface FilterProps {
   searchCategory: string | null;
@@ -20,7 +21,7 @@ export const Filter: FC<FilterProps> = ({ searchCategory, setSearchCategory }) =
       .then((res) => res.data.drinks.map((drink: { strCategory: string }) => drink.strCategory)),
   );
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <Spinner />;
 
   if (!isSuccess) return <div>Something went wrong</div>;
 

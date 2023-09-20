@@ -41,7 +41,7 @@ describe('DrinkCard', () => {
 
   it('Should show loading state when data is loading', () => {
     renderWithRouterAndQueryClient(<DrinkCard />);
-    expect(screen.getByText(/Loading/i)).toBeDefined();
+    expect(screen.getByTestId(/Spinner/i)).toBeDefined();
   });
 
   it('Should show that no drinks were found if none are returned', async () => {
