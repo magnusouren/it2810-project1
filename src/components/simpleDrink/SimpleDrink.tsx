@@ -11,7 +11,7 @@ interface SimpleDrinkProps {
 
 export const SimpleDrink: FC<SimpleDrinkProps> = ({ drink }) => {
   return (
-    <Link to={`/search/${drink.idDrink}`} state={drink.idDrink} className='simple-drink'>
+    <Link to={`/drink/${drink.idDrink}`} state={drink.idDrink} className='simple-drink'>
       <h3>{drink.strDrink}</h3>
       <img src={drink.strDrinkThumb} alt='Drink image' className='drink-image' />
     </Link>
