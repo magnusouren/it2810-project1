@@ -1,5 +1,6 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 
+import { randomDrink } from '../../../../__mocks__/mockObjects';
 import { renderWithRouterAndQueryClient } from '../../../utils/test-utils';
 import { DrinkOfTheDay } from '../DrinkOfTheDay';
 
@@ -14,7 +15,7 @@ describe('DrinkOfTheDay', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('Should render correct heading element', async () => {
+  it('Should render correct heading element of page', async () => {
     renderWithRouterAndQueryClient(<DrinkOfTheDay />);
     await waitFor(() => {
       expect(screen.getByText('Drink of the day!')).toBeDefined();
@@ -25,32 +26,32 @@ describe('DrinkOfTheDay', () => {
   it('Should render correct heading element for drink', async () => {
     renderWithRouterAndQueryClient(<DrinkOfTheDay />);
     await waitFor(() => {
-      expect(screen.getByText('Random Drink')).toBeDefined();
+      expect(screen.getByText(randomDrink.strDrink)).toBeDefined();
     });
-    expect(screen.getByRole('heading', { name: 'Random Drink' })).toBeDefined();
+    expect(screen.getByRole('heading', { name: randomDrink.strDrink })).toBeDefined();
   });
 
   it('Should render correct details for drink', async () => {
     renderWithRouterAndQueryClient(<DrinkOfTheDay />);
     await waitFor(() => {
-      expect(screen.getByText('Random Drink')).toBeDefined();
+      expect(screen.getByText(randomDrink.strDrink)).toBeDefined();
     });
-    expect(screen.getByText('Category')).toBeDefined();
-    expect(screen.getByText('Highball')).toBeDefined();
-    expect(screen.getByText('Alcoholic')).toBeDefined();
+    expect(screen.getByText(randomDrink.strCategory)).toBeDefined();
+    expect(screen.getByText(randomDrink.strGlass)).toBeDefined();
+    expect(screen.getByText(randomDrink.strAlcoholic)).toBeDefined();
   });
 
   it('Should render correct image for drink', async () => {
     const { getByAltText } = renderWithRouterAndQueryClient(<DrinkOfTheDay />);
     await waitFor(() => {
-      expect(screen.getByText('Random Drink')).toBeDefined();
+      expect(screen.getByText(randomDrink.strDrink)).toBeDefined();
     });
-    expect(getByAltText('Random Drink')).toBeDefined();
+    expect(getByAltText(randomDrink.strDrink)).toBeDefined();
   });
 
   it('should navigate to correct drink on click', async () => {
     const { getByText } = renderWithRouterAndQueryClient(<DrinkOfTheDay />);
-    fireEvent.click(getByText('Random Drink'));
-    expect(window.location.pathname).toBe('/drink/9118');
+    fireEvent.click(getByText(randomDrink.strDrink));
+    expect(window.location.pathname).toBe(`/drink/${randomDrink.idDrink}`);
   });
 });

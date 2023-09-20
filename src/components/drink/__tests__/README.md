@@ -27,6 +27,8 @@ A Drink object is passed as prop when rendering the DrinkCard. The DrinkCard sho
 - Drink instructions
 - Drink ingredients (iterating over the ingredients to make sure that all ingredients are rendered)
 
+We are also testing that static content is rendered correctly.
+
 ## Correct links and navigation
 
 Tests that the "Go Back" button works as expected.

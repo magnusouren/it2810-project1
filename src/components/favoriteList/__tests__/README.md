@@ -4,47 +4,54 @@
 
 For mocking the API-calls to fetch a drink we have mocked two different scenarios with two different ID's. This is for testing how to component handles 0, 1 or more drinks in the list.
 
-The mocks are located in the `mockDrinks.ts` file.
+The mocks are located in the `./__mocks__/mockObjects.ts` file.
 
 ### Mocks
 
 ```typescript
-drinks: {
-    [
-        drinkId: '1',
-        strDrink: 'Super Drink',
-        ingredients: [],
-        strGlass: 'Highball',
-        strInstructions: 'Instructions for drink',
-        strDrinkThumb: 'https://localhost:3000/drink/11008.jpg',
-        strCategory: 'Category',
-        strAlcoholic: 'Alcoholic',
-        strIngredient1: 'Ingredient 1',
-        strMeasure1: 'Measure 1',
-        strIngredient2: 'Ingredient 2',
-        strMeasure2: 'Measure 2',
-    ]
-}
+drinks: const mockDrink: Drink = {
+  idDrink: '11118',
+  strDrink: 'Super Drink',
+  ingredients: [
+    { ingredient: 'Ingredient 1', measure: 'Measure 1' },
+    { ingredient: 'Ingredient 2', measure: 'Measure 2' },
+  ],
+  strGlass: 'Highball',
+  strInstructions: 'Instructions for drink',
+  strDrinkThumb: 'https://localhost:3000/drink/11118.jpg',
+  strCategory: 'Category',
+  strAlcoholic: 'Alcoholic',
+};
 ```
 
 ```typescript
 drinks: {
-    [
-        drinkId: '2',
-        strDrink: 'Foo bar',
-        ingredients: [],
-        strGlass: 'Foo',
-        strInstructions: 'Instructions for foo drink',
-        strDrinkThumb: 'https://localhost:3000/drink/2.jpg',
-        strCategory: 'Category',
-        strAlcoholic: 'Alcoholic',
-        strIngredient1: 'Ingredient 1',
-        strMeasure1: 'Measure 1',
-        strIngredient2: 'Ingredient 2',
-        strMeasure2: 'Measure 2',
-    ]
+  [
+    {
+      idDrink: '11118',
+      strDrink: 'Super Drink',
+      ingredients: [
+        { ingredient: 'Ingredient 1', measure: 'Measure 1' },
+        { ingredient: 'Ingredient 2', measure: 'Measure 2' },
+      ],
+      strGlass: 'Highball',
+      strInstructions: 'Instructions for drink',
+      strDrinkThumb: 'https://localhost:3000/drink/11118.jpg',
+      strCategory: 'Category',
+      strAlcoholic: 'Alcoholic',
+    },
+    {
+      idDrink: '22222',
+      strDrink: 'Foo bar',
+      ingredients: [],
+      strGlass: 'Foo',
+      strInstructions: 'Instructions for foo drink',
+      strDrinkThumb: 'https://localhost:3000/drink/2.jpg',
+      strCategory: 'Category',
+      strAlcoholic: 'Alcoholic',
+    },
+  ];
 }
-
 ```
 
 ## Snapshot tests

@@ -74,6 +74,14 @@ describe('DrinkCard', () => {
     expect(screen.getByText(`${mockDrink.strInstructions}`)).toBeDefined();
   });
 
+  it('Should show like button', async () => {
+    renderWithRouterQueryClientAndDrinkId(mockDrink.idDrink);
+    await waitFor(() => {
+      expect(screen.getByText(mockDrink.strDrink)).toBeDefined();
+    });
+    expect(screen.getByText('favorite')).toBeDefined();
+  });
+
   it.each(mockDrink.ingredients)('Should show correct ingredient "%s"', async (ingredient) => {
     renderWithRouterQueryClientAndDrinkId(mockDrink.idDrink);
     await waitFor(() => {

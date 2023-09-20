@@ -39,3 +39,12 @@ export const alternativeDrink: Drink = {
   strCategory: 'Category',
   strAlcoholic: 'Alcoholic',
 };
+
+export const randomDrink = {
+  idDrink: '9118',
+  strDrink: 'Random Drink',
+  strDrinkThumb: 'https://localhost:3000/drink/11118.jpg',
+  strCategory: 'Category',
+  strGlass: 'Highball',
+  strAlcoholic: 'Alcoholic',
+};

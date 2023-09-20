@@ -18,6 +18,6 @@ describe('SimpleDrink', () => {
 
   it('Should show drink when it is passed as prop', () => {
     renderWithRouterAndQueryClient(<SimpleDrink drink={drink} />);
-    expect(screen.getByText('Margarita')).toBeDefined();
+    expect(screen.getByText(drink.strDrink)).toBeDefined();
   });
 });
