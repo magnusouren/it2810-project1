@@ -50,7 +50,7 @@ exports[`Navbar > Should match snapshot 1`] = `
     </a>
     <a
       class="link"
-      href="/drinks/"
+      href="/drinks"
     >
       Drinks
     </a>

@@ -22,7 +22,7 @@ describe('Navbar', () => {
     act(() => {
       screen.getByText(/Drinks/i).click();
     });
-    expect(window.location.pathname).toBe('/drinks/');
+    expect(window.location.pathname).toBe('/drinks');
   });
 
   it('Should navigate when to /favorites/ when Favorites is clicked', async () => {
