@@ -1,4 +1,5 @@
-import { waitFor, screen, fireEvent } from '@testing-library/react';
+import { fireEvent, screen, waitFor } from '@testing-library/react';
+
 import { renderWithRouterAndQueryClient } from '../../../utils/test-utils';
 import { DrinkOfTheDay } from '../DrinkOfTheDay';
 
