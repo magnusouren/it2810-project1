@@ -50,7 +50,8 @@
 }
 
 .favorites h3:hover {
-  text-decoration: underline #f2c2a6;
+  text-decoration-line: underline;
+  text-decoration-color: #f2c2a6;
 }
 
 .favorites p {

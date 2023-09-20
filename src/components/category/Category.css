@@ -5,7 +5,8 @@
   background-color: #fff;
   border: solid 1px #eaeaea;
   border-radius: 8px;
-  text-decoration: none #f2c2a6;
+  text-decoration-color: #f2c2a6;
+  text-decoration-line: none;
   transition: 0.1s ease-in-out;
 }
 
@@ -18,7 +19,7 @@
 .category:hover {
   border: solid 1px #000;
   cursor: pointer;
-  text-decoration: underline #f2c2a6;
+  text-decoration-line: underline;
 }
 
 @media screen and (width <= 460px) {
