@@ -1,3 +1,49 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`DrinkList > Should match snapshot 1`] = `<div />`;
+exports[`DrinkList > Should match snapshot 1`] = `
+<div>
+  <div
+    class="drink-div"
+  >
+    <a
+      class="simple-drink"
+      href="/drink/11007"
+    >
+      <h3>
+        Margarita
+      </h3>
+      <img
+        alt="Drink image"
+        class="drink-image"
+        src="https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg"
+      />
+    </a>
+    <a
+      class="simple-drink"
+      href="/drink/178332"
+    >
+      <h3>
+        Blue Margarita
+      </h3>
+      <img
+        alt="Drink image"
+        class="drink-image"
+        src="https://www.thecocktaildb.com/images/media/drink/bry4qh1582751040.jpg"
+      />
+    </a>
+    <a
+      class="simple-drink"
+      href="/drink/17216"
+    >
+      <h3>
+        Tommy's Margarita
+      </h3>
+      <img
+        alt="Drink image"
+        class="drink-image"
+        src="https://www.thecocktaildb.com/images/media/drink/loezxn1504373874.jpg"
+      />
+    </a>
+  </div>
+</div>
+`;

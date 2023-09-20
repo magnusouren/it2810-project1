@@ -4,7 +4,7 @@ import { FC, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { DrinkList } from '../components/drinkList/DrinkList';
-import { SearchCategory } from '../components/searchCategory/SearchCategory';
+import { Filter } from '../components/filter/Filter';
 import { CategoryType, SimpleDrinkType } from '../types';
 
 export const Search: FC = () => {
@@ -30,7 +30,7 @@ export const Search: FC = () => {
 
   return (
     <>
-      <SearchCategory searchCategory={searchCategory} setSearchCategory={setSearchCategory} />
+      <Filter searchCategory={searchCategory} setSearchCategory={setSearchCategory} />
       <DrinkList drinks={data} />
     </>
   );

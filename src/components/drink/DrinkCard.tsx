@@ -2,7 +2,7 @@ import './DrinkCard.css';
 
 import { useQuery } from '@tanstack/react-query';
 import { FC } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 import { Drink } from '../../types';
 import { fetchDrinkById } from '../../utils/queries';
@@ -10,10 +10,6 @@ import { FavoriteButton } from '../favoriteButton/FavoriteButton';
 
 export const DrinkCard: FC = () => {
   const { id } = useParams();
-  const navigate = useNavigate();
-  const goBack = () => {
-    navigate(-1);
-  };
   // useQuery hook
   const { data, isLoading, isSuccess } = useQuery<Drink | null>(['drink', id], () => fetchDrinkById(id));
 
@@ -26,7 +22,7 @@ export const DrinkCard: FC = () => {
   return (
     <div className='drink-container'>
       <div className='return-button-container'>
-        <Link onClick={goBack} state={data.strCategory} to='/search' className='return-button'>
+        <Link to='/search' className='return-button'>
           <span className='material-symbols-outlined'>arrow_back_ios_new</span>
         </Link>
       </div>
