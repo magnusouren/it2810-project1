@@ -10,7 +10,6 @@ import { FavoriteButton } from '../favoriteButton/FavoriteButton';
 
 export const DrinkCard: FC = () => {
   const { id } = useParams();
-
   // useQuery hook
   const { data, isLoading, isSuccess } = useQuery<Drink | null>(['drink', id], () => fetchDrinkById(id));
 
@@ -23,7 +22,7 @@ export const DrinkCard: FC = () => {
   return (
     <div className='drink-container'>
       <div className='return-button-container'>
-        <Link to='/search' className='return-button'>
+        <Link to='/drinks' className='return-button'>
           <span className='material-symbols-outlined'>arrow_back_ios_new</span>
         </Link>
       </div>

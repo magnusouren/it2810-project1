@@ -1,4 +1,4 @@
-import './SearchCategory.css';
+import './Filter.css';
 
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
@@ -7,12 +7,12 @@ import { FC, useState } from 'react';
 import { CategoryType } from '../../types';
 import { setSessionFilter } from '../../utils/persistency';
 
-interface SearchCategoryProps {
+interface FilterProps {
   searchCategory: string | null;
   setSearchCategory: (category: CategoryType | null) => void;
 }
 
-export const SearchCategory: FC<SearchCategoryProps> = ({ searchCategory, setSearchCategory }) => {
+export const Filter: FC<FilterProps> = ({ searchCategory, setSearchCategory }) => {
   const [filter, setFilter] = useState(searchCategory || '');
   const { data, isLoading, isSuccess } = useQuery<CategoryType[]>(['categories'], () =>
     axios
