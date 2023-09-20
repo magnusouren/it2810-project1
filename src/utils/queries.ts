@@ -1,6 +1,7 @@
 import axios, { isCancel } from 'axios';
 
 import { Drink, DrinkOfTheDay, Ingredient } from '../types';
+import { setDrinkOfTheDay } from './persistency';
 
 export const fetchDrinkById = async (id?: string) => {
   if (!id) {
@@ -68,7 +69,7 @@ export const fetchDrinkOfTheDay = async (currentDate: string) => {
       };
 
       // Store the new random drink ID in local storage with the current date
-      localStorage.setItem(currentDate, JSON.stringify(drink));
+      setDrinkOfTheDay(currentDate, drink);
 
       return drink;
     })

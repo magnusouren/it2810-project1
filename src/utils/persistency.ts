@@ -35,15 +35,19 @@ export const isFavorite = (id: string) => {
 };
 
 export const getDrinkOfTheDay = (date: string) => {
-  const drinkOfTheDay = localStorage.getItem(date);
+  const drinkOfTheDay = localStorage.getItem('drinkOfTheDay');
+
   if (drinkOfTheDay) {
-    return JSON.parse(drinkOfTheDay);
+    const { drink, date: drinkDate } = JSON.parse(drinkOfTheDay);
+    if (drinkDate === date) {
+      return drink;
+    }
   }
   return null;
 };
 
 export const setDrinkOfTheDay = (date: string, drink: DrinkOfTheDay) => {
-  localStorage.setItem(date, JSON.stringify(drink));
+  localStorage.setItem('drinkOfTheDay', JSON.stringify({ drink: drink, date: date }));
 };
 
 export const setSessionFilter = (filter: CategoryType) => {
