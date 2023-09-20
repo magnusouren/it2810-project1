@@ -2,126 +2,108 @@
 
 exports[`FavoriteList > should render correctly when having 1 favorite 1`] = `
 <div>
-  <h2
-    id="favorites-heading"
-  >
-    Your favorites:
-  </h2>
-  <div
-    class="favorites"
-  >
-    <ul>
-      <li>
-        <img
-          alt="Super Drink"
-          src="https://localhost:3000/drink/11118.jpg"
-        />
-        <div>
-          <a
-            href="/drink/11118"
-          >
-            <h3>
-              Super Drink
-            </h3>
-          </a>
-          <p
-            class="extra-info"
-          >
-            Category
-             - 
-            Highball
-          </p>
-        </div>
-        <button
-          class="remove-favorite"
+  <ul>
+    <li>
+      <img
+        alt="Super Drink"
+        src="https://localhost:3000/drink/11118.jpg"
+      />
+      <div>
+        <a
+          href="/drink/11118"
         >
-          <span
-            class="material-symbols-outlined"
-          >
-            heart_minus
-          </span>
-        </button>
-      </li>
-    </ul>
-  </div>
+          <h3>
+            Super Drink
+          </h3>
+        </a>
+        <p
+          class="extra-info"
+        >
+          Category
+           - 
+          Highball
+        </p>
+      </div>
+      <button
+        class="remove-favorite"
+      >
+        <span
+          class="material-symbols-outlined"
+        >
+          heart_minus
+        </span>
+      </button>
+    </li>
+  </ul>
 </div>
 `;
 
 exports[`FavoriteList > should render correctly when having 2 favorites 1`] = `
 <div>
-  <h2
-    id="favorites-heading"
-  >
-    Your favorites:
-  </h2>
-  <div
-    class="favorites"
-  >
-    <ul>
-      <li>
-        <img
-          alt="Super Drink"
-          src="https://localhost:3000/drink/11118.jpg"
-        />
-        <div>
-          <a
-            href="/drink/11118"
-          >
-            <h3>
-              Super Drink
-            </h3>
-          </a>
-          <p
-            class="extra-info"
-          >
-            Category
-             - 
-            Highball
-          </p>
-        </div>
-        <button
-          class="remove-favorite"
+  <ul>
+    <li>
+      <img
+        alt="Super Drink"
+        src="https://localhost:3000/drink/11118.jpg"
+      />
+      <div>
+        <a
+          href="/drink/11118"
         >
-          <span
-            class="material-symbols-outlined"
-          >
-            heart_minus
-          </span>
-        </button>
-      </li>
-      <li>
-        <img
-          alt="Foo bar"
-          src="https://localhost:3000/drink/2.jpg"
-        />
-        <div>
-          <a
-            href="/drink/22222"
-          >
-            <h3>
-              Foo bar
-            </h3>
-          </a>
-          <p
-            class="extra-info"
-          >
-            Category
-             - 
-            Foo
-          </p>
-        </div>
-        <button
-          class="remove-favorite"
+          <h3>
+            Super Drink
+          </h3>
+        </a>
+        <p
+          class="extra-info"
         >
-          <span
-            class="material-symbols-outlined"
-          >
-            heart_minus
-          </span>
-        </button>
-      </li>
-    </ul>
-  </div>
+          Category
+           - 
+          Highball
+        </p>
+      </div>
+      <button
+        class="remove-favorite"
+      >
+        <span
+          class="material-symbols-outlined"
+        >
+          heart_minus
+        </span>
+      </button>
+    </li>
+    <li>
+      <img
+        alt="Foo bar"
+        src="https://localhost:3000/drink/2.jpg"
+      />
+      <div>
+        <a
+          href="/drink/22222"
+        >
+          <h3>
+            Foo bar
+          </h3>
+        </a>
+        <p
+          class="extra-info"
+        >
+          Category
+           - 
+          Foo
+        </p>
+      </div>
+      <button
+        class="remove-favorite"
+      >
+        <span
+          class="material-symbols-outlined"
+        >
+          heart_minus
+        </span>
+      </button>
+    </li>
+  </ul>
 </div>
 `;
 
