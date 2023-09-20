@@ -4,23 +4,23 @@ exports[`FavoriteCard > should render correctly 1`] = `
 <div>
   <li>
     <img
-      alt="mockDrink"
-      src="mockThumb"
+      alt="Super Drink"
+      src="https://localhost:3000/drink/11118.jpg"
     />
     <div>
       <a
-        href="/drink/1"
+        href="/drink/11118"
       >
         <h3>
-          mockDrink
+          Super Drink
         </h3>
       </a>
       <p
         class="extra-info"
       >
-        mockCategory
+        Category
          - 
-        mockGlass
+        Highball
       </p>
     </div>
     <button

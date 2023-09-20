@@ -18,7 +18,8 @@ describe('SimpleDrink', () => {
 
   it('Should render correct heading element', () => {
     renderWithRouterAndQueryClient(<SimpleDrink drink={drink} />);
-    expect(screen.getByRole('heading', { name: 'Margarita' })).toBeDefined();
+    expect(screen.getByText(drink.strDrink)).toBeDefined();
+    expect(screen.getByRole('heading', { name: drink.strDrink })).toBeDefined();
   });
 
   it('Should render correct image for drink', () => {

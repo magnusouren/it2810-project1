@@ -6,4 +6,6 @@ The snapshot test is used to make sure that the FavoriteButton component is rend
 
 ## Unit tests
 
-The tests ensure the behavour of the component is correct. The tests are written to ensure that the component toggles the favorite class correctly.
+The tests ensure the behavour of the component is correct. The tests are written to ensure that the component toggles the favorite button correctly.
+
+We are not testing that the toggling function is called when clicking the button since the function is a part of the component and not reachable from the test.

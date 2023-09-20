@@ -12,13 +12,16 @@ We have mocked a drink object to be used in the tests. This object has fictive d
 
 ```typescript
 const mockDrink: Drink = {
-  idDrink: '1',
-  strDrink: 'mockDrink',
-  strDrinkThumb: 'mockThumb',
-  strCategory: 'mockCategory',
-  strGlass: 'mockGlass',
-  ingredients: [],
-  strInstructions: '',
+  idDrink: '11118',
+  strDrink: 'Super Drink',
+  ingredients: [
+    { ingredient: 'Ingredient 1', measure: 'Measure 1' },
+    { ingredient: 'Ingredient 2', measure: 'Measure 2' },
+  ],
+  strGlass: 'Highball',
+  strInstructions: 'Instructions for drink',
+  strDrinkThumb: 'https://localhost:3000/drink/11118.jpg',
+  strCategory: 'Category',
   strAlcoholic: 'Alcoholic',
 };
 ```

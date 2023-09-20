@@ -1,40 +1,14 @@
 import { screen, waitFor } from '@testing-library/react';
 
+import { mockDrink } from '../../../../__mocks__/mockObjects';
 import { renderWithRouterAndQueryClient, renderWithRouterQueryClientAndDrinkId } from '../../../utils/test-utils';
 import { DrinkCard } from '../DrinkCard';
 
-/* Minimal API return format */
-const testDrink = {
-  drinkId: '11118',
-  strDrink: 'Super Drink',
-  ingredients: [],
-  strGlass: 'Highball',
-  strInstructions: 'Instructions for drink',
-  strDrinkThumb: 'https://localhost:3000/drink/11118.jpg',
-  strCategory: 'Category',
-  strAlcoholic: 'Alcoholic',
-  strIngredient1: 'Ingredient 1',
-  strMeasure1: 'Measure 1',
-  strIngredient2: 'Ingredient 2',
-  strMeasure2: 'Measure 2',
-};
-
 describe('DrinkCard', () => {
-  it('Renders with proper params', async () => {
-    renderWithRouterQueryClientAndDrinkId(testDrink.drinkId);
-
-    await waitFor(() => {
-      expect(screen.getByText(testDrink.strDrink)).toBeDefined();
-    });
-  });
-
   it('Should match snapshot', async () => {
-    const { container } = renderWithRouterQueryClientAndDrinkId(testDrink.drinkId);
-
-    /* Expecting Drink name to show to make sure
-    the component is finished loading before comparing snapshots */
+    const { container } = renderWithRouterQueryClientAndDrinkId(mockDrink.idDrink);
     await waitFor(() => {
-      expect(screen.getByText(testDrink.strDrink)).toBeDefined();
+      expect(screen.getByText(mockDrink.strDrink)).toBeDefined();
     });
     expect(container).toMatchSnapshot();
   });
@@ -46,9 +20,74 @@ describe('DrinkCard', () => {
 
   it('Should show that no drinks were found if none are returned', async () => {
     renderWithRouterQueryClientAndDrinkId('0');
-
     await waitFor(() => {
       expect(screen.getByText(/No drink was found.../i)).toBeDefined();
     });
+  });
+
+  it('Should show correct name of drink as header', async () => {
+    renderWithRouterQueryClientAndDrinkId(mockDrink.idDrink);
+    await waitFor(() => {
+      expect(screen.getByText(mockDrink.strDrink)).toBeDefined();
+    });
+    expect(screen.getByRole('heading', { name: mockDrink.strDrink })).toBeDefined();
+  });
+
+  it('Should show correct image', async () => {
+    renderWithRouterQueryClientAndDrinkId(mockDrink.idDrink);
+    await waitFor(() => {
+      expect(screen.getByText(mockDrink.strDrink)).toBeDefined();
+    });
+    expect(screen.getByAltText(mockDrink.strDrink + 'image')).toBeDefined();
+  });
+
+  it('Should show correct category of drink', async () => {
+    renderWithRouterQueryClientAndDrinkId(mockDrink.idDrink);
+    await waitFor(() => {
+      expect(screen.getByText(mockDrink.strDrink)).toBeDefined();
+    });
+    expect(screen.getByText(`${mockDrink.strCategory}`)).toBeDefined();
+  });
+
+  it('Should show correct glass', async () => {
+    renderWithRouterQueryClientAndDrinkId(mockDrink.idDrink);
+    await waitFor(() => {
+      expect(screen.getByText(mockDrink.strDrink)).toBeDefined();
+    });
+    expect(screen.getByText(`${mockDrink.strGlass}`)).toBeDefined();
+  });
+
+  it('Should show correct alcoholics', async () => {
+    renderWithRouterQueryClientAndDrinkId(mockDrink.idDrink);
+    await waitFor(() => {
+      expect(screen.getByText(mockDrink.strDrink)).toBeDefined();
+    });
+    expect(screen.getByText(`${mockDrink.strAlcoholic}`)).toBeDefined();
+  });
+
+  it('Should show correct instructions', async () => {
+    renderWithRouterQueryClientAndDrinkId(mockDrink.idDrink);
+    await waitFor(() => {
+      expect(screen.getByText(mockDrink.strDrink)).toBeDefined();
+    });
+    expect(screen.getByRole('heading', { name: 'Instructions' })).toBeDefined();
+    expect(screen.getByText(`${mockDrink.strInstructions}`)).toBeDefined();
+  });
+
+  it('Should show like button', async () => {
+    renderWithRouterQueryClientAndDrinkId(mockDrink.idDrink);
+    await waitFor(() => {
+      expect(screen.getByText(mockDrink.strDrink)).toBeDefined();
+    });
+    expect(screen.getByTestId('favorite')).toBeDefined();
+  });
+
+  it.each(mockDrink.ingredients)('Should show correct ingredient "%s"', async (ingredient) => {
+    renderWithRouterQueryClientAndDrinkId(mockDrink.idDrink);
+    await waitFor(() => {
+      expect(screen.getByText(mockDrink.strDrink)).toBeDefined();
+    });
+    expect(screen.getByText(`${ingredient.ingredient}`)).toBeDefined();
+    expect(screen.getByText(`${ingredient.measure}`)).toBeDefined();
   });
 });
