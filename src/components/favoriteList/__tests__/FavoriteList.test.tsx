@@ -27,14 +27,6 @@ describe('FavoriteList', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('should contain heading-element', async () => {
-    const { getByRole } = renderWithRouterAndQueryClient(
-      <FavoriteList favorites={['11118']} onRemoveFavorite={vi.fn()} />,
-    );
-    await waitFor(() => screen.getByText(mockDrink.strDrink));
-    expect(getByRole('heading', { name: 'Your favorites:' })).toBeDefined();
-  });
-
   it('should contain correct amount of favorite-cards', async () => {
     const { getAllByRole } = renderWithRouterAndQueryClient(
       <FavoriteList favorites={['1118', '2']} onRemoveFavorite={vi.fn()} />,

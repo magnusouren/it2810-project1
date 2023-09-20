@@ -13,6 +13,11 @@ section {
   padding: 40px 0;
 }
 
+.page-not-found {
+  text-align: center;
+  margin-top: 2rem;
+}
+
 @media screen and (width <= 992px) {
   section {
     margin-left: 0;

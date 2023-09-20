@@ -36,16 +36,13 @@ export const FavoriteList: FC<FavoriteListProps> = ({ favorites, onRemoveFavorit
 
   return (
     <>
-      <h2 id={'favorites-heading'}>Your favorites:</h2>
-      <div className='favorites'>
-        <ul>
-          {isSuccess &&
-            favorites &&
-            data.map((drink, index) => (
-              <FavoriteCard drink={drink} handleRemoveFavorite={onRemoveFavorite} key={index} />
-            ))}
-        </ul>
-      </div>
+      <ul>
+        {isSuccess &&
+          favorites &&
+          data.map((drink, index) => (
+            <FavoriteCard drink={drink} handleRemoveFavorite={onRemoveFavorite} key={index} />
+          ))}
+      </ul>
     </>
   );
 };
