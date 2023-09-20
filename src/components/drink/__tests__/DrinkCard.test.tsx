@@ -15,7 +15,7 @@ describe('DrinkCard', () => {
 
   it('Should show loading state when data is loading', () => {
     renderWithRouterAndQueryClient(<DrinkCard />);
-    expect(screen.getByText(/Loading/i)).toBeDefined();
+    expect(screen.getByTestId(/Spinner/i)).toBeDefined();
   });
 
   it('Should show that no drinks were found if none are returned', async () => {
@@ -79,7 +79,7 @@ describe('DrinkCard', () => {
     await waitFor(() => {
       expect(screen.getByText(mockDrink.strDrink)).toBeDefined();
     });
-    expect(screen.getByText('favorite')).toBeDefined();
+    expect(screen.getByTestId('favorite')).toBeDefined();
   });
 
   it.each(mockDrink.ingredients)('Should show correct ingredient "%s"', async (ingredient) => {

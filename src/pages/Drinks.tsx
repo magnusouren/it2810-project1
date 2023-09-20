@@ -4,7 +4,8 @@ import { FC, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { DrinkList } from '../components/drinkList/DrinkList';
-import { SearchCategory } from '../components/searchCategory/SearchCategory';
+import { Filter } from '../components/filter/Filter';
+import { Spinner } from '../components/loading/Loading';
 import { CategoryType, SimpleDrinkType } from '../types';
 import { getSessionFilter, setSessionFilter } from '../utils/persistency';
 
@@ -18,7 +19,7 @@ export const Search: FC = () => {
     setSessionFilter(state as CategoryType);
   }
 
-  const { data } = useQuery<SimpleDrinkType[]>([searchCategory], async () => {
+  const { data, isLoading } = useQuery<SimpleDrinkType[]>([searchCategory], async () => {
     return axios
       .get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${searchCategory || 'Beer'}`)
       .then((res) => {
@@ -38,7 +39,8 @@ export const Search: FC = () => {
 
   return (
     <>
-      <SearchCategory searchCategory={searchCategory} setSearchCategory={setSearchCategory} />
+      <Filter searchCategory={searchCategory} setSearchCategory={setSearchCategory} />
+      {isLoading && <Spinner />}
       <DrinkList drinks={data} />
     </>
   );

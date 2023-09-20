@@ -1,4 +1,4 @@
-import './SearchCategory.css';
+import './Filter.css';
 
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
@@ -6,13 +6,14 @@ import { FC, useState } from 'react';
 
 import { CategoryType } from '../../types';
 import { setSessionFilter } from '../../utils/persistency';
+import { Spinner } from '../loading/Loading';
 
-interface SearchCategoryProps {
+interface FilterProps {
   searchCategory: string | null;
   setSearchCategory: (category: CategoryType | null) => void;
 }
 
-export const SearchCategory: FC<SearchCategoryProps> = ({ searchCategory, setSearchCategory }) => {
+export const Filter: FC<FilterProps> = ({ searchCategory, setSearchCategory }) => {
   const [filter, setFilter] = useState(searchCategory || '');
   const { data, isLoading, isSuccess } = useQuery<CategoryType[]>(['categories'], () =>
     axios
@@ -20,7 +21,7 @@ export const SearchCategory: FC<SearchCategoryProps> = ({ searchCategory, setSea
       .then((res) => res.data.drinks.map((drink: { strCategory: string }) => drink.strCategory)),
   );
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <Spinner />;
 
   if (!isSuccess) return <div>Something went wrong</div>;
 

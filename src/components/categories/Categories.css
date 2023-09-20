@@ -11,6 +11,8 @@ h2 {
   margin: 0 auto 1rem;
   padding-bottom: 0.5rem;
   border-bottom: solid 2px #f2c2a6;
+  font-family: Lato, sans-serif;
+  font-weight: 500;
 }
 
 @media screen and (width <= 992px) {

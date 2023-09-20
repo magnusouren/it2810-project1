@@ -13,12 +13,12 @@ describe('FavoriteButton', () => {
   it('Toggle should change class after click', () => {
     render(<FavoriteButton id='1' />);
     act(() => {
-      screen.getByText('favorite').parentElement?.click();
+      screen.getByTestId('favorite').click();
     });
-    expect(screen.getByText('favorite').parentElement?.classList.contains('favorite')).toBe(true);
+    expect(screen.getByTestId('favorite').classList.contains('favorite')).toBe(true);
     act(() => {
-      screen.getByText('favorite').parentElement?.click();
+      screen.getByTestId('favorite').click();
     });
-    expect(screen.getByText('favorite').parentElement?.classList.contains('favorite')).toBe(false);
+    expect(screen.getByTestId('favorite').classList.contains('favorite')).toBe(false);
   });
 });

@@ -6,6 +6,7 @@ import { FC } from 'react';
 
 import { CategoryType } from '../../types';
 import { Category } from '../category/Category';
+import { Spinner } from '../loading/Loading';
 
 export const Categories: FC = () => {
   const { data, isLoading, isSuccess } = useQuery<CategoryType[]>(['categories'], () =>
@@ -14,7 +15,7 @@ export const Categories: FC = () => {
       .then((res) => res.data.drinks.map((drink: { strCategory: string }) => drink.strCategory)),
   );
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <Spinner />;
 
   return (
     <>

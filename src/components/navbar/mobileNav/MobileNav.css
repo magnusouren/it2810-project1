@@ -4,6 +4,7 @@
   width: 100%;
   height: 100%;
   background-color: #f08080;
+  box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
 }
 
 @media screen and (width <= 992px) {
@@ -28,7 +29,11 @@
 }
 
 .mobile .link:hover {
-  color: #000;
+  color: white;
+}
+
+.mobile .link.active {
+  color: white;
 }
 
 .mobile .logo {

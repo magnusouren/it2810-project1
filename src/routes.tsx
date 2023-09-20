@@ -2,17 +2,17 @@ import { createBrowserRouter, createRoutesFromElements, Route } from 'react-rout
 
 import { PageLayout } from './layouts/PageLayout.tsx';
 import { Drink } from './pages/Drink.tsx';
+import { Search } from './pages/Drinks.tsx';
 import { Favorites } from './pages/Favorites.tsx';
 import { Home } from './pages/Home.tsx';
 import { NotFound } from './pages/NotFound.tsx';
-import { Search } from './pages/Search.tsx';
 
 export const Router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path='/' element={<PageLayout />}>
         <Route path='/' element={<Home />} />
-        <Route path='/search/' element={<Search />} />
+        <Route path='/drinks' element={<Search />} />
         <Route path='/favorites' element={<Favorites />} />
         <Route path='/drink/:id' element={<Drink />} />
       </Route>

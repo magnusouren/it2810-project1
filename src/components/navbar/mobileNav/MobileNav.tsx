@@ -1,7 +1,7 @@
 import './MobileNav.css';
 
 import { FaCocktail } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 export const MobileNav = () => {
   return (
@@ -13,15 +13,15 @@ export const MobileNav = () => {
         <FaCocktail />
       </Link>
       <div className='links'>
-        <Link to={'/'} className='link'>
+        <NavLink to={'/'} className='link'>
           Home
-        </Link>
-        <Link to={'/search/'} className='link'>
-          Search
-        </Link>
-        <Link to={'/favorites/'} className='link'>
+        </NavLink>
+        <NavLink to={'/drinks'} className='link'>
+          Drinks
+        </NavLink>
+        <NavLink to={'/favorites'} className='link'>
           Favorites
-        </Link>
+        </NavLink>
       </div>
     </>
   );

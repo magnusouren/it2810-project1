@@ -1,17 +1,23 @@
 .simple-drink {
   flex-grow: 1;
   margin: 0 auto;
-  padding: 3rem 1rem 1rem;
+  padding: 1rem;
+  min-height: 160px;
   background-color: #fff;
   border: solid 1px #eaeaea;
-  transition: border 0.2s ease-in-out;
-  text-decoration: none;
-  justify-content: space-between;
+  border-radius: 8px;
+  transition: 0.1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-decoration: none #f2c2a6;
 }
 
 .simple-drink h3 {
   text-align: center;
   color: #000;
+  font-weight: 500;
 }
 
 .simple-drink:hover {
@@ -26,4 +32,10 @@
   margin-right: auto;
   width: 100px;
   height: 100px;
+  border-radius: 8px;
+  transition: 0.1s ease-out;
+}
+
+.simple-drink:hover .drink-image {
+  transform: scale(1.02);
 }

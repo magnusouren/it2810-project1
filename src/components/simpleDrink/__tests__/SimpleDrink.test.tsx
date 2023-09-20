@@ -1,4 +1,4 @@
-import { screen } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 
 import { SimpleDrinkType } from '../../../types';
 import { renderWithRouterAndQueryClient } from '../../../utils/test-utils';
@@ -16,8 +16,20 @@ describe('SimpleDrink', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('Should show drink when it is passed as prop', () => {
+  it('Should render correct heading element', () => {
     renderWithRouterAndQueryClient(<SimpleDrink drink={drink} />);
     expect(screen.getByText(drink.strDrink)).toBeDefined();
+    expect(screen.getByRole('heading', { name: drink.strDrink })).toBeDefined();
+  });
+
+  it('Should render correct image for drink', () => {
+    renderWithRouterAndQueryClient(<SimpleDrink drink={drink} />);
+    expect(screen.getByRole('img', { name: 'Drink image' }));
+  });
+
+  it('Should navigate to correct drink on click', () => {
+    renderWithRouterAndQueryClient(<SimpleDrink drink={drink} />);
+    fireEvent.click(screen.getByRole('link'));
+    expect(window.location.pathname).toBe('/drink/11007');
   });
 });

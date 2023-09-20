@@ -31,6 +31,8 @@ exports[`Navbar > Should match snapshot 1`] = `
         class="link"
       >
         <a
+          aria-current="page"
+          class="active"
           href="/"
         >
           Home
@@ -40,16 +42,18 @@ exports[`Navbar > Should match snapshot 1`] = `
         class="link"
       >
         <a
-          href="/search/"
+          class=""
+          href="/drinks"
         >
-          Search
+          Drinks
         </a>
       </li>
       <li
         class="link"
       >
         <a
-          href="/favorites/"
+          class=""
+          href="/favorites"
         >
           Favorites
         </a>
