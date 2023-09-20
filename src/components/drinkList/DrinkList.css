@@ -12,3 +12,9 @@ h2 {
   padding-bottom: 0.5rem;
   border-bottom: solid 2px #f2c2a6;
 }
+
+@media screen and (width <= 549px) {
+  .drink-div {
+    width: 90%;
+  }
+}
