@@ -53,8 +53,7 @@
 
 /* **** Header **** */
 .drink-container .drink-header {
-  height: 110px;
-  max-height: 110px;
+  margin: 0 0 40px;
   display: flex;
   justify-content: center;
   align-items: center;
