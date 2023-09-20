@@ -36,7 +36,6 @@ export const isFavorite = (id: string) => {
 
 export const getDrinkOfTheDay = (date: string) => {
   const drinkOfTheDay = localStorage.getItem('drinkOfTheDay');
-  console.log(drinkOfTheDay);
 
   if (drinkOfTheDay) {
     const { drink, date: drinkDate } = JSON.parse(drinkOfTheDay);
