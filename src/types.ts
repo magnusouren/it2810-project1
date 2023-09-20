@@ -1,5 +1,5 @@
 export type CategoryType =
-  | 'Ordinary drink'
+  | 'Ordinary Drink'
   | 'Cocktail'
   | 'Shake'
   | 'Other / Unknown'
@@ -28,6 +28,12 @@ export interface Drink {
   strCategory: string;
   strAlcoholic: Alcoholic;
 }
+
+export type SimpleDrinkType = {
+  strDrink: string;
+  strDrinkThumb: string;
+  idDrink: string;
+};
 
 export interface DrinkOfTheDay {
   drinkId: string;

@@ -1,0 +1,48 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DrinkOfTheDay > Should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="drink-of-the-day-card"
+  >
+    <a
+      class="link-wrapper"
+      href="/drink/9118"
+    >
+      <h2>
+        Drink of the day!
+      </h2>
+      <div
+        class="left"
+      >
+        <h3>
+          Random Drink
+        </h3>
+        <p
+          id="drink-of-the-day-category"
+        >
+          Category
+        </p>
+        <p
+          id="drink-of-the-day-glass"
+        >
+          Highball
+        </p>
+        <p
+          id="drink-of-the-day-alcoholic"
+        >
+          Alcoholic
+        </p>
+      </div>
+      <div
+        class="right"
+      >
+        <img
+          alt="Random Drink"
+          src="https://localhost:3000/drink/11118.jpg/preview"
+        />
+      </div>
+    </a>
+  </div>
+</DocumentFragment>
+`;

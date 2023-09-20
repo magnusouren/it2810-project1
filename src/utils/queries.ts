@@ -1,6 +1,6 @@
 import axios, { isCancel } from 'axios';
 
-import { Drink, Ingredient } from '../types';
+import { Drink, DrinkOfTheDay, Ingredient } from '../types';
 
 export const fetchDrinkById = async (id?: string) => {
   if (!id) {
@@ -50,4 +50,30 @@ export const fetchDrinkById = async (id?: string) => {
       }
     });
   return response;
+};
+
+export const fetchDrinkOfTheDay = async (currentDate: string) => {
+  return axios
+    .get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+    .then((response) => {
+      const randomDrink = response.data.drinks[0];
+
+      const drink: DrinkOfTheDay = {
+        drinkId: randomDrink.idDrink,
+        strDrink: randomDrink.strDrink,
+        strDrinkThumb: randomDrink.strDrinkThumb,
+        strCategory: randomDrink.strCategory,
+        strGlass: randomDrink.strGlass,
+        strAlcoholic: randomDrink.strAlcoholic,
+      };
+
+      // Store the new random drink ID in local storage with the current date
+      localStorage.setItem(currentDate, JSON.stringify(drink));
+
+      return drink;
+    })
+    .catch((error) => {
+      console.error('Error fetching drink:', error);
+      return null;
+    });
 };

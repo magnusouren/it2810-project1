@@ -1,8 +1,10 @@
-image: node:20.5.1
+image: node:20
 
-stages: # List of stages for jobs, and their order of execution
+stages:
   - setup
   - test
+  - lint
+  - lint-css
   - build
 
 node-setup:
@@ -13,28 +15,34 @@ node-setup:
     paths:
       - node_modules
 
-unit-test-job: # This job runs in the test stage.
-  stage: test # It only starts when the job in the build stage completes successfully.
+unit-test-job:
+  stage: test
   script:
     - echo "Running unit tests..."
     - npm run coverage
   coverage: '/All files[^|]*\|[^|]*\s+([\d\.]+)/'
+  artifacts:
+    when: always
+    paths:
+      - ./coverage/junit.xml
+    reports:
+      junit: ./coverage/junit.xml
 
 lint-test-job 1/2:
-  stage: test # It can run at the same time as unit-test-job (in parallel).
+  stage: lint
   script:
     - echo "Linting code..."
     - npm run lint
     - echo "No lint issues found."
 
 lint-test-job 2/2:
-  stage: test # It can run at the same time as unit-test-job (in parallel).
+  stage: lint-css
   script:
     - echo "Linting code..."
     - npm run lint:css
     - echo "No lint issues found."
 
-build-job: # This job runs in the build stage.
+build-job:
   stage: build
   script:
     - echo "Compiling the code..."
