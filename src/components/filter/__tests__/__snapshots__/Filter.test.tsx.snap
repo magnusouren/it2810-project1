@@ -1,34 +1,5 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Filter > Should change category 1`] = `
-<DocumentFragment>
-  <div
-    class="category-div"
-  >
-    <select
-      class="search-category"
-      placeholder="Filter by category"
-    >
-      <option
-        value="Beer"
-      >
-        Beer
-      </option>
-      <option
-        value="Cocoa"
-      >
-        Cocoa
-      </option>
-      <option
-        value="Coffee / Tea"
-      >
-        Coffee / Tea
-      </option>
-    </select>
-  </div>
-</DocumentFragment>
-`;
-
 exports[`Filter > Should match snapshot 1`] = `
 <DocumentFragment>
   <div
