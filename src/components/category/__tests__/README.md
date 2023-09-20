@@ -11,8 +11,8 @@ Tests that the category renders correctly with the correct content when a catego
 
 ## Correct links and navigation
 
-Tests that the category links to the correct pages and that the navigation works as expected.
+Tests that the category links to the correct pages and that the navigation works as expected. The links is tested with iterating over the possible categories to make sure that all categories are tested and that the links are correct.
 
 ## Correct navigation with state
 
-Tests that the category is passed as a state to the next page when the category is clicked.
+Tests that the category is passed as a state to the next page when the category is clicked.The links is tested with iterating over the possible categories to make sure that all categories are tested and that the navigation works correct.

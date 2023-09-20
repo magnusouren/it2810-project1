@@ -1,6 +1,6 @@
 # Categories tests
 
-When rendering the categories component, an API call is made to fetch the categories. This call is mocked in the test to return a predefined list of categories. Its is now returning a shorter list of categories than the actual API call would return. This is done to make the test run faster.
+When rendering the categories component, an API call is made to fetch the categories. This call is mocked in the test to return a predefined list of categories. Its is now returning a shorter list of categories than the actual API call would return. This is done to make the test run faster. The mock is found in `./__mocks__/handlers.ts`.
 
 ## Snapshot tests
 
