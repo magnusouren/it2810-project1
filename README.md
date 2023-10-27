@@ -106,6 +106,10 @@ This project follows a specific file structure. This section provides an overvie
 - [Project filestructure](./docs/filestructure-project.md)
 - [Component filestructure](./docs/filestructure-component.md)
 
+## Feedbacks and improvements after first delivery
+
+[Feedbacks and improvements](./docs/feedback.md)
+
 ## Copy project to VM
 
 1. Build the project with `npm run build`.
