@@ -14,7 +14,9 @@ We have not used TanStack before, so we did not know that it makes unnecessary A
 
 ### Improvement
 
-We found out that queryClient saved the data in cache, but only within the session. Therefore we had to implement a persistent cache. We installed tanstack/react-query-persist-client and tanstack/query-sync-storage-persister to support this. The documentation for this was found at [Tanstack query - persistQueryClient](https://tanstack.com/query/latest/docs/react/plugins/persistQueryClient?from=reactQueryV3&original=https%3A%2F%2Ftanstack.com%2Fquery%2Fv3%2Fdocs%2Fplugins%2FpersistQueryClient)
+Solved in [issue #34](https://gitlab.stud.idi.ntnu.no/it2810-h23/Team-16/prosjekt-1/-/issues/34).
+
+We found out that tanstack queryClient saved the data in cache, but only within the session. Therefore we had to implement a persistent cache. We installed tanstack/react-query-persist-client and tanstack/query-sync-storage-persister to support this. The documentation for this was found at [Tanstack query - persistQueryClient](https://tanstack.com/query/latest/docs/react/plugins/persistQueryClient?from=reactQueryV3&original=https%3A%2F%2Ftanstack.com%2Fquery%2Fv3%2Fdocs%2Fplugins%2FpersistQueryClient)
 
 We had to set the staleTime for the cache, which decided to be 24 hours. All this was configured in [main.tsx](../src/main.tsx).
 
@@ -39,8 +41,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   </React.StrictMode>,
 );
 ```
-
-Solved in [issue #34](https://gitlab.stud.idi.ntnu.no/it2810-h23/Team-16/prosjekt-1/-/issues/34).
 
 ## Bether favorite-marking on the drink page
 
