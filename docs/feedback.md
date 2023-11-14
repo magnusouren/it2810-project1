@@ -10,11 +10,23 @@ The page uses TanStack Query, but it makes unnecessary API calls. One can assume
 
 ### Our reflection
 
-We have not used TanStack before, so we did not know that it makes unnecessary API calls. We have now set staleTime to Infinity, so the page never makes unnecessary calls. This is something we are going to improve in the next delivery.
+We have not used TanStack before, so we did not know that it makes unnecessary API calls. We now want set staleTime to Infinity, so the page never makes unnecessary calls. This is something we are going to improve in the next delivery.
 
 ### Improvement
 
-TODO
+Included staleTime in the queryClinet in [main.tsx](../src/main.tsx).
+
+```typescript
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: Infinity,
+    },
+  },
+});
+```
+
+Solved in [issue #34](https://gitlab.stud.idi.ntnu.no/it2810-h23/Team-16/prosjekt-1/-/issues/34).
 
 ## Bether favorite-marking on the drink page
 
