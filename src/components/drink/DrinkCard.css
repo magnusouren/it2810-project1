@@ -88,10 +88,6 @@
   transition: transform 0.3s ease-out;
 }
 
-.drink-container .image-container img:hover {
-  transform: scale(1.02);
-}
-
 /* **** Info **** */
 
 .drink-container .info {
