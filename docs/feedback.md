@@ -78,7 +78,9 @@ It's not intenional that the image should have a clickable effect. We should rem
 
 ### Improvements
 
-TODO
+Solved in [#36](https://gitlab.stud.idi.ntnu.no/it2810-h23/Team-16/prosjekt-1/-/issues/36)
+
+We have now removed the hover effect on the image. This was done by removing the `:hover` and the related style from the css file.
 
 ## Regex in tests
 
