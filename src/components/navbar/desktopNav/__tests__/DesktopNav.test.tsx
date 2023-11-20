@@ -12,15 +12,15 @@ describe('Navbar', () => {
 
   it('Should show title and links', () => {
     renderWithRouter(<DesktopNav />);
-    expect(screen.getByText(/Enjoy my cocktail/i)).toBeDefined();
-    expect(screen.getByText(/Drinks/i)).toBeDefined();
-    expect(screen.getByText(/Favorites/i)).toBeDefined();
+    expect(screen.getByText('Enjoy my cocktail')).toBeDefined();
+    expect(screen.getByText('Drinks')).toBeDefined();
+    expect(screen.getByText('Favorites')).toBeDefined();
   });
 
   it('Should navigate when to /search/ when Search is clicked', async () => {
     renderWithRouter(<DesktopNav />);
     act(() => {
-      screen.getByText(/Drinks/i).click();
+      screen.getByText('Drinks').click();
     });
     expect(window.location.pathname).toBe('/drinks');
   });
@@ -28,7 +28,7 @@ describe('Navbar', () => {
   it('Should navigate when to /favorites/ when Favorites is clicked', async () => {
     renderWithRouter(<DesktopNav />);
     act(() => {
-      screen.getByText(/Favorites/i).click();
+      screen.getByText('Favorites').click();
     });
     expect(window.location.pathname).toBe('/favorites');
   });
@@ -36,7 +36,7 @@ describe('Navbar', () => {
   it('Should navigate when to / when logo is clicked', async () => {
     renderWithRouter(<DesktopNav />);
     act(() => {
-      screen.getByText(/Enjoy my cocktail/i).click();
+      screen.getByText('Enjoy my cocktail').click();
     });
     expect(window.location.pathname).toBe('/');
   });
