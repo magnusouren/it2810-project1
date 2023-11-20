@@ -90,6 +90,18 @@ I think it might be som bug with yout tests. expect(screen.getByText(/Enjoy my C
 
 This is not how it should be. We should look into the syntax of the tests and see if we can make it more accurate.
 
+### Improvements
+
+Solved in [#37](https://gitlab.stud.idi.ntnu.no/it2810-h23/Team-16/prosjekt-1/-/issues/37)
+
+We have now changed the tests to be more accurate. In the tests where we have used the /i flag, we have removed it, and are now using the exact text we are looking for. This makes the tests more accurate.
+
+Changes where made in the following files:
+
+- Category.test.tsx
+- DrinkCard.test.tsx
+- DesktopNav.test.tsx
+
 ## Possibilty for filtering on the favorite page
 
 ### Feedback
