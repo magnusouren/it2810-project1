@@ -28,7 +28,9 @@ We wil change the favorite marking on the drink page to be more clear. We will m
 
 ### Improvement
 
-TODO
+Solved in #40
+
+We have now changed the favorite marking on the drink page to be more clear. The heart is now filled when the drink is marked as favorite + having a different color.
 
 ## Mobile responsivenes
 

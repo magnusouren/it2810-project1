@@ -9,12 +9,6 @@
   user-select: none;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
-}
-
-.favorite-toggle::before {
-  content: 'favorite_border';
-  position: absolute;
-  font-family: 'Material Symbols Outlined', sans-serif;
   color: #fbc4ab;
 }
 
@@ -26,6 +20,6 @@
   transform: scale(1);
 }
 
-.favorite-toggle.favorite::before {
+.favorite-toggle.favorite {
   color: #f00;
 }
