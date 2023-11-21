@@ -23,18 +23,14 @@ export const FavoriteButton: FC<FavoriteButtonProps> = ({ id }) => {
     }
   };
 
-  // const peach = '#fbc4ab'; color={peach}
-  // const red = '#ff0000'; color={red}
   const heart = isFavoriteDrink ? <FaHeart /> : <FaRegHeart />;
 
   return (
     <div
       className={`favorite-toggle${isFavoriteDrink ? ' favorite' : ''}`}
       onClick={toggleFavoriteDrink}
-      // ref={favoriteDrinkToggleButton}
       data-testid='favorite'
     >
-      {/* Use an empty span for the icon */}
       {heart}
     </div>
   );
