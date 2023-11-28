@@ -48,7 +48,10 @@ TODO
 
 ### Improvements
 
-TODO
+Solved in [issue #39](https://gitlab.stud.idi.ntnu.no/it2810-h23/Team-16/prosjekt-1/-/issues/39).
+
+We've adjusted the breakpoints to prevent the navbar from doubling in height when the width is below 550 pixels.
+We've also made the navbar sticky on mobile.
 
 ## File/document structure
 
