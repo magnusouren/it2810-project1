@@ -2,20 +2,13 @@
 .favorite-toggle {
   position: relative;
   font-size: 1.7em;
-  color: transparent;
+  color: #fbc4ab;
   font-weight: 300;
   cursor: pointer;
   transition: 0.08s ease-in;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
-}
-
-.favorite-toggle::before {
-  content: 'favorite_border';
-  position: absolute;
-  font-family: 'Material Symbols Outlined', sans-serif;
-  color: #fbc4ab;
 }
 
 .favorite-toggle:hover {
@@ -26,6 +19,6 @@
   transform: scale(1);
 }
 
-.favorite-toggle.favorite::before {
+.favorite-toggle.favorite {
   color: #f00;
 }

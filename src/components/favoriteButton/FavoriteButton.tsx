@@ -1,6 +1,7 @@
 import './FavoriteButton.css';
 
-import { FC, useEffect, useRef, useState } from 'react';
+import { FC, useState } from 'react';
+import { FaHeart, FaRegHeart } from 'react-icons/fa';
 
 import { isFavorite, toggleFavorite } from '../../utils/persistency';
 
@@ -10,7 +11,6 @@ interface FavoriteButtonProps {
 
 export const FavoriteButton: FC<FavoriteButtonProps> = ({ id }) => {
   const [isFavoriteDrink, setIsFavoriteDrink] = useState(isFavorite(id));
-  const favoriteDrinkToggleButton = useRef<HTMLDivElement>(null);
 
   const updateFavoriteDrink = () => {
     setIsFavoriteDrink(id ? isFavorite(id) : false);
@@ -23,35 +23,15 @@ export const FavoriteButton: FC<FavoriteButtonProps> = ({ id }) => {
     }
   };
 
-  useEffect(() => {
-    if (isFavoriteDrink) {
-      if (favoriteDrinkToggleButton.current) {
-        favoriteDrinkToggleButton.current.classList.add('favorite');
-      }
-    } else {
-      if (favoriteDrinkToggleButton.current) {
-        favoriteDrinkToggleButton.current.classList.remove('favorite');
-      }
-    }
-  }, [isFavoriteDrink, favoriteDrinkToggleButton]);
+  const heart = isFavoriteDrink ? <FaHeart /> : <FaRegHeart />;
 
-  return isFavoriteDrink ? (
+  return (
     <div
-      className='favorite-toggle favorite'
+      className={`favorite-toggle${isFavoriteDrink ? ' favorite' : ''}`}
       onClick={toggleFavoriteDrink}
-      ref={favoriteDrinkToggleButton}
       data-testid='favorite'
     >
-      &#60;3
-    </div>
-  ) : (
-    <div
-      className='favorite-toggle'
-      onClick={toggleFavoriteDrink}
-      ref={favoriteDrinkToggleButton}
-      data-testid='favorite'
-    >
-      &#60;3
+      {heart}
     </div>
   );
 };
