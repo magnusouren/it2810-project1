@@ -147,10 +147,16 @@ This project follows a specific file structure. This section provides an overvie
 - [Project filestructure](./docs/filestructure-project.md)
 - [Component filestructure](./docs/filestructure-component.md)
 
+## Query caching
+
+We have implemented query caching in the application. This means that when a user searches for a drink, category, etc., the application will cache the query and the result. If the user searches for the same drink again, the application will use the cached result instead of making a new request to the API. This will improve the performance of the application.
+
+The caching is implemented using tanstack QueryClient with SyncStoragePersister. Read more about it [here](https://tanstack.com/query/latest/docs/react/plugins/persistQueryClient?from=reactQueryV3&original=https%3A%2F%2Ftanstack.com%2Fquery%2Fv3%2Fdocs%2Fplugins%2FpersistQueryClient).
+
 ## Responsiveness
 
 The user experience and responsivness of the application have been tested using Chrome Devtools and our personal mobile phones (iPhone 12).
 
-## Feedbacks and improvements after first delivery
+## Feedback and improvements after first delivery
 
-[Feedbacks and improvements](./docs/feedback.md)
+[Feedback and improvements](./docs/feedback.md)
