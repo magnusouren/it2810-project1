@@ -1,4 +1,4 @@
-# Feebacks from fellow students after delivery 1
+# Feedback from fellow students after delivery 1
 
 This document contains the feedback we received from fellow students after delivery 1. Some of the feedbacks that were frequently mentioned are collected into one feedback in this document. The feedbacks are translated from Norwegian to English. We have furthered reflected on the feedbacks and written down our thoughts about them. After making improvements, we have written down what we have done to improve the feedbacks.
 
@@ -16,7 +16,7 @@ We have not used TanStack before, so we did not know that it makes unnecessary A
 
 TODO
 
-## Bether favorite-marking on the drink page
+## Better favorite-marking on the drink page
 
 ### Feedback
 
@@ -32,7 +32,7 @@ Solved in [issue #40](https://gitlab.stud.idi.ntnu.no/it2810-h23/Team-16/prosjek
 
 We have now changed the favorite marking on the drink page to be more clear. The heart is now filled when the drink is marked as favorite + having a different color.
 
-## Mobile responsivenes
+## Mobile responsiveness
 
 ### Feedback
 
