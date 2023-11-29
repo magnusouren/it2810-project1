@@ -55,6 +55,11 @@ Solved in [issue #39](https://gitlab.stud.idi.ntnu.no/it2810-h23/Team-16/prosjek
 We've adjusted the breakpoints to prevent the navbar from doubling in height when the width is below 550 pixels.
 We've also made the navbar sticky on mobile.
 
+- Changed breakpoint so that the navbar scales smoothly on all screen sies.
+- Navbar is now sticky on smaller screens.
+- The size of the dropdown has been slightly increased.
+- We have standardized the width of drink cards on smaller screens, ensuring uniformity when the available width accommodates only one drink. Conversely, on larger screens, we have retained the variable width, as we are pleased with the visual presentation it offers.
+
 ## File/document structure
 
 ### Feedback
@@ -65,11 +70,6 @@ We've also made the navbar sticky on mobile.
 ### Our reflection
 
 - We are quiet happy with the file/document structure we have now, but we will look into the feedback and see if we can make some improvements. We dont want to restructure the whole project now, as we dont think it is necessary. We accepts that the structure might be a little bit overkill, but we think it makes it easier to scale the project.
-- We will look into the content in the
-
-### Improvements
-
-TODO
 
 ## Hover effect on drink image on the drink page
 
@@ -121,4 +121,4 @@ This is a good idea. We will look into the possibility for filtering on the favo
 
 ### Improvements
 
-TODO
+The decision has been made to abstain from implementing filtering functionality on the favorite page. This choice is attributed to the complexity associated with the API integration, and considering the relatively modest scope of this feature, undertaking such an extensive task is deemed disproportionate.

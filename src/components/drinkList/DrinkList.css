@@ -16,5 +16,6 @@ h2 {
 @media screen and (width <= 549px) {
   .drink-div {
     width: 90%;
+    display: block;
   }
 }
