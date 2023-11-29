@@ -26,7 +26,7 @@ describe('Category', () => {
 
   it('Should show category when it is passed as prop', () => {
     renderWithRouterAndQueryClient(<Category category={'Ordinary Drink'} />);
-    expect(screen.getByText(/Ordinary Drink/i)).toBeDefined();
+    expect(screen.getByText('Ordinary Drink')).toBeDefined();
   });
 
   it.each(categories)('Should navigate correct when "%s" is clicked', async (category) => {

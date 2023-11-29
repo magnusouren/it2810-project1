@@ -1,4 +1,4 @@
-# Feebacks from fellow students after delivery 1
+# Feedback from fellow students after delivery 1
 
 This document contains the feedback we received from fellow students after delivery 1. Some of the feedbacks that were frequently mentioned are collected into one feedback in this document. The feedbacks are translated from Norwegian to English. We have furthered reflected on the feedbacks and written down our thoughts about them. After making improvements, we have written down what we have done to improve the feedbacks.
 
@@ -42,7 +42,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 );
 ```
 
-## Bether favorite-marking on the drink page
+## Better favorite-marking on the drink page
 
 ### Feedback
 
@@ -54,9 +54,11 @@ We wil change the favorite marking on the drink page to be more clear. We will m
 
 ### Improvement
 
-TODO
+Solved in [issue #40](https://gitlab.stud.idi.ntnu.no/it2810-h23/Team-16/prosjekt-1/-/issues/40).
 
-## Mobile responsivenes
+We have now changed the favorite marking on the drink page to be more clear. The heart is now filled when the drink is marked as favorite + having a different color.
+
+## Mobile responsiveness
 
 ### Feedback
 
@@ -74,7 +76,15 @@ TODO
 
 ### Improvements
 
-TODO
+Solved in [issue #39](https://gitlab.stud.idi.ntnu.no/it2810-h23/Team-16/prosjekt-1/-/issues/39).
+
+We've adjusted the breakpoints to prevent the navbar from doubling in height when the width is below 550 pixels.
+We've also made the navbar sticky on mobile.
+
+- Changed breakpoint so that the navbar scales smoothly on all screen sies.
+- Navbar is now sticky on smaller screens.
+- The size of the dropdown has been slightly increased.
+- We have standardized the width of drink cards on smaller screens, ensuring uniformity when the available width accommodates only one drink. Conversely, on larger screens, we have retained the variable width, as we are pleased with the visual presentation it offers.
 
 ## File/document structure
 
@@ -86,11 +96,6 @@ TODO
 ### Our reflection
 
 - We are quiet happy with the file/document structure we have now, but we will look into the feedback and see if we can make some improvements. We dont want to restructure the whole project now, as we dont think it is necessary. We accepts that the structure might be a little bit overkill, but we think it makes it easier to scale the project.
-- We will look into the content in the
-
-### Improvements
-
-TODO
 
 ## Hover effect on drink image on the drink page
 
@@ -104,7 +109,9 @@ It's not intenional that the image should have a clickable effect. We should rem
 
 ### Improvements
 
-TODO
+Solved in [#36](https://gitlab.stud.idi.ntnu.no/it2810-h23/Team-16/prosjekt-1/-/issues/36)
+
+We have now removed the hover effect on the image. This was done by removing the `:hover` and the related style from the css file.
 
 ## Regex in tests
 
@@ -115,6 +122,18 @@ I think it might be som bug with yout tests. expect(screen.getByText(/Enjoy my C
 ### Our reflection
 
 This is not how it should be. We should look into the syntax of the tests and see if we can make it more accurate.
+
+### Improvements
+
+Solved in [#37](https://gitlab.stud.idi.ntnu.no/it2810-h23/Team-16/prosjekt-1/-/issues/37)
+
+We have now changed the tests to be more accurate. In the tests where we have used the /i flag, we have removed it, and are now using the exact text we are looking for. This makes the tests more accurate.
+
+Changes where made in the following files:
+
+- Category.test.tsx
+- DrinkCard.test.tsx
+- DesktopNav.test.tsx
 
 ## Possibilty for filtering on the favorite page
 
@@ -128,4 +147,4 @@ This is a good idea. We will look into the possibility for filtering on the favo
 
 ### Improvements
 
-TODO
+The decision has been made to abstain from implementing filtering functionality on the favorite page. This choice is attributed to the complexity associated with the API integration, and considering the relatively modest scope of this feature, undertaking such an extensive task is deemed disproportionate.
