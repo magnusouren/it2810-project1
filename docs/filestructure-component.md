@@ -1,21 +1,22 @@
 # Component File Structure
 
-To maintain a organized structure for components, their associated files are organized as follows:
-Note that component names should be written with an initial capital letter. This is a convention that makes it easier to distinguish between components and other files.
+To maintain an organized structure for components, their associated files are organized like the diagram below:
 
 ```
 ├── ComponentName
-│   ├── __tests__                           # tests for the component
-│       ├── __snapshots__                   # snapshots from tests
-│       ├── Component.test.tsx              # test file for 'Component'
-│       ├── Component-utils.test.ts         # tests for the utils file in the component
-│       ├── README.md                       # documentation for tests
-│   ├── Component.tsx                       # component
-│   ├── Component.css                       # stylesheet
-│   ├── utils.ts                            # utils for the component (optional)
-│   ├── README.md                           # documentation for the component (optional)
+│   ├── __tests__                       # tests for the component
+│       ├── __snapshots__               # snapshots from tests
+│       ├── Component.test.tsx          # test file for 'Component'
+│       ├── Component-utils.test.ts     # tests for the utils file in the component
+│       ├── README.md                   # documentation for tests
+│   ├── Component.tsx                   # component
+│   ├── Component.css                   # stylesheet
+│   ├── utils.ts                        # utils for the component (optional)
+│   ├── README.md                       # documentation for the component (optional)
 
 ```
+
+<i>Note that component names should be written with an initial capital letter. This is a convention that makes it easier to distinguish between components and other files.</i>
 
 ## Testing
 
