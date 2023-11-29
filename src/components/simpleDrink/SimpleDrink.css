@@ -40,3 +40,9 @@
 .simple-drink:hover .drink-image {
   transform: scale(1.02);
 }
+
+@media screen and (width <= 549px) {
+  .simple-drink {
+    margin: 1rem 0;
+  }
+}
